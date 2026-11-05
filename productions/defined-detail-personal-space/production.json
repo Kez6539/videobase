@@ -1,0 +1,109 @@
+{
+  "id": "defined-detail-personal-space",
+  "title": "Personal Space",
+  "status": "review-candidate",
+  "creativeApproval": null,
+  "reviewUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-personal-space/index.html",
+  "businessSource": "https://www.thedefineddetail.co.uk/",
+  "productionHost": "Hermes VPS",
+  "footage": {
+    "provider": "Runway",
+    "model": "kling-o3-pro",
+    "taskId": "e5669da2-16cc-45a9-9c29-fe2c7a75550b",
+    "paidTakes": 1,
+    "sourceSeconds": 10,
+    "credits": 170
+  },
+  "voice": {
+    "name": "Adam Stone",
+    "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
+    "method": "Unchanged complete phrase from existing original recording",
+    "text": "There's a simpler way.",
+    "sourceIn": 4.05,
+    "sourceOut": 5.6,
+    "tailSilence": 0.65,
+    "newCredits": 0
+  },
+  "edit": {
+    "captions": [
+      {
+        "start": 0.95,
+        "end": 3.85,
+        "text": "Could you give me\na little space?"
+      },
+      {
+        "start": 5.7,
+        "end": 6.55,
+        "text": "Perfect."
+      }
+    ],
+    "footInsert": [
+      3.85,
+      5.3
+    ],
+    "sourceSegments": [
+      {
+        "start": 0,
+        "end": 5.3,
+        "speed": 1
+      },
+      {
+        "start": 7.9,
+        "end": 10.041667,
+        "speed": 1
+      }
+    ],
+    "editorialNote": "Dropped the unclear owner question. The miniature step carries the joke; the clear dry Perfect reply and full quiet reaction are preserved. No dialogue has been sped up."
+  },
+  "export": {
+    "title": "Personal Space",
+    "duration": 13.5,
+    "nativePictureSeconds": 7.5,
+    "endcardSeconds": 6,
+    "voiceStart": 7.8,
+    "voice": "Exact original Adam Stone recording, unchanged delivery",
+    "voiceCredits": 0,
+    "footageCredits": 170,
+    "paidTakes": 1,
+    "fullDecodePassed": true,
+    "reviewStatus": "New candidate; final creative acceptance remains with Keiron",
+    "files": {
+      "captions.vtt": {
+        "bytes": 166,
+        "sha256": "d7d36aae1a46b63720b407e3b8c41e5803ed2bf2b9f695525acd6150ff169ba4"
+      },
+      "defined-detail-logo.png": {
+        "bytes": 33227,
+        "sha256": "643de4d5e49ebe2e6339cdc79752cc541b80be01ef1d9cde0c94966b66e2daf5"
+      },
+      "defined-detail-personal-space-both.zip": {
+        "bytes": 3574812,
+        "sha256": "7032c68587830ba1842572e5c7ea450b0e65522d1088ae3f83be625d8c4c7900"
+      },
+      "defined-detail-personal-space-reels.mp4": {
+        "bytes": 1752147,
+        "sha256": "e1955bdad80c6eef3b03708d8100df8fe94b74c9e8d5dbb8cc850eae4c103fb5"
+      },
+      "adam-original-line.wav": {
+        "bytes": 422478,
+        "sha256": "5c85b572b2692aee11f878dd0e31d57fc1648af17d3290df04961bec66b73a7a"
+      },
+      "poster-feed.jpg": {
+        "bytes": 50665,
+        "sha256": "dd874e0b5b36a522aa65f7285b3d3bb1c5d55a230960d4734cf682ce193980c0"
+      },
+      "poster-reels.jpg": {
+        "bytes": 57021,
+        "sha256": "d928be2cfb798e6f46830b98a107df8280f0e30907d93cee5b2743a6d293b77d"
+      },
+      "defined-detail-personal-space-feed.mp4": {
+        "bytes": 1877913,
+        "sha256": "8618ff6ac016f9106ea8e28334ea3e87d910f8c6f85272acbb375aa00fe534c0"
+      },
+      "index.html": {
+        "bytes": 6912,
+        "sha256": "77218582534ea93a88d20a6bfaf810ef603cff9690bf4504d68b66751e2a8e24"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "captions": [
+    {
+      "start": 0.95,
+      "end": 3.85,
+      "text": "Could you give me\na little space?"
+    },
+    {
+      "start": 5.7,
+      "end": 6.55,
+      "text": "Perfect."
+    }
+  ],
+  "footInsert": [
+    3.85,
+    5.3
+  ],
+  "sourceSegments": [
+    {
+      "start": 0,
+      "end": 5.3,
+      "speed": 1
+    },
+    {
+      "start": 7.9,
+      "end": 10.041667,
+      "speed": 1
+    }
+  ],
+  "editorialNote": "Dropped the unclear owner question. The miniature step carries the joke; the clear dry Perfect reply and full quiet reaction are preserved. No dialogue has been sped up."
+}
