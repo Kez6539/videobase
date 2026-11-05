@@ -21,3 +21,12 @@ This does not establish that the existing joke or actors are strong enough. The 
 ## Defaults worth keeping
 
 One business-specific situation, a natural character exchange, a quiet reaction, evidence of the actual service, an identifiable voice, authentic brand assets, short readable captions and a close long enough to understand. Carry those decisions into the next project; do not carry over a joke, narrator approval or customer claim by assumption.
+
+
+## Personal Space: second rejection
+
+Keiron also rejected the Personal Space cut: "thats terrible. try again, look at the comparethenetworks ones, they are laods better". He clarified: "its about cleaning cars, sparkling clean?"
+
+The tiny step and generic owner-hovering situation did not satisfy the brief. Its technical checks did not make it an accepted advert. Keep its assets and recipe for comparison, and record its status as rejected.
+
+The next review candidate, Kitchen's Next, centres the immaculate car: the owner's partner assumes it is newly purchased, then gives him the kitchen to clean. It retains a full three-turn exchange and a 5.5-second close. The production recipe, exact spend and media hashes are in productions/defined-detail-kitchens-next/. Keiron has not accepted this new candidate.

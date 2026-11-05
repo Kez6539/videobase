@@ -1,5 +1,7 @@
 # Personal Space
 
+Keiron rejected this cut on 5 November 2026 and requested a new attempt against the CTN reference. It is retained for comparison, not as an accepted creative template. His clarification was to centre the advert on cleaning cars and the sparkling-clean result.
+
 [Watch the new review cut](https://meetingai.comparethenetworks.com/ads/media/defined-detail-personal-space/index.html).
 
 A nervous supercar owner hovers over a detailer. Asked for a little space, he moves a tiny distance. The detailer replies, "Perfect." The visual joke leads into the original Adam recording and a six-second Defined Detail close: "Particular? So are we."

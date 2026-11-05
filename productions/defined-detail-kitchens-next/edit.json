@@ -1,0 +1,68 @@
+{
+  "bodySeconds": 10.1,
+  "brandStart": 9.5,
+  "sourceSegments": [
+    {
+      "start": 0,
+      "end": 10.1,
+      "speed": 1
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.65,
+      "text": "When did you buy that?"
+    },
+    {
+      "start": 1.72,
+      "end": 2.92,
+      "text": "It's ours."
+    },
+    {
+      "start": 3.36,
+      "end": 4.9,
+      "text": "Had it detailed."
+    },
+    {
+      "start": 6.23,
+      "end": 7.2,
+      "text": "Lovely."
+    },
+    {
+      "start": 7.76,
+      "end": 9.02,
+      "text": "Kitchen's next."
+    }
+  ],
+  "framing": {
+    "reels": {
+      "crop": [
+        0,
+        0,
+        1080,
+        1920
+      ],
+      "logo": [
+        75,
+        970
+      ],
+      "captionMarginBottom": 710
+    },
+    "feed": {
+      "crop": [
+        0,
+        160,
+        1080,
+        1350
+      ],
+      "logo": [
+        75,
+        890
+      ],
+      "captionMarginBottom": 95
+    }
+  },
+  "editorialNote": "The complete original exchange is retained at native speed, followed by 0.96 seconds before the original Adam phrase begins. No line is cut, sped up or substituted. The car fills the foreground. Branding is kept away from faces.",
+  "captionFont": "Poppins Bold 76 px; brand phrase retains 58 px"
+}

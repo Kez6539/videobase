@@ -1,7 +1,7 @@
 {
   "id": "defined-detail-personal-space",
   "title": "Personal Space",
-  "status": "review-candidate",
+  "status": "rejected",
   "creativeApproval": null,
   "reviewUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-personal-space/index.html",
   "businessSource": "https://www.thedefineddetail.co.uk/",
@@ -66,7 +66,7 @@
     "footageCredits": 170,
     "paidTakes": 1,
     "fullDecodePassed": true,
-    "reviewStatus": "New candidate; final creative acceptance remains with Keiron",
+    "reviewStatus": "Rejected by Keiron",
     "files": {
       "captions.vtt": {
         "bytes": 166,
@@ -105,5 +105,10 @@
         "sha256": "77218582534ea93a88d20a6bfaf810ef603cff9690bf4504d68b66751e2a8e24"
       }
     }
+  },
+  "rejection": {
+    "reviewer": "Keiron",
+    "quote": "thats terrible. try again, look at the comparethenetworks ones, they are laods better",
+    "clarification": "its about cleaning cars, sparkling clean?"
   }
 }

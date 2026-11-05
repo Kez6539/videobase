@@ -1,0 +1,181 @@
+{
+  "id": "defined-detail-kitchens-next",
+  "title": "Kitchen's Next",
+  "status": "rendered review candidate",
+  "creativeApproval": null,
+  "userDirections": [
+    "thats terrible. try again, look at the comparethenetworks ones, they are laods better",
+    "its about cleaning cars, sparkling clean?"
+  ],
+  "request": {
+    "model": "seedance-2",
+    "duration": 10,
+    "ratio": "9:16",
+    "resolution": "1080p",
+    "generateAudio": true,
+    "promptText": "A beautifully photographed British car-detailing comedy commercial, portrait 9:16, ten seconds. One continuous medium two-shot with a very gentle camera push, like a polished naturalistic TV comedy advert. Open immediately on an immaculate deep metallic blue sports coupe in a premium UK detailing studio. Its front wing, curved bonnet and headlight occupy the lower foreground; exceptionally clean paint shows crisp straight reflections of soft white inspection lights. Realistic rich gloss, spotless glass, dry clean bodywork, pristine wheel. No fantasy sparkles, flare effects or floating particles. The car's actual cleanliness is the hero.\nBehind the front wing, a fictional British couple in their forties are framed from the waist up, with large clear faces. On the left, a woman in a cream jacket and rust blouse looks impressed at the spotless car. On the right, her husband in a pale blue open-neck shirt and navy overshirt is quietly pleased with himself. Ordinary believable people, no model poses. The car and both faces remain visible together. Warm soft window daylight, dimensional cinematic lighting, natural skin texture, tasteful warm-neutral studio, shallow realistic depth of field. No distant full-body framing or empty ceiling.\nExact clear conversational British English, three turns, no overlap:\nAt about 0.6 seconds the WOMAN, looking at the car with pleasantly surprised curiosity, asks: \"When did you buy that?\"\nAt about 3.0 seconds the MAN answers casually: \"It's ours. Had it detailed.\"\nAt about 6.1 seconds the WOMAN admires the finish, then looks at him and replies completely dryly: \"Lovely. Kitchen's next.\"\nKeep the meaning plain: she mistook their professionally cleaned car for a new purchase, then asks him to clean the kitchen. Small sincere expressions, no shouting, exaggerated faces or laughter. Deliver all three lines naturally and finish speaking by 8.2 seconds. Hold his tiny deflated reaction and the gleaming car for the final quiet beat. Keep the car, faces, clothes and reflections consistent. The parked car does not move. Quiet studio room tone only, no music, narrator or extra words. No generated captions, readable writing, number plates, logos, brand badges or end card. Actual Defined Detail branding, captions and licensed narrator are added in the edit.",
+    "rationale": "The user rejected Personal Space and explicitly requested a new attempt matching the CTN adverts, then clarified that the service and sparkling-clean car must be central. Create one 10-second take with an obvious clean-car reveal and a clear three-line joke. Reuse the selected exact Adam recording. Cap this new take at the verified 400-credit 1080p rate. All further production on Hermes VPS; no user desktop control."
+  },
+  "requestId": "a09ec9de848a4a02b78de5414f6adb1f304e50d66599413a41b6508df9fcc0c0",
+  "cap": 400,
+  "workspace": 72233744,
+  "creditsBefore": 4584,
+  "paidTakes": 1,
+  "voice": "Exact existing Adam Stone recording",
+  "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
+  "voiceNewCredits": 0,
+  "editorialAssessment": {
+    "reviewer": "Codex",
+    "notHumanApproval": true,
+    "premise": "The car looks so clean she assumes he bought a new one. Her reaction turns the household cleaning job back on him.",
+    "whyThisChangesTheRejectedCut": "Clear spoken punchline, unmistakably immaculate car, large faces, no miniature foot gag, no question cut to rescue unclear speech.",
+    "timing": "13 words in three turns with a final reaction; original delivery retained.",
+    "reference": "CTN wedding and psychic: Seedance 2, medium two-shot, cinematic warm daylight, three clear turns and a quiet reaction."
+  },
+  "taskId": "ab07dd70-19b7-45af-840f-648fec8bad98",
+  "actualCredits": 400,
+  "creditsAfter": 4184,
+  "duration": 15.6,
+  "reviewUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/index.html",
+  "editingHost": "Hermes VPS",
+  "sourceSHA256": "695f50966ad6e56071cb21b54e1b5468566a84f237c9ebd22d5fa253e51729e3",
+  "export": {
+    "title": "Kitchen's Next",
+    "duration": 15.6,
+    "bodySeconds": 10.1,
+    "endcardSeconds": 5.5,
+    "brandStart": 9.5,
+    "paidTakes": 1,
+    "footageCredits": 400,
+    "voiceCredits": 0,
+    "voice": "Original selected Adam recording; performance unchanged",
+    "renderHost": "Hermes VPS",
+    "creativeApproval": null,
+    "fullDecodePassed": true,
+    "metadata": {
+      "reels": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1080,
+            "height": 1920,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "15.600000"
+        }
+      },
+      "feed": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1080,
+            "height": 1350,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "aac",
+            "sample_rate": "48000",
+            "channels": 2,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "15.600000"
+        }
+      }
+    },
+    "files": {
+      "defined-detail-kitchens-next-feed.mp4": {
+        "bytes": 3482536,
+        "sha256": "0f72e4eab867e52ebade1f00d9a951cfb961d59d1ff5ad4b152b2c180836dcfd"
+      },
+      "captions.vtt": {
+        "bytes": 291,
+        "sha256": "d47b60d4261059c2ab33728e4b843988c8b49352c9aea0c14b33dbd6e8d23834"
+      },
+      "defined-detail-logo.png": {
+        "bytes": 33227,
+        "sha256": "643de4d5e49ebe2e6339cdc79752cc541b80be01ef1d9cde0c94966b66e2daf5"
+      },
+      "defined-detail-kitchens-next-both.zip": {
+        "bytes": 7915083,
+        "sha256": "c5299bb7fc1edd9428953dc999e4fbdcc805004254e54388ba282bf1b2558f95"
+      },
+      "defined-detail-kitchens-next-reels.mp4": {
+        "bytes": 4469555,
+        "sha256": "c8c2b590b924c314e300b52db2f38a0830404e8e8de925bea951ae70e9349b3e"
+      },
+      "adam-original-line.wav": {
+        "bytes": 422478,
+        "sha256": "5c85b572b2692aee11f878dd0e31d57fc1648af17d3290df04961bec66b73a7a"
+      },
+      "poster-feed.jpg": {
+        "bytes": 74135,
+        "sha256": "ebc984bc1eefb0f225a4c709192085955fa6edda34a90f64dbe1484f5cd1bbe9"
+      },
+      "poster-reels.jpg": {
+        "bytes": 91085,
+        "sha256": "e4ab66d493867626d69c4f483a5d70900398ea238f54bec0714ad03df29de0aa"
+      },
+      "index.html": {
+        "bytes": 6875,
+        "sha256": "8d096b0d1c35c947f8ed974147c385aa5b668424bfa6b1fec10941869566503c"
+      }
+    }
+  },
+  "technicalChecks": {
+    "browser": {
+      "reels": {
+        "width": 1080,
+        "height": 1920,
+        "duration": 15.6,
+        "ended": true,
+        "error": null
+      },
+      "feed": {
+        "width": 1080,
+        "height": 1350,
+        "duration": 15.6,
+        "ended": true,
+        "error": null
+      },
+      "feedDownload": "defined-detail-kitchens-next-feed.mp4",
+      "mobile": {
+        "viewport": 390,
+        "pageWidth": 390,
+        "logoLoaded": true
+      },
+      "errors": []
+    },
+    "http": {
+      "hashes": {
+        "defined-detail-kitchens-next-feed.mp4": true,
+        "captions.vtt": true,
+        "defined-detail-logo.png": true,
+        "defined-detail-kitchens-next-both.zip": true,
+        "defined-detail-kitchens-next-reels.mp4": true,
+        "adam-original-line.wav": true,
+        "poster-feed.jpg": true,
+        "poster-reels.jpg": true,
+        "index.html": true
+      },
+      "range": {
+        "reels": 206,
+        "feed": 206
+      },
+      "zip": "CRC passed",
+      "identicalAudioPackets": "5b790d9eac0161ad8e8f4f4c43a5f44e7d639804b06e10bb67288e5f6f8e7f40"
+    },
+    "loudnessSummary": "\n\n  Integrated loudness:\n    I:         -16.1 LUFS\n    Threshold: -29.6 LUFS\n\n  Loudness range:\n    LRA:        18.5 LU\n    Threshold: -39.9 LUFS\n    LRA low:   -35.2 LUFS\n    LRA high:  -16.7 LUFS\n\n  True peak:\n    Peak:       -2.0 dBFS\n"
+  }
+}
