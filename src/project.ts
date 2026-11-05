@@ -15,12 +15,12 @@ export const projectSchema=z.object({
   voice:z.object({referenceName:z.string(),referenceUrl:https,voiceId:z.string(),direction:z.string(),auditions:z.array(z.object({id,name:z.string(),voiceId:z.string().optional(),url:https,script:z.string(),selected:z.boolean()})),recordingAsset:id.optional(),recordingUrl:https.optional(),recordingDuration:z.number().positive().optional(),recordingScriptHash:hash.optional()}).strict(),
   assets:z.array(z.object({id,path:local,sha256:hash,kind:z.enum(['video','audio','image']),sourceUrl:https.optional()}).strict()),
   timeline:z.array(z.object({id,label:z.string(),kind:z.enum(['video','still','card']),assetId:id.optional(),sourceStart:z.number().nonnegative().default(0),duration:z.number().positive(),audioUntil:z.number().nonnegative().default(0),spoken:z.boolean().default(false),speed:z.number().min(.5).max(2).default(1),purpose:z.string(),voicePlaceholder:z.boolean().default(false)}).strict()).min(1),
-  policy:z.object({minEndcardSeconds:z.number().positive(),maxSpokenWpm:z.number().positive(),minReactionSeconds:z.number().nonnegative(),maxCredits:z.number().int().nonnegative(),voiceStart:z.number().nonnegative()}).strict(),
+  policy:z.object({minEndcardSeconds:z.number().positive(),maxSpokenWpm:z.number().positive(),maxNarrationWpm:z.number().positive().default(135),minReactionSeconds:z.number().nonnegative(),maxCredits:z.number().int().nonnegative(),voiceStart:z.number().nonnegative()}).strict(),
   generation:z.object({enabled:z.boolean(),tool:z.literal('mcp__codex_apps__runway_generate_video'),workspaceId:z.number().int().positive(),arguments:z.object({model:z.string(),promptText:z.string().min(1),duration:z.number().int().positive(),ratio:z.enum(['9:16','16:9','1:1']),resolution:z.string(),generateAudio:z.boolean()}).strict(),quote:z.object({credits:z.number().int().positive(),checkedAt:z.iso.datetime(),source:https,notes:z.string()}).strict()}).strict().nullable(),
   reviews:z.array(reviewSchema),
   delivery:z.object({artifacts:z.array(z.object({profile:z.enum(['reels','feed']),path:local,sha256:hash})),technicalChecks:z.array(z.string())}).strict().nullable().default(null),
   comparison:z.object({referenceLabel:z.string(),referenceUrl:https,rejectedLabel:z.string(),rejectedUrl:https,notes:z.array(z.object({topic:z.string(),reference:z.string(),rejected:z.string(),rule:z.string()}))}).strict(),
-  preview:z.object({animaticUrl:z.string(),animaticNote:z.string(),referencePoster:https,rejectedPoster:https}).strict()
+  preview:z.object({animaticUrl:z.string(),animaticInputHash:hash.optional(),animaticNote:z.string(),referencePoster:https,rejectedPoster:https,candidates:z.array(z.object({profile:z.enum(['reels','feed']),url:https,sha256:hash})).optional()}).strict()
 }).strict().superRefine((p,ctx)=>{
   const ids=new Set<string>(); for(const a of p.assets){if(ids.has(a.id))ctx.addIssue({code:'custom',message:'Duplicate asset id: '+a.id});ids.add(a.id);}
   const shots=new Set<string>();for(const s of p.timeline){if(shots.has(s.id))ctx.addIssue({code:'custom',message:'Duplicate shot id: '+s.id});shots.add(s.id);if(s.kind!=='card'&&(!s.assetId||!ids.has(s.assetId)))ctx.addIssue({code:'custom',message:'Missing shot asset: '+s.id});if(s.spoken&&s.speed!==1)ctx.addIssue({code:'custom',message:'Do not time-stretch spoken performances: '+s.id});}
@@ -74,6 +74,9 @@ export async function audit(p:Project):Promise<Finding[]>{
   if(p.policy.voiceStart-lastLine<p.policy.minReactionSeconds)findings.push({code:'reaction',level:'block',message:'The narration crowds the final character reaction.'});
   if(!p.voice.recordingAsset||!p.voice.recordingDuration||!p.voice.recordingScriptHash)findings.push({code:'voice-missing',level:'block',message:'No business-specific voice recording has been auditioned. A reference voice is not an approved recording.'});
   else{
+    if(words(p.script.closingCopy)/p.voice.recordingDuration*60>p.policy.maxNarrationWpm)findings.push({code:'narration-rushed',level:'block',message:'The recorded narration exceeds this project’s chosen pace. Re-perform it or rewrite the copy; do not slow it artificially.'});
+    const normalize=(s:string)=>s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+    if(normalize(p.script.captions.filter(c=>c.kind==='narration').map(c=>c.text).join(' '))!==normalize(p.script.closingCopy))findings.push({code:'narration-captions',level:'block',message:'Time the narration captions to the actual recording before production.'});
     if(p.voice.recordingScriptHash!==await digest(p.script.closingCopy))findings.push({code:'voice-script',level:'block',message:'The voice recording belongs to an earlier closing script.'});
     if(p.policy.voiceStart+p.voice.recordingDuration>timelineDuration(p)-.6)findings.push({code:'voice-fit',level:'block',message:'The recorded voice does not fit with a natural tail. Extend the edit; do not squeeze the recording.'});
   }

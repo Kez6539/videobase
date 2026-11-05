@@ -1,7 +1,7 @@
 {
   "version": 1,
   "id": "defined-detail",
-  "name": "Defined Detail \u00b7 The viewing",
+  "name": "Defined Detail · The viewing",
   "status": "in-review",
   "brief": {
     "business": "Defined Detail",
@@ -54,12 +54,6 @@
         "end": 5.98
       }
     ],
-    "closingCopy": "Defined Detail. Interior detailing in Telford. Message us to book.",
-    "closingDelivery": "Approximately 6\u20137 seconds. Warm, conversational British read. A smile rather than an announcer. Let the name and Telford breathe.",
-    "pronunciation": {
-      "Defined": "dih-FYND, including the final d",
-      "Telford": "TEL-fuhd"
-    },
     "captions": [
       {
         "kind": "dialogue",
@@ -91,26 +85,32 @@
         "start": 5.2,
         "end": 6.3
       }
-    ]
+    ],
+    "closingCopy": "Defined Detail. Interior detailing in Telford. Message us to book.",
+    "closingDelivery": "Approximately 6–7 seconds. Warm, conversational British read. A smile rather than an announcer. Let the name and Telford breathe.",
+    "pronunciation": {
+      "Defined": "dih-FYND, including the final d",
+      "Telford": "TEL-fuhd"
+    }
   },
   "voice": {
-    "referenceName": "Adam Stone \u00b7 CTN reference",
+    "referenceName": "Adam Stone · CTN reference",
     "referenceUrl": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
     "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
     "direction": "Use the natural warmth and measured finish of the CTN reference. The Defined Detail script still needs its own dry recording and an explicit listening review.",
     "auditions": [
       {
         "id": "adam",
+        "name": "Adam Stone · the CTN reference",
         "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
-        "name": "Adam Stone \u00b7 the CTN reference",
         "url": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
         "script": "Existing library preview. Tone reference only; this is not Defined Detail copy.",
         "selected": true
       },
       {
         "id": "adrian",
+        "name": "Adrian · British commercial",
         "voiceId": "ZzBnwUd5N5vZp018EN64",
-        "name": "Adrian \u00b7 British commercial",
         "url": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/ZzBnwUd5N5vZp018EN64/130522fe27a272f0b13907e71e6210895c7a4cf5891304e15b95493e37c6a94f.mp3",
         "script": "Existing library preview. Tone reference only; this is not Defined Detail copy.",
         "selected": false
@@ -143,7 +143,8 @@
       "audioUntil": 4.041667,
       "spoken": true,
       "speed": 1,
-      "purpose": "Establish the absurd situation. Keep the original performance."
+      "purpose": "Establish the absurd situation. Keep the original performance.",
+      "voicePlaceholder": false
     },
     {
       "id": "reaction",
@@ -155,7 +156,8 @@
       "audioUntil": 2.25,
       "spoken": true,
       "speed": 1,
-      "purpose": "Keep Mate, the pause and the full reply. Leave the agent's quiet reaction."
+      "purpose": "Keep Mate, the pause and the full reply. Leave the agent's quiet reaction.",
+      "voicePlaceholder": false
     },
     {
       "id": "cleaning",
@@ -167,7 +169,8 @@
       "audioUntil": 0,
       "spoken": false,
       "speed": 1,
-      "purpose": "The cleaning is proof of the service. Rejected native narration is muted."
+      "purpose": "The cleaning is proof of the service. Rejected native narration is muted.",
+      "voicePlaceholder": false
     },
     {
       "id": "reveal",
@@ -198,6 +201,7 @@
   "policy": {
     "minEndcardSeconds": 4.4,
     "maxSpokenWpm": 170,
+    "maxNarrationWpm": 135,
     "minReactionSeconds": 0.8,
     "maxCredits": 0,
     "voiceStart": 12.1
@@ -206,9 +210,9 @@
   "reviews": [],
   "delivery": null,
   "comparison": {
-    "referenceLabel": "CTN \u00b7 The contract wedding",
+    "referenceLabel": "CTN · The contract wedding",
     "referenceUrl": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/ctn-wedding-facebook-reels.mp4",
-    "rejectedLabel": "Defined Detail \u00b7 rejected first edit",
+    "rejectedLabel": "Defined Detail · rejected first edit",
     "rejectedUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail/defined-detail-the-viewing-reels.mp4",
     "notes": [
       {
@@ -241,6 +245,7 @@
     "animaticUrl": "./media/defined-detail-pacing-study.mp4",
     "animaticNote": "20-second pacing study made only from the footage already paid for. The rejected closing narration is removed. The blank voice space is deliberate: no new narrator has been recorded or approved.",
     "referencePoster": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/poster.jpg",
-    "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail/poster-reels.jpg"
+    "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail/poster-reels.jpg",
+    "animaticInputHash": "6d35a154af778377d18457a7285544d216fdc879d28960e09baffa71c44d1671"
   }
 }

@@ -21,11 +21,11 @@ export async function card(p:Project,profile:'reels'|'feed',output:string,root:s
 }
 function stamp(seconds:number):string{const cs=Math.round(seconds*100);return `${Math.floor(cs/360000)}:${String(Math.floor(cs/6000)%60).padStart(2,'0')}:${String(Math.floor(cs/100)%60).padStart(2,'0')}.${String(cs%100).padStart(2,'0')}`;}
 function captions(p:Project,profile:'reels'|'feed',draft:boolean):string{
-  const cfg=profiles[profile];const rows=p.script.captions.filter(c=>!draft||c.kind==='dialogue').map(line=>`Dialogue: 0,${stamp(line.start)},${stamp(line.end)},Caption,,0,0,0,,${line.text.replaceAll('{','').replaceAll('}','').replaceAll('\n','\\N')}`);
-  if(draft)rows.push('Dialogue: 1,0:00:00.00,0:59:59.00,Draft,,0,0,0,,PACING STUDY  /  NARRATOR NOT RECORDED');
+  const cfg=profiles[profile];const rows=p.script.captions.filter(c=>!draft||!!p.voice.recordingAsset||c.kind==='dialogue').map(line=>`Dialogue: 0,${stamp(line.start)},${stamp(line.end)},Caption,,0,0,0,,${line.text.replaceAll('{','').replaceAll('}','').replaceAll('\n','\\N')}`);
+  if(draft)rows.push('Dialogue: 1,0:00:00.00,0:59:59.00,Draft,,0,0,0,,PACING STUDY  /  '+(p.voice.recordingAsset?'REVIEW COPY':'NARRATOR NOT RECORDED'));
   return `[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: ${cfg.height}\nWrapStyle: 0\nScaledBorderAndShadow: yes\n[V4+ Styles]\nFormat: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding\nStyle: Caption,Arial,54,&H00FFFFFF,&H00FFFFFF,&H00151515,&H00151515,-1,0,0,0,100,100,0,0,1,3,0,2,90,90,${cfg.captionBottom},1\nStyle: Draft,Arial,25,&H00FFFFFF,&H00FFFFFF,&H00151515,&H00151515,0,0,0,0,100,100,0,0,3,9,0,8,55,55,${profile==='reels'?280:70},1\n[Events]\nFormat: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text\n${rows.join('\n')}\n`;
 }
-export async function render(root:string,p:Project,profile:'reels'|'feed',mode:'draft'|'candidate'):Promise<{file:string;sha256:string;report:string}>{
+export async function render(root:string,p:Project,profile:'reels'|'feed',mode:'draft'|'candidate'):Promise<{file:string;sha256:string;report:string;inputHash:string}>{
   if(mode==='candidate'){
     for(const stage of ['brief','script','voice','animatic'] as const)if(await reviewStatus(p,stage)!=='approved')throw Error('Candidate render requires current '+stage+' approval');
     const blockers=(await audit(p)).filter(f=>f.level==='block');if(blockers.length)throw Error(blockers.map(f=>f.message).join('\n'));
@@ -51,14 +51,14 @@ export async function render(root:string,p:Project,profile:'reels'|'feed',mode:'
   await run(ff,['-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i','parts.txt','-c','copy','joined.mp4'],dir);
   const output=path.join(dir,p.id+'-'+profile+'-'+mode+'.mp4');const args=['-hide_banner','-loglevel','error','-y','-i','joined.mp4'];
   let af='loudnorm=I=-16:TP=-1.5:LRA=8,aresample=48000';
-  if(mode==='candidate'&&p.voice.recordingAsset){const voice=files[p.voice.recordingAsset];if(!voice)throw Error('Voice file missing');args.push('-i',voice,'-filter_complex',`[1:a]adelay=${Math.round(p.policy.voiceStart*1000)}:all=1[v];[0:a][v]amix=inputs=2:normalize=0,${af}[out]`,'-map','0:v','-map','[out]');}
+  if(p.voice.recordingAsset){const voice=files[p.voice.recordingAsset];if(!voice)throw Error('Voice file missing');args.push('-i',voice,'-filter_complex',`[1:a]adelay=${Math.round(p.policy.voiceStart*1000)}:all=1[v];[0:a][v]amix=inputs=2:normalize=0,${af}[out]`,'-map','0:v','-map','[out]');}
   else args.push('-af',af);
   args.push('-vf','ass=captions.ass','-t',String(total),'-c:v','libx264','-preset','fast','-threads','2','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-ar','48000','-ac','2','-b:a','192k','-movflags','+faststart',output);
   await run(ff,args,dir);await run(ff,['-hide_banner','-loglevel','error','-i',output,'-f','null','-'],dir);
   const metadata=JSON.parse(await run(probe,['-v','error','-show_streams','-show_format','-of','json',output],dir)) as {streams:Array<{codec_type:string;width?:number;height?:number;sample_rate?:string}>,format:{duration:string}};
   if(!metadata.streams.some(s=>s.codec_type==='video'&&s.width===1080&&s.height===height)||!metadata.streams.some(s=>s.codec_type==='audio'&&s.sample_rate==='48000')||Math.abs(Number(metadata.format.duration)-total)>.25)throw Error('Output metadata does not match the timeline');
   const sha256=fileDigest(await readFile(output));const report=path.join(dir,'report.json');await saveJson(report,{project:p.id,mode,profile,seconds:Number(metadata.format.duration),sha256,paidCalls:0,fullDecode:true,metadata,creativeApproval:mode==='draft'?'Not requested: timing study only':'Pending final review'});
-  return {file:output,sha256,report};
+  return {file:output,sha256,report,inputHash:await stageHash(p,'animatic')};
 }
 export async function release(root:string,p:Project):Promise<string>{
   if(await reviewStatus(p,'final')!=='approved')throw Error('The exact candidate files need final human approval');
