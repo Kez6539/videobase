@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.videobase/
+public/media/
+*.local
+.env*
+!.env.example
+.playwright-cli/
+output/

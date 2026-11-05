@@ -1,0 +1,246 @@
+{
+  "version": 1,
+  "id": "defined-detail",
+  "name": "Defined Detail \u00b7 The viewing",
+  "status": "in-review",
+  "brief": {
+    "business": "Defined Detail",
+    "product": "Interior detailing",
+    "audience": "Drivers around Telford whose everyday car has become a takeaway graveyard.",
+    "problem": "A familiar messy-car problem needs a memorable, credible reason to book a professional interior detail.",
+    "promise": "Professional interior detailing in Telford.",
+    "action": "Message Defined Detail to enquire about an interior detail.",
+    "proof": [
+      {
+        "claim": "Defined Detail offers interior wet detailing in Telford.",
+        "source": "https://www.thedefineddetail.co.uk/vehicledetailing"
+      }
+    ],
+    "tone": "Understated British comedy. Earnest characters, natural conversation and enough silence for the reaction.",
+    "avoid": [
+      "Announcer voice",
+      "Generic car glamour montage",
+      "Speeding up speech to fit an arbitrary duration",
+      "Invented prices, guarantees or testimonials",
+      "Treating a successful file encode as creative approval"
+    ]
+  },
+  "brand": {
+    "name": "Defined Detail",
+    "headline": "Your car. Without the evidence.",
+    "background": "#101112",
+    "accent": "#d71920",
+    "ink": "#ffffff",
+    "logo": ".videobase/assets/defined-detail/logo.png",
+    "cta": "Message Defined Detail",
+    "destination": "facebook.com/DefinedDetail"
+  },
+  "script": {
+    "premise": "An estate agent treats a dirty car as an attractive property. The owner punctures the sales pitch.",
+    "whyFunny": "The estate agent is completely sincere. The incongruity and the owner's reaction carry the joke, rather than a shouting performance.",
+    "lines": [
+      {
+        "speaker": "Estate agent",
+        "text": "Open plan. Lived-in. Original fries.",
+        "performance": "Sincere, measured property sales patter. Point, then let the phrase land.",
+        "start": 0,
+        "end": 3.78
+      },
+      {
+        "speaker": "Owner",
+        "text": "Mate. It's my car.",
+        "performance": "Baffled, conversational. Pause after Mate. No broad mugging.",
+        "start": 4.28,
+        "end": 5.98
+      }
+    ],
+    "closingCopy": "Defined Detail. Interior detailing in Telford. Message us to book.",
+    "closingDelivery": "Approximately 6\u20137 seconds. Warm, conversational British read. A smile rather than an announcer. Let the name and Telford breathe.",
+    "pronunciation": {
+      "Defined": "dih-FYND, including the final d",
+      "Telford": "TEL-fuhd"
+    },
+    "captions": [
+      {
+        "kind": "dialogue",
+        "text": "Open plan.",
+        "start": 0.04,
+        "end": 1.12
+      },
+      {
+        "kind": "dialogue",
+        "text": "Lived-in.",
+        "start": 1.34,
+        "end": 2.58
+      },
+      {
+        "kind": "dialogue",
+        "text": "Original fries.",
+        "start": 2.66,
+        "end": 3.94
+      },
+      {
+        "kind": "dialogue",
+        "text": "Mate.",
+        "start": 4.2,
+        "end": 4.97
+      },
+      {
+        "kind": "dialogue",
+        "text": "It's my car.",
+        "start": 5.2,
+        "end": 6.3
+      }
+    ]
+  },
+  "voice": {
+    "referenceName": "Adam Stone \u00b7 CTN reference",
+    "referenceUrl": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
+    "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
+    "direction": "Use the natural warmth and measured finish of the CTN reference. The Defined Detail script still needs its own dry recording and an explicit listening review.",
+    "auditions": [
+      {
+        "id": "adam",
+        "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
+        "name": "Adam Stone \u00b7 the CTN reference",
+        "url": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
+        "script": "Existing library preview. Tone reference only; this is not Defined Detail copy.",
+        "selected": true
+      },
+      {
+        "id": "adrian",
+        "voiceId": "ZzBnwUd5N5vZp018EN64",
+        "name": "Adrian \u00b7 British commercial",
+        "url": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/ZzBnwUd5N5vZp018EN64/130522fe27a272f0b13907e71e6210895c7a4cf5891304e15b95493e37c6a94f.mp3",
+        "script": "Existing library preview. Tone reference only; this is not Defined Detail copy.",
+        "selected": false
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "source",
+      "path": ".videobase/assets/defined-detail/source.mp4",
+      "sha256": "2d48d282571655b381cb18a32585bd31becaba1f08d7248d6737aa60dc528f85",
+      "kind": "video"
+    },
+    {
+      "id": "logo",
+      "path": ".videobase/assets/defined-detail/logo.png",
+      "sha256": "643de4d5e49ebe2e6339cdc79752cc541b80be01ef1d9cde0c94966b66e2daf5",
+      "kind": "image",
+      "sourceUrl": "https://static.wixstatic.com/media/ea4773_ba539c7be6e9499f89c3ab1923c26f73~mv2.png"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "viewing",
+      "label": "The viewing",
+      "kind": "video",
+      "assetId": "source",
+      "sourceStart": 0,
+      "duration": 4.041667,
+      "audioUntil": 4.041667,
+      "spoken": true,
+      "speed": 1,
+      "purpose": "Establish the absurd situation. Keep the original performance."
+    },
+    {
+      "id": "reaction",
+      "label": "Let the owner react",
+      "kind": "video",
+      "assetId": "source",
+      "sourceStart": 4.041667,
+      "duration": 4.166666,
+      "audioUntil": 2.25,
+      "spoken": true,
+      "speed": 1,
+      "purpose": "Keep Mate, the pause and the full reply. Leave the agent's quiet reaction."
+    },
+    {
+      "id": "cleaning",
+      "label": "Show the service",
+      "kind": "video",
+      "assetId": "source",
+      "sourceStart": 8.208333,
+      "duration": 2.916667,
+      "audioUntil": 0,
+      "spoken": false,
+      "speed": 1,
+      "purpose": "The cleaning is proof of the service. Rejected native narration is muted."
+    },
+    {
+      "id": "reveal",
+      "label": "Give the reveal room",
+      "kind": "video",
+      "assetId": "source",
+      "sourceStart": 11.125,
+      "duration": 3.875,
+      "audioUntil": 0,
+      "spoken": false,
+      "speed": 1,
+      "purpose": "Begin the new narrator over live picture once recorded.",
+      "voicePlaceholder": true
+    },
+    {
+      "id": "close",
+      "label": "A readable, voiced close",
+      "kind": "card",
+      "sourceStart": 0,
+      "duration": 5,
+      "audioUntil": 0,
+      "spoken": false,
+      "speed": 1,
+      "purpose": "One message, one service, one way to enquire. Match the CTN close's breathing room.",
+      "voicePlaceholder": true
+    }
+  ],
+  "policy": {
+    "minEndcardSeconds": 4.4,
+    "maxSpokenWpm": 170,
+    "minReactionSeconds": 0.8,
+    "maxCredits": 0,
+    "voiceStart": 12.1
+  },
+  "generation": null,
+  "reviews": [],
+  "delivery": null,
+  "comparison": {
+    "referenceLabel": "CTN \u00b7 The contract wedding",
+    "referenceUrl": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/ctn-wedding-facebook-reels.mp4",
+    "rejectedLabel": "Defined Detail \u00b7 rejected first edit",
+    "rejectedUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail/defined-detail-the-viewing-reels.mp4",
+    "notes": [
+      {
+        "topic": "Voice",
+        "reference": "A previously selected Adam recording, with a consistent brand delivery.",
+        "rejected": "An unreviewed Tom preset replaced the native closing voice.",
+        "rule": "Hear the actual business script dry before choosing the narrator."
+      },
+      {
+        "topic": "Brand close",
+        "reference": "Wedding: 4.73 seconds. Psychic: 4.43 seconds.",
+        "rejected": "A 2.5-second end card followed a short, compressed voiceover.",
+        "rule": "Allow at least 4.4 seconds for the end card; let the recorded voice determine the edit."
+      },
+      {
+        "topic": "Editorial control",
+        "reference": "Separate dialogue, reaction, brand voice, captions and placement framing.",
+        "rejected": "A single 15-second generation was pushed through to delivery.",
+        "rule": "Approve the script and timing study before committing to new footage."
+      },
+      {
+        "topic": "Judgment",
+        "reference": "The user's chosen reference for quality.",
+        "rejected": "Technical checks passed, but the user rejected the voice and pace.",
+        "rule": "Technical checks and creative approval are separate. Neither can stand in for the other."
+      }
+    ]
+  },
+  "preview": {
+    "animaticUrl": "./media/defined-detail-pacing-study.mp4",
+    "animaticNote": "20-second pacing study made only from the footage already paid for. The rejected closing narration is removed. The blank voice space is deliberate: no new narrator has been recorded or approved.",
+    "referencePoster": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/poster.jpg",
+    "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail/poster-reels.jpg"
+  }
+}

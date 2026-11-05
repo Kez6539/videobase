@@ -1,0 +1,23 @@
+# Defined Detail: what the base must correct
+
+Keiron's direction: the [CTN Facebook set](https://meetingai.comparethenetworks.com/ads/media/facebook-ready/index.html) is much better; the [first Defined Detail cut](https://meetingai.comparethenetworks.com/ads/media/defined-detail/index.html) has a poor voice and feels rushed.
+
+| Decision | CTN reference evidence | Defined Detail first cut | Consequence |
+|---|---|---|---|
+| Narrator | Existing selected Adam Stone recording, directed as warm and natural | A Tom preset was substituted after the native narrator's pronunciation failed | The replacement voice was never reviewed against the reference |
+| End card | Wedding 4.73 s; psychic 4.43 s | 2.5 s | Less room for the close and action |
+| Voice and picture | Voice-led timing, selected segments and reaction holds | One 15 s generation followed by a shortened 13.5 s picture body | Duration drove the edit before the actual performance was judged |
+| Review | The set Keiron chose as the standard | Decode, transcript, framing and browser checks were reported as completion | Technical success was mistaken for creative success |
+| Cost | Existing recordings and footage reused in the edit | 600 video credits, 1 speech credit, 3 sound-effect credits | 604 credits were committed before a meaningful creative review |
+
+The earlier manifests and edit scripts supplied these timing and cost figures. Keiron supplied the comparative quality judgment. An automated transcript cannot establish whether a read sounds natural, and a contact sheet cannot establish whether a comedy performance works.
+
+## Included study
+
+The 20-second timing study is a review artifact. It keeps the already-generated character exchange at its original speed, removes the rejected narration, restores the available live-picture reveal and gives the closing card five seconds. The voice space is intentionally unrecorded and visibly labelled. No new generation credits are used.
+
+This does not establish that the existing joke or actors are strong enough. The story, cast, voice and timing remain open for review. The framework must make that review concrete before another expensive take is commissioned.
+
+## Defaults worth keeping
+
+One business-specific situation, a natural character exchange, a quiet reaction, evidence of the actual service, an identifiable voice, authentic brand assets, short readable captions and a close long enough to understand. Carry those decisions into the next project; do not carry over a joke, narrator approval or customer claim by assumption.
