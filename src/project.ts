@@ -27,15 +27,16 @@ export const projectSchema=z.object({
   brief:z.object({format:z.enum(['acted-comedy','caption-led']).optional(),business:z.string().min(1),product:z.string().min(1),audience:z.string().min(1),problem:z.string().min(1),promise:z.string().min(1),action:z.string().min(1),proof:z.array(z.object({claim:z.string(),source:https})),tone:z.string(),avoid:z.array(z.string())}).strict(),
   brand:z.object({fontFamily:z.string().optional(),fontAsset:id.optional(),sceneLogo:z.object({reels:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive()}).strict(),feed:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive()}).strict()}).strict().optional(),name:z.string(),headline:z.string(),background:z.string().regex(/^#[a-f\d]{6}$/i),accent:z.string().regex(/^#[a-f\d]{6}$/i),ink:z.string().regex(/^#[a-f\d]{6}$/i),logo:local.optional(),cta:z.string(),destination:z.string()}).strict(),
   script:z.object({format:z.enum(['dialogue','caption-led']).optional(),displayCopy:z.array(z.object({text:z.string().min(1),start:z.number().nonnegative(),end:z.number().positive()}).strict()).optional(),premise:z.string(),whyFunny:z.string(),lines:z.array(z.object({speaker:z.string(),text:z.string().min(1),performance:z.string(),start:z.number().nonnegative(),end:z.number().positive()}).strict()),captions:z.array(z.object({kind:z.enum(['dialogue','narration','display']),text:z.string().min(1),start:z.number().nonnegative(),end:z.number().positive()}).strict()),closingCopy:z.string(),closingDelivery:z.string(),pronunciation:z.record(z.string(),z.string())}).strict(),
-  voice:z.object({referenceName:z.string(),referenceUrl:https,voiceId:z.string(),direction:z.string(),auditions:z.array(z.object({id,name:z.string(),voiceId:z.string().optional(),url:https,script:z.string(),selected:z.boolean()})),recordingProvenance:z.object({method:z.enum(['library','reference-recreation','human-recording','existing-recording']),referenceVoiceId:z.string().optional(),referenceSHA256:hash.optional(),model:z.string().optional(),reportUrl:https.optional()}).strict().optional(),recordingAsset:id.optional(),recordingUrl:https.optional(),recordingDuration:z.number().positive().optional(),recordingScriptHash:hash.optional()}).strict(),
+  voice:z.object({requireExactSelectedVoice:z.boolean().optional(),referenceName:z.string(),referenceUrl:https,voiceId:z.string(),direction:z.string(),auditions:z.array(z.object({id,name:z.string(),voiceId:z.string().optional(),url:https,script:z.string(),selected:z.boolean()})),recordingProvenance:z.object({method:z.enum(['library','reference-recreation','human-recording','existing-recording']),referenceVoiceId:z.string().optional(),referenceSHA256:hash.optional(),model:z.string().optional(),reportUrl:https.optional()}).strict().optional(),recordingAsset:id.optional(),recordingUrl:https.optional(),recordingDuration:z.number().positive().optional(),recordingScriptHash:hash.optional()}).strict(),
   assets:z.array(z.object({id,path:local,sha256:hash,kind:z.enum(['video','audio','image','font']),scriptHash:hash.optional(),sourceUrl:https.optional()}).strict()),
   timeline:z.array(z.object({id,label:z.string(),role:z.enum(['setup','process','result','reaction','brand']).optional(),kind:z.enum(['video','still','card']),assetId:id.optional(),sourceStart:z.number().nonnegative().default(0),duration:z.number().positive(),audioUntil:z.number().nonnegative().default(0),spoken:z.boolean().default(false),speed:z.number().min(.5).max(2).default(1),framing:z.object({reels:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive(),height:z.number().positive()}).strict().optional(),feed:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive(),height:z.number().positive()}).strict().optional()}).strict().optional(),purpose:z.string(),voicePlaceholder:z.boolean().default(false)}).strict()).min(1),
   policy:z.object({minEndcardSeconds:z.number().positive(),maxSpokenWpm:z.number().positive(),maxNarrationWpm:z.number().positive().default(135),minReactionSeconds:z.number().nonnegative(),maxCredits:z.number().int().nonnegative().nullable(),voiceStart:z.number().nonnegative()}).strict(),
+  music:z.object({assetId:id,start:z.number().nonnegative(),volumeDb:z.number().min(-60).max(0),fadeIn:z.number().nonnegative(),fadeOut:z.number().nonnegative()}).strict().optional(),
   generation:generationSchema.nullable(),
   reviews:z.array(reviewSchema),
   delivery:z.object({artifacts:z.array(z.object({profile:z.enum(['reels','feed']),path:local,sha256:hash})),technicalChecks:z.array(z.string())}).strict().nullable().default(null),
   comparison:z.object({referenceLabel:z.string(),referenceUrl:https,rejectedLabel:z.string(),rejectedUrl:https,notes:z.array(z.object({topic:z.string(),reference:z.string(),rejected:z.string(),rule:z.string()}))}).strict(),
-  preview:z.object({animaticUrl:z.string(),animaticInputHash:hash.optional(),animaticNote:z.string(),referencePoster:https,rejectedPoster:https,candidates:z.array(z.object({profile:z.enum(['reels','feed']),url:https,sha256:hash})).optional()}).strict()
+  preview:z.object({performanceTakes:z.array(z.object({id,label:z.string(),url:https,sha256:hash,taskId:z.uuid(),status:z.enum(['review','selected-for-edit','not-used']),notes:z.string()}).strict()).optional(),animaticUrl:z.string(),animaticInputHash:hash.optional(),animaticNote:z.string(),referencePoster:https,rejectedPoster:https,candidates:z.array(z.object({profile:z.enum(['reels','feed']),url:https,sha256:hash})).optional()}).strict()
 }).strict().superRefine((p,ctx)=>{
   const ids=new Set<string>(); for(const a of p.assets){if(ids.has(a.id))ctx.addIssue({code:'custom',message:'Duplicate asset id: '+a.id});ids.add(a.id);}
   const shots=new Set<string>();for(const s of p.timeline){if(shots.has(s.id))ctx.addIssue({code:'custom',message:'Duplicate shot id: '+s.id});shots.add(s.id);if(s.kind!=='card'&&(!s.assetId||!ids.has(s.assetId)))ctx.addIssue({code:'custom',message:'Missing shot asset: '+s.id});if(s.spoken&&s.speed!==1)ctx.addIssue({code:'custom',message:'Do not time-stretch spoken performances: '+s.id});}
@@ -55,7 +56,7 @@ export function stageInput(p:Project,stage:Stage):unknown {
   const brief={brief:p.brief,brand:p.brand,creative:p.creative??null};
   const script={...brief,script:p.script};
   const voice={...script,voice:p.voice,recording:p.assets.find(a=>a.id===p.voice.recordingAsset)??null};
-  const animatic={...voice,timeline:p.timeline,assets:p.assets,policy:p.policy};
+  const animatic={...voice,timeline:p.timeline,assets:p.assets,policy:p.policy,...(p.music?{music:p.music}:{})};
   if(stage==='brief')return brief;
   if(stage==='script')return script;
   if(stage==='voice')return voice;
@@ -93,7 +94,16 @@ export async function audit(p:Project):Promise<Finding[]>{
     if(copy.some(c=>!c.text.trim()||c.end<=c.start||c.end>timelineDuration(p))||JSON.stringify(visible)!==JSON.stringify(copy))findings.push({code:'display-captions',level:'block',message:'The rendered headlines and their times must match the caption-led script.'});
   }
   const close=p.timeline.at(-1);if(close?.kind!=='card'||close.duration<p.policy.minEndcardSeconds)findings.push({code:'endcard',level:'block',message:'The closing card must hold for at least '+p.policy.minEndcardSeconds+' seconds.'});
-  for(const line of p.script.lines){const wpm=words(line.text)/(line.end-line.start)*60;if(wpm>p.policy.maxSpokenWpm)findings.push({code:'rushed-line',level:'block',message:line.speaker+' is planned at '+Math.round(wpm)+' words/minute. Re-perform or extend the shot; do not speed up dialogue.'});}
+  // Five words is a conservative, uncalibrated editorial heuristic, not a statistical
+  // threshold or approval. Short word-boundary windows do not represent sustained
+  // conversational pace. Retain their real times and require actual-audio judgement.
+  for(const line of p.script.lines){
+    const count=words(line.text);const wpm=count/(line.end-line.start)*60;
+    if(wpm>p.policy.maxSpokenWpm){
+      if(count<=5)findings.push({code:'short-line-rate',level:'note',message:line.speaker+' has a '+count+'-word turn at '+Math.round(wpm)+' words/minute across its stated speech window. This short-window rate is advisory: listen for intelligibility and pace, keeping the real timestamps and original speech speed.'});
+      else findings.push({code:'rushed-line',level:'block',message:line.speaker+' is planned at '+Math.round(wpm)+' words/minute. Re-perform or extend the shot; do not speed up dialogue.'});
+    }
+  }
   const lastLine=Math.max(p.script.lines.reduce((end,line)=>Math.max(end,line.end),0),...(p.script.displayCopy??[]).map(c=>c.end));
   if(p.policy.voiceStart-lastLine<p.policy.minReactionSeconds)findings.push({code:'reaction',level:'block',message:'The narration crowds the final character reaction.'});
   if(!p.voice.recordingAsset||!p.voice.recordingDuration||!p.voice.recordingScriptHash)findings.push({code:'voice-missing',level:'block',message:'No business-specific voice recording has been auditioned. A reference voice is not an approved recording.'});
@@ -103,6 +113,14 @@ export async function audit(p:Project):Promise<Finding[]>{
     if(normalize(p.script.captions.filter(c=>c.kind==='narration').map(c=>c.text).join(' '))!==normalize(p.script.closingCopy))findings.push({code:'narration-captions',level:'block',message:'Time the narration captions to the actual recording before production.'});
     if(p.voice.recordingScriptHash!==await digest(p.script.closingCopy))findings.push({code:'voice-script',level:'block',message:'The voice recording belongs to an earlier closing script.'});
     if(p.policy.voiceStart+p.voice.recordingDuration>timelineDuration(p)-.6)findings.push({code:'voice-fit',level:'block',message:'The recorded voice does not fit with a natural tail. Extend the edit; do not squeeze the recording.'});
+  }
+  if(p.music){
+    const musicAsset=p.assets.find(a=>a.id===p.music!.assetId);
+    if(musicAsset?.kind!=='audio')findings.push({code:'music-asset',level:'block',message:'The closing music must reference a verified audio asset.'});
+    const lastCharacterLine=p.script.lines.reduce((end,line)=>Math.max(end,line.end),0);
+    if(p.script.lines.length&&p.music.start<lastCharacterLine+p.policy.minReactionSeconds)findings.push({code:'music-reaction',level:'block',message:'Keep closing music after the complete character exchange and its reaction.'});
+    const musicDuration=timelineDuration(p)-p.music.start;
+    if(musicDuration<=0||p.music.fadeIn+p.music.fadeOut>musicDuration)findings.push({code:'music-fit',level:'block',message:'The closing music and its fades must fit inside the edit.'});
   }
   findings.push({code:'human-judgment',level:'note',message:'Decode, transcript and loudness checks cannot judge whether a voice sounds good or a joke lands.'});
   return findings;
@@ -132,9 +150,15 @@ export async function generationBlockers(p:Project,now=new Date()):Promise<strin
   return Array.from(new Set(reasons));
 }
 
+export function exactVoiceIdentityFindings(p:Project):Finding[]{
+ if(!p.voice.requireExactSelectedVoice)return [];
+ const provenance=p.voice.recordingProvenance;
+ if(!p.voice.voiceId.trim()||!provenance||!['library','existing-recording'].includes(provenance.method)||provenance.referenceVoiceId!==p.voice.voiceId)return [{code:'voice-exact-selected',level:'block',message:'The exact selected narrator requires a library or existing recording with the matching voice ID. A reference recreation cannot fulfil this requirement.'}];
+ return [];
+}
 export function candidateCoverage(p:Project):Finding[]{
- if(!p.creative)return [];
- const findings:Finding[]=[];
+ const findings:Finding[]=exactVoiceIdentityFindings(p);
+ if(!p.creative)return findings;
  if(p.script.format!=='caption-led'&&!p.timeline.some(s=>s.role==='setup'&&s.spoken&&s.audioUntil>0&&s.kind==='video'&&p.assets.some(a=>a.id===s.assetId&&a.kind==='video')))findings.push({code:'candidate-dialogue',level:'block',message:'The character scene needs its actual spoken video. A photograph cannot masquerade as the dialogue performance.'});
  for(const role of ['process','result'] as const){
   if(!p.timeline.some(s=>s.role===role&&s.kind==='video'&&p.assets.some(a=>a.id===s.assetId&&a.kind==='video'))){

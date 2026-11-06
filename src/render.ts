@@ -2,7 +2,7 @@ import path from 'node:path';
 import {spawn} from 'node:child_process';
 import {mkdir,writeFile,readFile,copyFile} from 'node:fs/promises';
 import sharp,{type OverlayOptions} from 'sharp';
-import {audit,reviewStatus,stageHash,developmentAuthorized,candidateCoverage,dialogueHash,type Project} from './project.ts';
+import {audit,reviewStatus,stageHash,developmentAuthorized,candidateCoverage,exactVoiceIdentityFindings,dialogueHash,type Project} from './project.ts';
 import {fileDigest,verifyAssets,assetPath,saveJson} from './io.ts';
 
 export const profiles={reels:{width:1080,height:1920,captionBottom:720,safe:[65,269,1015,1248]},feed:{width:1080,height:1350,captionBottom:155,safe:[70,60,1010,1290]}} as const;
@@ -95,8 +95,28 @@ export async function render(root:string,p:Project,profile:'reels'|'feed',mode:'
   await writeFile(path.join(dir,'parts.txt'),encoded.join('\n'));await writeFile(path.join(dir,'captions.ass'),captions(p,profile,mode==='draft'));
   await run(ff,['-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i','parts.txt','-c','copy','joined.mp4'],dir);
   const output=path.join(dir,p.id+'-'+profile+'-'+mode+'.mp4');const args=['-hide_banner','-loglevel','error','-y','-i','joined.mp4'];
-  let af='loudnorm=I=-16:TP=-1.5:LRA=8,aresample=48000';
-  if(p.voice.recordingAsset){const voice=files[p.voice.recordingAsset];if(!voice)throw Error('Voice file missing');args.push('-i',voice,'-filter_complex',`[1:a]adelay=${Math.round(p.policy.voiceStart*1000)}:all=1[v];[0:a][v]amix=inputs=2:normalize=0,${af}[out]`,'-map','0:v','-map','[out]');}
+  const af='loudnorm=I=-16:TP=-1.5:LRA=8,aresample=48000';
+  const audioFilters:string[]=[];const mixInputs=['[0:a]'];let nextInput=1;
+  if(p.voice.recordingAsset){
+    const voice=files[p.voice.recordingAsset];if(!voice)throw Error('Voice file missing');
+    args.push('-i',voice);
+    audioFilters.push('['+nextInput+':a]adelay='+Math.round(p.policy.voiceStart*1000)+':all=1[narration]');
+    mixInputs.push('[narration]');nextInput++;
+  }
+  if(p.music){
+    const asset=p.assets.find(a=>a.id===p.music!.assetId);const music=files[p.music.assetId];
+    if(asset?.kind!=='audio'||!music)throw Error('Closing music must be a verified audio asset.');
+    const duration=total-p.music.start;
+    if(duration<=0||p.music.fadeIn+p.music.fadeOut>duration)throw Error('Closing music and fades do not fit inside the edit.');
+    args.push('-stream_loop','-1','-i',music);
+    const filters=['atrim=duration='+duration,'asetpts=PTS-STARTPTS','volume='+p.music.volumeDb+'dB'];
+    if(p.music.fadeIn>0)filters.push('afade=t=in:st=0:d='+p.music.fadeIn);
+    if(p.music.fadeOut>0)filters.push('afade=t=out:st='+(duration-p.music.fadeOut)+':d='+p.music.fadeOut);
+    filters.push('adelay='+Math.round(p.music.start*1000)+':all=1');
+    audioFilters.push('['+nextInput+':a]'+filters.join(',')+'[music]');
+    mixInputs.push('[music]');
+  }
+  if(mixInputs.length>1)args.push('-filter_complex',audioFilters.join(';')+';'+mixInputs.join('')+'amix=inputs='+mixInputs.length+':duration=first:normalize=0,'+af+'[out]','-map','0:v','-map','[out]');
   else args.push('-af',af);
   args.push('-vf','ass=captions.ass:fontsdir=fonts','-t',String(total),'-c:v','libx264','-preset','fast','-threads','2','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-ar','48000','-ac','2','-b:a','192k','-movflags','+faststart',output);
   await run(ff,args,dir);await run(ff,['-hide_banner','-loglevel','error','-i',output,'-f','null','-'],dir);
@@ -107,6 +127,7 @@ export async function render(root:string,p:Project,profile:'reels'|'feed',mode:'
 }
 export async function release(root:string,p:Project):Promise<string>{
   if(await reviewStatus(p,'final')!=='approved')throw Error('The exact candidate files need final human approval');
+  const identityBlocks=exactVoiceIdentityFindings(p);if(identityBlocks.length)throw Error(identityBlocks.map(f=>f.message).join('\n'));
   if(!developmentAuthorized(p))for(const stage of ['brief','script','voice','animatic'] as const)if(await reviewStatus(p,stage)!=='approved')throw Error('Stale '+stage+' review');
   if(!p.delivery?.artifacts.length)throw Error('No candidate artifacts');
   const destination=path.join(root,'.videobase','releases',p.id,(await stageHash(p,'final')).slice(0,16));await mkdir(destination,{recursive:true});

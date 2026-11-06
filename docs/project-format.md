@@ -41,3 +41,7 @@ Brand settings support fontFamily, a verified fontAsset and per-profile sceneLog
 ## Caption-led visual projects
 
 script.format can explicitly be caption-led, with no invented character lines. script.displayCopy and display captions carry the visible words, bound to the selected concept. They do not enter the spoken VTT. Dialogue projects still need actual spoken setup video before a candidate render. Both formats require produced process and result footage, an actual script-bound brand read, and separate final human review. The visual colour project is a distinct alternative; it does not complete the blocked spoken plan.
+
+## Exact narrator identity
+
+voice.requireExactSelectedVoice can require the selected library identity. Candidate and release checks require matching referenceVoiceId with library or existing-recording provenance. A reference recreation remains an audition even when it has the same source voice ID. Character-scene development eligibility is unchanged; it must not silently relax this final narrator requirement.

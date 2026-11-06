@@ -1,10 +1,11 @@
 import {recordPlayback,playedSeconds,type PlaybackRange} from './evidence.ts';
 import rejectedVisual from '../examples/defined-detail-colour-visual.json';
-import latest from '../examples/defined-detail-colour.json';
+import bluePlan from '../examples/defined-detail-colour.json';
+import latest from '../examples/defined-detail-taxi.json';
 import {creativeView,bindCreative} from './creative.ts';
 import {emptyCreative} from '../src/creative.ts';
 import raw from '../examples/defined-detail.json';
-import {projectSchema,stages,stageHash,reviewStatus,audit,generationBlockers,timelineDuration,type Project,type Stage} from '../src/project.ts';
+import {projectSchema,stages,stageHash,reviewStatus,audit,exactVoiceIdentityFindings,generationBlockers,timelineDuration,type Project,type Stage} from '../src/project.ts';
 import './style.css';
 
 const app=document.querySelector<HTMLDivElement>('#app')!;
@@ -12,7 +13,7 @@ const original=projectSchema.parse(raw);
 const key='videobase.projects.v1';
 let projects:Project[]=[];
 try{const saved:unknown=JSON.parse(localStorage.getItem(key)??'[]');if(Array.isArray(saved))projects=saved.map(p=>projectSchema.parse(p));}catch{localStorage.removeItem(key);}
-if(!projects.length)projects=[projectSchema.parse(structuredClone(latest)),projectSchema.parse(structuredClone(rejectedVisual)),structuredClone(original)];
+if(!projects.length)projects=[projectSchema.parse(structuredClone(latest)),projectSchema.parse(structuredClone(bluePlan)),projectSchema.parse(structuredClone(rejectedVisual)),structuredClone(original)];
 else if(!projects.some(p=>p.id===latest.id))projects.unshift(projectSchema.parse(structuredClone(latest)));
 for(const project of projects)if(project.id===latest.id)project.brief.format='acted-comedy';
 for(const project of projects)if(project.id===rejectedVisual.id){project.status='rejected';project.preview.animaticNote=rejectedVisual.preview.animaticNote;}
@@ -64,6 +65,7 @@ async function recordReview():Promise<void>{
   const stage=(document.querySelector<HTMLSelectElement>('#reviewStage')!.value) as Stage;const decision=document.querySelector<HTMLSelectElement>('#reviewDecision')!.value as 'approved'|'changes';const reviewer=document.querySelector<HTMLInputElement>('#reviewer')!.value.trim();const note=document.querySelector<HTMLTextAreaElement>('#reviewNote')!.value.trim();
   if(reviewer.length<2||note.length<5){notice='Add your name and a useful review note.';void draw();return;}
   if(decision==='approved'){
+    if(stage==='voice'&&exactVoiceIdentityFindings(current).length){notice='This project requires the exact selected narrator. The current reference recreation cannot be approved as that voice.';void draw();return;}
     if(stage==='voice'&&(!current.voice.recordingAsset||!current.voice.recordingUrl||(listened.get(evidenceKey('Business-specific voice recording'))??0)<(current.voice.recordingDuration??Infinity)*.8)){notice='Listen to the actual business recording first. A reference preview cannot approve a new recording.';void draw();return;}
     if(stage==='animatic'&&current.preview.animaticInputHash!==await stageHash(current,'animatic')){notice='This timing study belongs to an earlier edit. Re-render and import the updated project before approving it.';void draw();return;}
     if(stage==='animatic'&&(listened.get(evidenceKey('Pacing study'))??0)<timelineDuration(current)*.8){notice='Watch at least 80% of the timing study before approving its pacing.';void draw();return;}
