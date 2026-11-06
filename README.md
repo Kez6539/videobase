@@ -2,7 +2,7 @@
 
 A production workbench for business adverts. Develop the idea, show the service, record the actual business copy and compose the edit before treating a render as an advert.
 
-Built around Keiron's preferred [CTN set](https://meetingai.comparethenetworks.com/ads/media/facebook-ready/index.html). The rejected Defined Detail cuts remain as comparisons. The featured project is the new 16.5-second [caption-led visual cut](https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/index.html): dirty car, actual foam-rinse footage, matching clean result and a new brand-specific read. The separately approved spoken scene remains pending after automatic approval review blocked its reservation. See [the production record](productions/defined-detail-colour/README.md).
+Built around Keiron's preferred [CTN set](https://meetingai.comparethenetworks.com/ads/media/facebook-ready/index.html). The fourth Defined Detail cut was rejected for replacing the requested acted comedy with silent captions. The featured project is the approved spoken plan, still unproduced. The [rejected visual cut](https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/index.html) remains available for comparison. Read [the fourth-rejection reset and exact filming direction](docs/defined-detail-reset.md).
 
 ## Run it
 

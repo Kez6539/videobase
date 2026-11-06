@@ -43,3 +43,11 @@ Compare actual takes for a named creative or physical failure. Preserve previous
 Compose Reels and Feed separately. Keep people, product, captions and action clear. Use the brand font and measured bounds. Let the real voice determine the close and its readable tail.
 
 Record decode, dimensions, loudness, hashes, captions and hosted playback separately from performance, accent, intelligibility, humour, service relevance and creative acceptance. Agent-directed development never invents final approval by the user.
+
+## Preserve the requested format
+
+An acted comedy brief requires people speaking to each other on camera, a clear misunderstanding or comic turn, and a performed reaction. Captions support audible performance. A narrator over beauty footage, a silent still or a caption-led montage cannot replace that format without a new user instruction.
+
+A blocked production step leaves that step incomplete. Do not redefine the advert to make the available assets pass the checks. Keep internal production constraints out of the scene prompt: give the actors one playable situation, exact words, simple blocking and sufficient reaction time. The technical checklist belongs in the production plan.
+
+The CTN references work through sincere delivery and a specific comic situation. More adjectives, expensive cars or extra audit rules do not establish humour. Never advertise a fallback as the next finished attempt.

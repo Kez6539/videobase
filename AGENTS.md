@@ -40,3 +40,5 @@ A new read recreated from the selected narrator reference must be labelled refer
 - No paid provider client is included. The workbench cannot spend credits. The reservation command produces a request receipt for an external, explicitly authorized submission. This protects the workflow only when the agent follows it.
 - Public review hosting uses a static build. Browser notes remain in that browser until the user exports a project or review receipt and it is imported into the repository. Do not claim server persistence.
 - Keep previous versions available for comparison. A timing study is a draft, not a replacement finished advert.
+
+The fourth Defined Detail cut was rejected for replacing acted comedy with silent captions. Preserve brief.format across production failures. A blocker does not authorise a format change; mark the performance pending and retain the rejection. Do not spend on another render before presenting the revised spoken script and filming direction to Keiron.

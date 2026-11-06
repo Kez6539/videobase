@@ -3,7 +3,7 @@
   "project": "defined-detail-colour",
   "visualProject": "defined-detail-colour-visual",
   "title": "Blue. Allegedly.",
-  "status": "visual candidate; approved spoken performance pending",
+  "status": "rejected: silent format did not fulfil the acted-comedy brief",
   "producedAt": "2026-11-06T10:51:28.806550+00:00",
   "host": "Hermes VPS",
   "preview": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/index.html",
@@ -418,7 +418,7 @@
   "visualInspection": {
     "method": "sampled frames and source contact sheets",
     "findings": "Matching blue coupe and studio; visible physical foam removal; dry result; legible brand card. Feed opening cropped separately to retain faces and dirty bonnet.",
-    "humanCreativeAcceptance": "pending"
+    "humanCreativeAcceptance": "rejected by user"
   },
   "assets": [
     {
@@ -501,5 +501,14 @@
       "sha256": "1525c93865a576b95b77c203f8495c43c6d8fe4f36de04e06e1d293feb2c35f6",
       "kind": "video"
     }
-  ]
+  ],
+  "feedback": {
+    "source": "user chat",
+    "quotes": [
+      "wow its shocking? no talking? no comic like comparethenetworks.com ads. why is the prompting for this got worse? ultracode",
+      "this is the forth time now"
+    ],
+    "decision": "rejected",
+    "cause": "Agent delivered a silent caption-led fallback instead of the requested acted exchange."
+  }
 }

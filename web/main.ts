@@ -1,6 +1,6 @@
 import {recordPlayback,playedSeconds,type PlaybackRange} from './evidence.ts';
-import latest from '../examples/defined-detail-colour-visual.json';
-import spokenPlan from '../examples/defined-detail-colour.json';
+import rejectedVisual from '../examples/defined-detail-colour-visual.json';
+import latest from '../examples/defined-detail-colour.json';
 import {creativeView,bindCreative} from './creative.ts';
 import {emptyCreative} from '../src/creative.ts';
 import raw from '../examples/defined-detail.json';
@@ -12,9 +12,12 @@ const original=projectSchema.parse(raw);
 const key='videobase.projects.v1';
 let projects:Project[]=[];
 try{const saved:unknown=JSON.parse(localStorage.getItem(key)??'[]');if(Array.isArray(saved))projects=saved.map(p=>projectSchema.parse(p));}catch{localStorage.removeItem(key);}
-if(!projects.length)projects=[projectSchema.parse(structuredClone(latest)),projectSchema.parse(structuredClone(spokenPlan)),structuredClone(original)];
+if(!projects.length)projects=[projectSchema.parse(structuredClone(latest)),projectSchema.parse(structuredClone(rejectedVisual)),structuredClone(original)];
 else if(!projects.some(p=>p.id===latest.id))projects.unshift(projectSchema.parse(structuredClone(latest)));
-let current=projects[0]!;let tab='creative';let notice='';
+for(const project of projects)if(project.id===latest.id)project.brief.format='acted-comedy';
+for(const project of projects)if(project.id===rejectedVisual.id){project.status='rejected';project.preview.animaticNote=rejectedVisual.preview.animaticNote;}
+let current=projects.find(p=>p.id===latest.id)??projects[0]!;
+let tab='creative';let notice='';
 const listened=new Map<string,number>();
 const heardRanges=new Map<string,PlaybackRange[]>();
 function evidenceKey(label:string):string{

@@ -1,3 +1,7 @@
+# REJECTED FOURTH ATTEMPT
+
+Keiron rejected this silent cut. It did not fulfil the requested spoken comedy format. Keep it for comparison; do not present it as a completed delivery.
+
 # Defined Detail: Blue. Allegedly.
 
 A caption-led 16.5-second visual cut, produced on Hermes from an intentional dirty-car still, four seconds of actual foam-rinse footage and four seconds of a matching dry, clean blue-car result. The brand card remains visible for 5.5 seconds. The new business-specific narration is not time-stretched.

@@ -108,7 +108,7 @@ test('reference inputs cannot leak a signed provider URL into the public project
 
 test('an honest caption-led cut has no invented character performance',async()=>{
  const {default:visual}=await import('../examples/defined-detail-colour-visual.json',{with:{type:'json'}});
- const p=projectSchema.parse(visual);
+ const p=projectSchema.parse(visual);p.brief.format='caption-led';p.status='development';
  assert.equal(p.script.format,'caption-led');assert.deepEqual(p.script.lines,[]);
  assert.equal(creativeAudit(p).filter(x=>x.level==='block').length,0);
  assert.equal(candidateCoverage(p).filter(x=>x.level==='block').length,0);
@@ -128,4 +128,20 @@ test('the renderer cannot silently use different visible headlines',async()=>{
  const p=projectSchema.parse(structuredClone(visual));p.script.captions.find(c=>c.kind==='display')!.text='Different headline';
  const {audit}=await import('../src/project.ts');
  assert.ok((await audit(p)).some(x=>x.code==='display-captions'));
+});
+
+test('an acted-comedy brief cannot be silently downgraded to headlines',async()=>{
+ const {default:visual}=await import('../examples/defined-detail-colour-visual.json',{with:{type:'json'}});
+ const p=projectSchema.parse(structuredClone(visual));p.status='development';
+ const {audit}=await import('../src/project.ts');
+ assert.ok((await audit(p)).some(x=>x.code==='brief-format'));
+});
+test('a scene request for acted comedy must include character audio',async()=>{
+ const p=await ready();if(p.generation?.tool!=='mcp__codex_apps__runway_generate_video')throw Error('Fixture requires video');p.generation.arguments.generateAudio=false;
+ assert.ok((await generationBlockers(p)).some(x=>x.includes('character dialogue audio')));
+});
+test('a video flagged spoken with no audible source is still missing the performance',()=>{
+ const p=fresh();p.timeline[0]={...p.timeline[0]!,role:'setup',kind:'video',spoken:true,audioUntil:0,assetId:'fixture-scene'};
+ p.assets.push({id:'fixture-scene',path:'.videobase/fixture.mp4',kind:'video',sha256:'b'.repeat(64)});
+ assert.ok(candidateCoverage(p).some(x=>x.code==='candidate-dialogue'));
 });

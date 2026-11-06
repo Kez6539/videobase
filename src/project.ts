@@ -24,7 +24,7 @@ export type Stage=typeof stages[number];
 export const reviewSchema=z.object({stage:z.enum(stages),inputHash:hash,decision:z.enum(['approved','changes']),reviewer:z.string().min(2),at:z.iso.datetime(),note:z.string().min(5),evidence:z.array(z.string().min(1)).min(1)}).strict();
 export const projectSchema=z.object({
   version:z.literal(1),creative:creativeSchema.optional(),authorization:z.object({mode:z.literal('agent-directed-development'),instruction:z.string().min(10),at:z.iso.datetime(),grantedBy:z.literal('user')}).strict().optional(),id,name:z.string().min(1),status:z.enum(['development','in-review','approved','rejected']),
-  brief:z.object({business:z.string().min(1),product:z.string().min(1),audience:z.string().min(1),problem:z.string().min(1),promise:z.string().min(1),action:z.string().min(1),proof:z.array(z.object({claim:z.string(),source:https})),tone:z.string(),avoid:z.array(z.string())}).strict(),
+  brief:z.object({format:z.enum(['acted-comedy','caption-led']).optional(),business:z.string().min(1),product:z.string().min(1),audience:z.string().min(1),problem:z.string().min(1),promise:z.string().min(1),action:z.string().min(1),proof:z.array(z.object({claim:z.string(),source:https})),tone:z.string(),avoid:z.array(z.string())}).strict(),
   brand:z.object({fontFamily:z.string().optional(),fontAsset:id.optional(),sceneLogo:z.object({reels:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive()}).strict(),feed:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive()}).strict()}).strict().optional(),name:z.string(),headline:z.string(),background:z.string().regex(/^#[a-f\d]{6}$/i),accent:z.string().regex(/^#[a-f\d]{6}$/i),ink:z.string().regex(/^#[a-f\d]{6}$/i),logo:local.optional(),cta:z.string(),destination:z.string()}).strict(),
   script:z.object({format:z.enum(['dialogue','caption-led']).optional(),displayCopy:z.array(z.object({text:z.string().min(1),start:z.number().nonnegative(),end:z.number().positive()}).strict()).optional(),premise:z.string(),whyFunny:z.string(),lines:z.array(z.object({speaker:z.string(),text:z.string().min(1),performance:z.string(),start:z.number().nonnegative(),end:z.number().positive()}).strict()),captions:z.array(z.object({kind:z.enum(['dialogue','narration','display']),text:z.string().min(1),start:z.number().nonnegative(),end:z.number().positive()}).strict()),closingCopy:z.string(),closingDelivery:z.string(),pronunciation:z.record(z.string(),z.string())}).strict(),
   voice:z.object({referenceName:z.string(),referenceUrl:https,voiceId:z.string(),direction:z.string(),auditions:z.array(z.object({id,name:z.string(),voiceId:z.string().optional(),url:https,script:z.string(),selected:z.boolean()})),recordingProvenance:z.object({method:z.enum(['library','reference-recreation','human-recording','existing-recording']),referenceVoiceId:z.string().optional(),referenceSHA256:hash.optional(),model:z.string().optional(),reportUrl:https.optional()}).strict().optional(),recordingAsset:id.optional(),recordingUrl:https.optional(),recordingDuration:z.number().positive().optional(),recordingScriptHash:hash.optional()}).strict(),
@@ -80,6 +80,8 @@ export async function audit(p:Project):Promise<Finding[]>{
   const findings:Finding[]=[];
   if(p.status==='rejected')findings.push({code:'project-rejected',level:'block',message:'This project is rejected; keep it as comparison and develop a new candidate.'});
   if(p.creative)findings.push(...creativeAudit(p));
+  if(p.brief.format==='acted-comedy'&&(p.script.format==='caption-led'||p.script.lines.length<2||new Set(p.script.lines.map(l=>l.speaker)).size<2))findings.push({code:'brief-format',level:'block',message:'This brief requires an acted comedy exchange. A caption-led alternative does not fulfil it.'});
+
   if(Object.values(p.brand).some(v=>typeof v==='string'&&/^\[.*\]$/.test(v)))findings.push({code:'brand-incomplete',level:'block',message:'Write the business-specific closing line, action and destination.'});
   if(p.brand.headline.length>60||p.brand.cta.length>45||p.brand.destination.length>60)findings.push({code:'endcard-copy',level:'block',message:'Shorten the end-card copy so it can be read clearly on a phone.'});
   if(Object.values(p.brief).some(v=>typeof v==='string'&&(!v.trim()||/^\[.*\]$/.test(v))))findings.push({code:'brief-incomplete',level:'block',message:'Complete the business brief before production.'});
@@ -120,6 +122,8 @@ export async function generationBlockers(p:Project,now=new Date()):Promise<strin
   reasons.push(...(await audit(p)).filter(f=>f.level==='block').map(f=>f.message));
   if(!p.generation?.enabled)reasons.push('Paid generation is disabled.');
   if(p.generation){
+    if(p.brief.format==='acted-comedy'&&p.generation.tool==='mcp__codex_apps__runway_generate_video'&&(p.generation.purpose??'scene')==='scene'&&!p.generation.arguments.generateAudio)reasons.push('The acted comedy scene requires generated character dialogue audio.');
+
     if(p.policy.maxCredits!==null&&p.generation.quote.credits>p.policy.maxCredits)reasons.push('Quote exceeds the project credit cap.');
     if(p.creative&&p.generation.tool==='mcp__codex_apps__runway_generate_video'&&(p.generation.purpose??'scene')==='scene'&&p.script.lines.some(l=>!p.generation!.arguments.promptText.includes(l.text)))reasons.push('The filming request does not contain the exact selected character lines.');
     const age=now.getTime()-Date.parse(p.generation.quote.checkedAt);
@@ -131,7 +135,7 @@ export async function generationBlockers(p:Project,now=new Date()):Promise<strin
 export function candidateCoverage(p:Project):Finding[]{
  if(!p.creative)return [];
  const findings:Finding[]=[];
- if(p.script.format!=='caption-led'&&!p.timeline.some(s=>s.role==='setup'&&s.spoken&&s.kind==='video'&&p.assets.some(a=>a.id===s.assetId&&a.kind==='video')))findings.push({code:'candidate-dialogue',level:'block',message:'The character scene needs its actual spoken video. A photograph cannot masquerade as the dialogue performance.'});
+ if(p.script.format!=='caption-led'&&!p.timeline.some(s=>s.role==='setup'&&s.spoken&&s.audioUntil>0&&s.kind==='video'&&p.assets.some(a=>a.id===s.assetId&&a.kind==='video')))findings.push({code:'candidate-dialogue',level:'block',message:'The character scene needs its actual spoken video. A photograph cannot masquerade as the dialogue performance.'});
  for(const role of ['process','result'] as const){
   if(!p.timeline.some(s=>s.role===role&&s.kind==='video'&&p.assets.some(a=>a.id===s.assetId&&a.kind==='video'))){
    findings.push({code:'candidate-'+role,level:'block',message:'The candidate needs actual '+role+' footage. A plan or placeholder is insufficient.'});

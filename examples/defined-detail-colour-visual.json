@@ -33,6 +33,11 @@
         "name": "Kitchen's Next",
         "reason": "The household punchline diverted the story from detailing; no cleaning process and no complete business-specific voice close.",
         "evidence": "Keiron: the adverts in comparethenetworks.com are still better."
+      },
+      {
+        "name": "Blue. Allegedly. / visual cut",
+        "reason": "The agent replaced the requested acted comedy exchange with silent headlines. A technical blocker never authorised that format change.",
+        "evidence": "Keiron: wow its shocking? no talking? no comic like comparethenetworks.com ads. this is the forth time now"
       }
     ],
     "concepts": [
@@ -175,8 +180,8 @@
     "grantedBy": "user"
   },
   "id": "defined-detail-colour-visual",
-  "name": "Defined Detail / Blue. Allegedly. / visual cut",
-  "status": "development",
+  "name": "Defined Detail / rejected silent fourth attempt",
+  "status": "rejected",
   "brief": {
     "business": "Defined Detail",
     "product": "Car cleaning and detailing in Telford",
@@ -198,7 +203,8 @@
       "Fake sparkle overlays",
       "Cutting or accelerating dialogue",
       "Inventing creative approval"
-    ]
+    ],
+    "format": "acted-comedy"
   },
   "brand": {
     "fontFamily": "Poppins",
@@ -564,7 +570,7 @@
   },
   "preview": {
     "animaticUrl": "",
-    "animaticNote": "Caption-led visual alternative. The separately approved character performance is pending; this version uses a still opening and actual wash/result footage.",
+    "animaticNote": "Rejected by Keiron: no talking and no comedy like the CTN adverts. This caption-led version did not fulfil the acted-comedy brief.",
     "referencePoster": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/poster.jpg",
     "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/poster-reels.jpg",
     "candidates": [

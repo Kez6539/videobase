@@ -81,7 +81,7 @@ export function promptPack(p:CreativeContext){
   const c=p.creative!;const selected=c.concepts.find(x=>x.id===c.selectedId)!;
   const scene=[
     'Create a naturalistic British comedy advert for '+p.brief.business+'.',
-    p.script.format==='caption-led'?'Caption-led opening still. The visible copy is graphic text, not character speech. Do not imply lip-synced dialogue.':'One continuous medium two-shot, with the speakers and car visible together. No montage inside this conversation.',
+    p.script.format==='caption-led'?'Caption-led opening still. The visible copy is graphic text, not character speech. Do not imply lip-synced dialogue.':'One continuous medium two-shot of people speaking on camera with clearly audible, synchronised dialogue. Keep both speakers and the car visible. No montage inside this conversation.',
     'Opening image: '+selected.firstFrame,
     'Situation: '+selected.premise,
     'Photographic direction: '+c.visualStyle,

@@ -203,7 +203,8 @@
       "Fake sparkle overlays",
       "Cutting or accelerating dialogue",
       "Inventing creative approval"
-    ]
+    ],
+    "format": "acted-comedy"
   },
   "brand": {
     "fontFamily": "Poppins",
@@ -287,7 +288,8 @@
       "Defined": "dih-FYND",
       "Detail": "DEE-tail",
       "Telford": "TEL-fuhd"
-    }
+    },
+    "format": "dialogue"
   },
   "voice": {
     "referenceName": "Adam Stone \u00b7 CTN reference",
@@ -500,7 +502,7 @@
   },
   "preview": {
     "animaticUrl": "",
-    "animaticNote": "23-second storyboard timing study. Scene, process and result are explicitly labelled placeholders. The actual new reference-based branded recording is included. No fictional footage has been represented as produced.",
+    "animaticNote": "Approved spoken script and prepared references only. The acted character performance has not been produced. The silent fourth attempt was rejected and cannot substitute for this scene.",
     "referencePoster": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/poster.jpg",
     "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/poster-reels.jpg",
     "animaticInputHash": "5f379421681f2e55df3c61927e2641b6c741bda752924cb44ad40bc0685b5984"
