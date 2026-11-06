@@ -180,7 +180,7 @@
     "grantedBy": "user"
   },
   "id": "defined-detail-colour",
-  "name": "Defined Detail / Blue. Allegedly.",
+  "name": "Defined Detail / Blue. Allegedly. / spoken scene pending",
   "status": "development",
   "brief": {
     "business": "Defined Detail",
@@ -353,6 +353,49 @@
       "path": ".videobase/assets/defined-detail-colour/result-plan.png",
       "sha256": "ca8eb5e540e364410cf3419f28a194845029daa38af2ddbfd6f94955fc716390",
       "kind": "image"
+    },
+    {
+      "id": "clean-master",
+      "path": ".videobase/assets/defined-detail-colour/clean-master.png",
+      "kind": "image",
+      "sha256": "ed08c93d2c42a0f49b1bd69259cf6b709d0a5af24ab5537c68a45e31807469bb",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/assets/clean-master.png"
+    },
+    {
+      "id": "dirty-scene",
+      "kind": "image",
+      "path": ".videobase/assets/defined-detail-colour/dirty-scene.png",
+      "sha256": "375f28766fc1f839d9ed918b57d3080ce543807cfa8c5de6263e85e9f194cbad"
+    },
+    {
+      "id": "foam-process",
+      "kind": "image",
+      "path": ".videobase/assets/defined-detail-colour/foam-process.png",
+      "sha256": "143039c3053ed8ad85fc6678e57277f137b21a983e717be4b9d6d62d01b15b1e"
+    },
+    {
+      "id": "hero-motion",
+      "kind": "video",
+      "path": ".videobase/assets/defined-detail-colour/hero-motion.mp4",
+      "sha256": "ac267298127b49f5c2d1f7c3e26bcbbd67087b387e7a16dbd8903ebc79fe7042"
+    },
+    {
+      "id": "dirty-scene-close",
+      "path": ".videobase/assets/defined-detail-colour/dirty-scene-close.png",
+      "kind": "image",
+      "sha256": "095edb29fd6b5948407382c2361ded89c64dad7c7a29d72be2d7ebe27eff881f"
+    },
+    {
+      "id": "rinse-motion",
+      "kind": "video",
+      "path": ".videobase/assets/defined-detail-colour/rinse-motion.mp4",
+      "sha256": "8ec5a3065a2ef6601479833882f11f45a682ec6a2678e6208eb316a0fd6991b0"
+    },
+    {
+      "id": "hero-native-1080",
+      "kind": "video",
+      "path": ".videobase/assets/defined-detail-colour/hero-native-1080.mp4",
+      "sha256": "1525c93865a576b95b77c203f8495c43c6d8fe4f36de04e06e1d293feb2c35f6"
     }
   ],
   "timeline": [

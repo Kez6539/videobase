@@ -2,7 +2,7 @@
 
 A production workbench for business adverts. Develop the idea, show the service, record the actual business copy and compose the edit before treating a render as an advert.
 
-Built around Keiron's preferred [CTN set](https://meetingai.comparethenetworks.com/ads/media/facebook-ready/index.html). The rejected Defined Detail cut is included as a comparison, alongside a 20-second pacing study made from footage already paid for. The study removes the rejected narrator and reserves room for a new, reviewed recording. It is not a finished advert.
+Built around Keiron's preferred [CTN set](https://meetingai.comparethenetworks.com/ads/media/facebook-ready/index.html). The rejected Defined Detail cuts remain as comparisons. The featured project is the new 16.5-second [caption-led visual cut](https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/index.html): dirty car, actual foam-rinse footage, matching clean result and a new brand-specific read. The separately approved spoken scene remains pending after automatic approval review blocked its reservation. See [the production record](productions/defined-detail-colour/README.md).
 
 ## Run it
 
@@ -48,7 +48,7 @@ npm run vb -- render examples/defined-detail.json feed draft
 
 The CLI verifies each media hash, renders from the edit timeline, adds captions, keeps dialogue at normal speed, produces a real brand card, fully decodes the output and checks its dimensions, duration and 48 kHz audio. Drafts are marked as timing studies. The reviewed project JSON remains the source of editorial decisions.
 
-The renderer supports explicit per-shot Reels/Feed crops, scene-logo placement, verified font assets and measured end-card text bounds. Legacy shots retain full-frame fitting. Actual caption times belong to the performed take. A full VTT is exported; the brand card supplies closing information while narration continues.
+The renderer supports explicit per-shot Reels/Feed crops, scene-logo placement, verified font assets and measured end-card text bounds. Legacy shots retain full-frame fitting. Actual caption times belong to the performed take. A full spoken VTT is exported; the brand card supplies closing information while narration continues. Explicit caption-led projects bind their visible copy to the selected concept and do not pretend those headlines were spoken. Dialogue projects additionally require actual script-bound spoken setup video.
 
 The creative desk compares five ideas, with an opening image, punchline, service connection, visible payoff, likely failure and selection reason. Rejected-cut lessons remain visible. These are editorial records, not automatic humour scores.
 
@@ -102,7 +102,7 @@ npm run check
 npm run build
 ```
 
-The tests cover creative/script consistency, produced service coverage, branded narration, development authority, unlimited budgeting, quote-refresh duplicates, stale approvals, wrong voice scripts, rushed lines, missing reaction time, short closes, duplicate and concurrent reservations, cap enforcement, task receipts and asset boundaries. GitHub Actions runs the checks and static build on `main`.
+The tests cover creative/script consistency, produced service coverage, branded narration, development authority, unlimited budgeting, quote-refresh duplicates, stale approvals, wrong voice scripts, rushed lines, missing reaction time, short closes, duplicate and concurrent reservations, cap enforcement, task receipts and asset boundaries. GitHub Actions runs the checks and static build on `main`. Playback review evidence counts the union of audible, visible, normal-speed intervals; looping one fragment or seeking cannot inflate coverage.
 
 Serve `dist/` from any static web host. Add the locally rendered study at `public/media/defined-detail-pacing-study.mp4` before building if you want the sample study to play. Video media is intentionally not redistributed in the public source repository. A build without that file still supports the comparison and editor, and clearly reports the missing study rather than pretending it played.
 

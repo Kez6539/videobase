@@ -37,3 +37,7 @@ policy.maxCredits is a nonnegative integer or null. Null means no project ceilin
 Timeline shots may declare role and per-profile framing rectangles. Assets may declare scriptHash; a spoken source in a creative candidate must match dialogueHash. A creative candidate requires actual video assets for process and result. Placeholders remain draft-only.
 
 Brand settings support fontFamily, a verified fontAsset and per-profile sceneLogo coordinates. Fonts remain private assets. Measured end-card bounds are written next to each generated card. Media paths keep the existing workspace boundary checks.
+
+## Caption-led visual projects
+
+script.format can explicitly be caption-led, with no invented character lines. script.displayCopy and display captions carry the visible words, bound to the selected concept. They do not enter the spoken VTT. Dialogue projects still need actual spoken setup video before a candidate render. Both formats require produced process and result footage, an actual script-bound brand read, and separate final human review. The visual colour project is a distinct alternative; it does not complete the blocked spoken plan.

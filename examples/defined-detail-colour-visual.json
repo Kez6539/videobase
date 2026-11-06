@@ -1,0 +1,585 @@
+{
+  "version": 1,
+  "creative": {
+    "version": 1,
+    "serviceTruth": "Defined Detail professionally cleans and details vehicles in Telford, including everyday cars and supercars. The advert must show dirt being removed and a visibly clean car.",
+    "audienceRecognition": "You know the car is a lovely colour; the layers of road grime have made that difficult to prove.",
+    "visualStyle": "Photorealistic British commercial photography. Warm side-window daylight balanced with soft white inspection lights. Natural skin, tactile water and paint, restrained sincere performances and dimensional light. No artificial star sparkles.",
+    "continuity": "One fictional unbadged cobalt-blue rear-engine sports coupe with rounded headlights, black five-split-spoke wheels and the same grey detailing bay. Road grime obscures the blue in the first scene; cleaning reveals the same blue paint, wheel design, lights and body geometry. The clean reference is the visual source for dirty, process and result shots. The detailer has tied-back dark hair and an unbranded black polo. The owner has short greying hair, a sage overshirt and grey T-shirt. Keep their faces and clothes consistent between takes.",
+    "references": [
+      {
+        "name": "CTN: Contract wedding",
+        "url": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/ctn-wedding-facebook-reels.mp4",
+        "lesson": "A readable visual premise in the first frame, a joke about the actual product, sincere actors and an unhurried branded close."
+      },
+      {
+        "name": "CTN: Psychic",
+        "url": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/psychic/reels/ctn-psychic-facebook-reels.mp4",
+        "lesson": "Three short turns; the last line changes how we read the setup. Leave the reaction intact. Do not copy its costume, prop or script."
+      }
+    ],
+    "rejectedLessons": [
+      {
+        "name": "The Viewing",
+        "reason": "The first advert felt rushed and its substituted narrator was rejected.",
+        "evidence": "Keiron: not good rushed; CTN loads better."
+      },
+      {
+        "name": "Personal Space",
+        "reason": "A minute step carried too much of the joke; the service result was secondary.",
+        "evidence": "Keiron: thats terrible. try again."
+      },
+      {
+        "name": "Kitchen's Next",
+        "reason": "The household punchline diverted the story from detailing; no cleaning process and no complete business-specific voice close.",
+        "evidence": "Keiron: the adverts in comparethenetworks.com are still better."
+      }
+    ],
+    "concepts": [
+      {
+        "id": "blue-allegedly",
+        "title": "Blue. Allegedly. / caption-led",
+        "firstFrame": "A fictional female detailer, 35, with dark hair tied back, a clean black polo and black trousers, stands beside a fictional male owner, 50, in a sage overshirt and grey T-shirt. Their sports coupe is so covered in brown road grime that its paint colour is barely visible. The expensive body shape and dirt are readable immediately; faces are close and clear above its front wing.",
+        "premise": "The dirt-covered blue car is introduced with a dry caption. Actual cleaning and the blue result resolve it. This visual alternative does not contain the approved character performance.",
+        "punchline": "Blue. Allegedly.",
+        "serviceConnection": "The confident colour label has to qualify itself because the dirt is hiding the blue. Cleaning supplies the visual answer.",
+        "visualPayoff": "A real-looking foam rinse exposes blue paint. Cut to the same dry spotless sports car with clean glass and crisp soft-light reflections.",
+        "risk": "The generated dirt must genuinely obscure the paint. Inspect water contact and matching car geometry; never wipe abrasive dry grime. No artificial sparkle stars or instant morph.",
+        "recommendation": "develop",
+        "displayCopy": [
+          {
+            "text": "Original colour:",
+            "start": 0.15,
+            "end": 1.1
+          },
+          {
+            "text": "Blue.",
+            "start": 1.15,
+            "end": 1.95
+          },
+          {
+            "text": "Allegedly.",
+            "start": 2,
+            "end": 3
+          }
+        ],
+        "dialogue": []
+      },
+      {
+        "id": "lost-property",
+        "title": "Lost property",
+        "firstFrame": "A detailer holds a single fossil-looking chip recovered from the footwell with small detailing tweezers; the owner watches as if it might be valuable.",
+        "premise": "The owner cannot quite remember which takeaway the car has been preserving.",
+        "punchline": "That's not mine. Mine was a salad.",
+        "serviceConnection": "The recovered food is evidence of why an interior needs a proper clean. An interior vacuum and clean cabin finish the story.",
+        "visualPayoff": "Spotless seat rails and footwell, with the food and accumulated debris actually removed.",
+        "risk": "Too close to the rejected first film if performed as a novelty voice. Small food must be legible; it underplays the premium exterior finish requested.",
+        "recommendation": "alternative",
+        "dialogue": [
+          {
+            "speaker": "Detailer",
+            "text": "Found your lunch.",
+            "performance": "Matter of fact.",
+            "start": 0.5,
+            "end": 2.2
+          },
+          {
+            "speaker": "Owner",
+            "text": "That's not mine. Mine was a salad.",
+            "performance": "An unconvincing, entirely sincere denial.",
+            "start": 3,
+            "end": 6.7
+          }
+        ]
+      },
+      {
+        "id": "mirror",
+        "title": "The mirror",
+        "firstFrame": "A customer adjusts his hair using the deep reflection in the freshly detailed door while the waiting detailer holds his keys.",
+        "premise": "The finish is sufficiently clear that the owner has started grooming himself in it.",
+        "punchline": "I'm not.",
+        "serviceConnection": "The paint finish is the visual joke. Actual cleaning coverage must establish how it was achieved.",
+        "visualPayoff": "A clear, physically plausible door reflection and an immaculate complete car.",
+        "risk": "Face reflections can distort in generated footage; the line relies on a visual effect that must survive phone-size review.",
+        "recommendation": "alternative",
+        "dialogue": [
+          {
+            "speaker": "Detailer",
+            "text": "Your car's finished.",
+            "performance": "Patient, holding the keys.",
+            "start": 0.5,
+            "end": 2.8
+          },
+          {
+            "speaker": "Owner",
+            "text": "I'm not.",
+            "performance": "Still fixing his hair, completely serious.",
+            "start": 4.2,
+            "end": 5.8
+          }
+        ]
+      },
+      {
+        "id": "funeral",
+        "title": "A minute for the dirt",
+        "firstFrame": "The owner solemnly holds a tiny bunch of flowers beside a bucket of dirty rinse water.",
+        "premise": "He treats the years of grime leaving his car as the end of a relationship.",
+        "punchline": "We've been through a lot.",
+        "serviceConnection": "The grime leaving the car is the subject, followed by a clean-car result.",
+        "visualPayoff": "The bucket is set aside and the immaculate car is revealed.",
+        "risk": "The ceremony competes with the service and risks making the result feel like an afterthought. It also repeats the ceremonial mechanism of the CTN wedding.",
+        "recommendation": "reject",
+        "dialogue": []
+      },
+      {
+        "id": "garden",
+        "title": "Established dirt",
+        "firstFrame": "The owner tries to protect a tiny weed growing out of mud on the wheel arch while a detailer prepares to clean it.",
+        "premise": "The owner has become attached to what has started growing on the car.",
+        "punchline": "Careful. That's established.",
+        "serviceConnection": "Cleaning removes the accumulated dirt, with a clear clean-wheel result.",
+        "visualPayoff": "The same clean wheel arch and spotless blue paint.",
+        "risk": "The plant can look fantastical and implies neglect beyond the believable audience problem. Do not buy a take merely for a large visual prop.",
+        "recommendation": "reject",
+        "dialogue": []
+      }
+    ],
+    "selectedId": "blue-allegedly",
+    "selectionReason": "A clearly labelled visual alternative uses the existing reference, actual wash and actual clean-result footage. The approved spoken scene remains pending because automatic review blocked its reservation, even after explicit approval. This version does not pretend the still photograph is an acted performance.",
+    "coverage": [
+      {
+        "id": "rinse",
+        "role": "process",
+        "description": "Close view of a pressure-wash fan moving steadily across thick prewash foam on the same blue front wing. The water physically removes foam and road grime to reveal clean blue paint. An operator in a black polo is mostly outside frame; the lance stays plausibly separated from the car. No dry wiping. A single simple action.",
+        "duration": 4,
+        "reference": "The same clean master car reference, front wing geometry, blue paint and wheel."
+      },
+      {
+        "id": "hero",
+        "role": "result",
+        "description": "Low three-quarter hero view of the same dry, spotless blue sports coupe in the same studio. Slow restrained camera movement shows crisp inspection-light reflections on the blue bonnet, clean glass and the pristine wheel. Let the car fill the picture. No people, fake star sparkles, transformation morph or invented badges.",
+        "duration": 4,
+        "reference": "The clean master car reference; match body, rounded headlights, black five-split-spoke wheel, colour and bay."
+      }
+    ],
+    "spokenClose": {
+      "businessName": "Defined Detail",
+      "service": "Car cleaning and detailing in Telford",
+      "action": "Message us to book"
+    }
+  },
+  "authorization": {
+    "mode": "agent-directed-development",
+    "instruction": "so on the repo, make it alot better, then try again, there isnt a limit on credits",
+    "at": "2026-11-06T09:46:46.568362Z",
+    "grantedBy": "user"
+  },
+  "id": "defined-detail-colour-visual",
+  "name": "Defined Detail / Blue. Allegedly. / visual cut",
+  "status": "development",
+  "brief": {
+    "business": "Defined Detail",
+    "product": "Car cleaning and detailing in Telford",
+    "audience": "Drivers around Telford who value a properly clean car, including owners of premium cars and supercars.",
+    "problem": "Road grime is hiding the finish of a car the owner cares about.",
+    "promise": "Professional vehicle cleaning and detailing in Telford.",
+    "action": "Message Defined Detail to discuss and book a detail.",
+    "proof": [
+      {
+        "claim": "Defined Detail offers vehicle detailing in Telford and works on everyday vehicles and supercars.",
+        "source": "https://www.thedefineddetail.co.uk/"
+      }
+    ],
+    "tone": "Dry British situational comedy. Real service work, tactile cleaning and a satisfying clean-car finish.",
+    "avoid": [
+      "An unrelated household punchline",
+      "A glossy-car conversation with no cleaning",
+      "A generic sentence standing in for a branded voice close",
+      "Fake sparkle overlays",
+      "Cutting or accelerating dialogue",
+      "Inventing creative approval"
+    ]
+  },
+  "brand": {
+    "fontFamily": "Poppins",
+    "fontAsset": "brand-font",
+    "sceneLogo": {
+      "reels": {
+        "x": 75,
+        "y": 1000,
+        "width": 210
+      },
+      "feed": {
+        "x": 75,
+        "y": 950,
+        "width": 210
+      }
+    },
+    "name": "Defined Detail",
+    "headline": "Blue. Again.",
+    "background": "#101112",
+    "accent": "#d71920",
+    "ink": "#ffffff",
+    "logo": ".videobase/assets/defined-detail/logo.png",
+    "cta": "Message Defined Detail",
+    "destination": "facebook.com/DefinedDetail"
+  },
+  "script": {
+    "format": "caption-led",
+    "displayCopy": [
+      {
+        "text": "Original colour:",
+        "start": 0.15,
+        "end": 1.1
+      },
+      {
+        "text": "Blue.",
+        "start": 1.15,
+        "end": 1.95
+      },
+      {
+        "text": "Allegedly.",
+        "start": 2,
+        "end": 3
+      }
+    ],
+    "premise": "The dirt-covered blue car is introduced with a dry caption. Actual cleaning and the blue result resolve it. This visual alternative does not contain the approved character performance.",
+    "whyFunny": "The confident colour label has to qualify itself because the dirt is hiding the blue. Cleaning supplies the visual answer.",
+    "lines": [],
+    "captions": [
+      {
+        "kind": "display",
+        "text": "Original colour:",
+        "start": 0.15,
+        "end": 1.1
+      },
+      {
+        "kind": "display",
+        "text": "Blue.",
+        "start": 1.15,
+        "end": 1.95
+      },
+      {
+        "kind": "display",
+        "text": "Allegedly.",
+        "start": 2,
+        "end": 3
+      },
+      {
+        "kind": "narration",
+        "text": "Defined Detail.",
+        "start": 8.5,
+        "end": 9.72
+      },
+      {
+        "kind": "narration",
+        "text": "Car cleaning and detailing in Telford.",
+        "start": 9.9,
+        "end": 12.36
+      },
+      {
+        "kind": "narration",
+        "text": "Message us to book.",
+        "start": 12.68,
+        "end": 13.75
+      }
+    ],
+    "closingCopy": "Defined Detail. Car cleaning and detailing in Telford. Message us to book.",
+    "closingDelivery": "Warm, clear and conversational; allow the business name and place to breathe. The actual recording determines the closing hold.",
+    "pronunciation": {
+      "Defined": "dih-FYND",
+      "Detail": "DEE-tail",
+      "Telford": "TEL-fuhd"
+    }
+  },
+  "voice": {
+    "referenceName": "Adam Stone \u00b7 CTN reference",
+    "referenceUrl": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
+    "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
+    "direction": "New business-specific read recreated from the selected Adam reference. This is not the original recording or an official library render. Retain natural warmth and pace; inspect the business name and place carefully.",
+    "auditions": [
+      {
+        "id": "adam",
+        "name": "Adam Stone \u00b7 the CTN reference",
+        "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
+        "url": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
+        "script": "Existing library preview. Tone reference only; this is not Defined Detail copy.",
+        "selected": true
+      }
+    ],
+    "recordingProvenance": {
+      "method": "reference-recreation",
+      "referenceVoiceId": "DEFpwxCUkrj3WAbTDRTZ",
+      "referenceSHA256": "9d211b7c7cbedef9ad690b142b1ca1abda4086edb6fa615626038a15ff428e4b",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "reportUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/voice-provenance.json"
+    },
+    "recordingAsset": "brand-voice",
+    "recordingUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/voice-audition-2.wav",
+    "recordingDuration": 5.36,
+    "recordingScriptHash": "f0e5a0897ea897a221b1513a8978a1f01cb6cfcb44aa82b46f0f4fa4675d908b"
+  },
+  "assets": [
+    {
+      "id": "logo",
+      "path": ".videobase/assets/defined-detail/logo.png",
+      "sha256": "643de4d5e49ebe2e6339cdc79752cc541b80be01ef1d9cde0c94966b66e2daf5",
+      "kind": "image",
+      "sourceUrl": "https://static.wixstatic.com/media/ea4773_ba539c7be6e9499f89c3ab1923c26f73~mv2.png"
+    },
+    {
+      "id": "brand-font",
+      "path": ".videobase/assets/defined-detail-colour/Poppins-Bold.ttf",
+      "sha256": "983676516167748b74de6f4771fb384c664fd913acb8b471122ecacf5da5ea6c",
+      "kind": "font"
+    },
+    {
+      "id": "brand-voice",
+      "path": ".videobase/assets/defined-detail-colour/voice-f1fc716264c31cb3.wav",
+      "sha256": "f1fc716264c31cb3f5c9016b6744e6e5c375e761d9d06f2b7f6279f7778e069b",
+      "kind": "audio"
+    },
+    {
+      "id": "setup-plan",
+      "path": ".videobase/assets/defined-detail-colour/setup-plan.png",
+      "sha256": "8f67c11318438e8c41f04eaf400a5457871c10745635b1b17dd19c122c6cfd08",
+      "kind": "image"
+    },
+    {
+      "id": "process-plan",
+      "path": ".videobase/assets/defined-detail-colour/process-plan.png",
+      "sha256": "bf2be2c1c64c050f5fe7fefcbe40681db6c65cb7b529ba9670e9929f889c3ba3",
+      "kind": "image"
+    },
+    {
+      "id": "result-plan",
+      "path": ".videobase/assets/defined-detail-colour/result-plan.png",
+      "sha256": "ca8eb5e540e364410cf3419f28a194845029daa38af2ddbfd6f94955fc716390",
+      "kind": "image"
+    },
+    {
+      "id": "clean-master",
+      "path": ".videobase/assets/defined-detail-colour/clean-master.png",
+      "sha256": "ed08c93d2c42a0f49b1bd69259cf6b709d0a5af24ab5537c68a45e31807469bb",
+      "kind": "image",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/assets/clean-master.png"
+    },
+    {
+      "id": "dirty-scene",
+      "path": ".videobase/assets/defined-detail-colour/dirty-scene.png",
+      "sha256": "375f28766fc1f839d9ed918b57d3080ce543807cfa8c5de6263e85e9f194cbad",
+      "kind": "image"
+    },
+    {
+      "id": "foam-process",
+      "path": ".videobase/assets/defined-detail-colour/foam-process.png",
+      "sha256": "143039c3053ed8ad85fc6678e57277f137b21a983e717be4b9d6d62d01b15b1e",
+      "kind": "image"
+    },
+    {
+      "id": "hero-motion",
+      "path": ".videobase/assets/defined-detail-colour/hero-motion.mp4",
+      "sha256": "ac267298127b49f5c2d1f7c3e26bcbbd67087b387e7a16dbd8903ebc79fe7042",
+      "kind": "video"
+    },
+    {
+      "id": "dirty-scene-close",
+      "path": ".videobase/assets/defined-detail-colour/dirty-scene-close.png",
+      "sha256": "095edb29fd6b5948407382c2361ded89c64dad7c7a29d72be2d7ebe27eff881f",
+      "kind": "image"
+    },
+    {
+      "id": "rinse-motion",
+      "path": ".videobase/assets/defined-detail-colour/rinse-motion.mp4",
+      "sha256": "8ec5a3065a2ef6601479833882f11f45a682ec6a2678e6208eb316a0fd6991b0",
+      "kind": "video"
+    },
+    {
+      "id": "hero-native-1080",
+      "path": ".videobase/assets/defined-detail-colour/hero-native-1080.mp4",
+      "sha256": "1525c93865a576b95b77c203f8495c43c6d8fe4f36de04e06e1d293feb2c35f6",
+      "kind": "video"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "dirty-opening",
+      "label": "Dirty car / visible caption",
+      "role": "setup",
+      "kind": "still",
+      "assetId": "dirty-scene-close",
+      "sourceStart": 0,
+      "duration": 3,
+      "audioUntil": 0,
+      "spoken": false,
+      "speed": 1,
+      "framing": {
+        "reels": {
+          "x": 4,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "feed": {
+          "x": 4,
+          "y": 150,
+          "width": 1080,
+          "height": 1350
+        }
+      },
+      "purpose": "An intentional still opening with graphic copy, not a lip-synced performance.",
+      "voicePlaceholder": false
+    },
+    {
+      "id": "wash",
+      "label": "Actual foam rinse",
+      "role": "process",
+      "kind": "video",
+      "assetId": "rinse-motion",
+      "sourceStart": 0.4,
+      "duration": 4,
+      "audioUntil": 4,
+      "spoken": false,
+      "speed": 1,
+      "framing": {
+        "reels": {
+          "x": 4,
+          "y": 0,
+          "width": 1076,
+          "height": 1912
+        },
+        "feed": {
+          "x": 2,
+          "y": 220,
+          "width": 1080,
+          "height": 1350
+        }
+      },
+      "purpose": "Physically remove foam and show blue paint emerging.",
+      "voicePlaceholder": false
+    },
+    {
+      "id": "clean-result",
+      "label": "Same car / clean blue finish",
+      "role": "result",
+      "kind": "video",
+      "assetId": "hero-native-1080",
+      "sourceStart": 0.5,
+      "duration": 4,
+      "audioUntil": 0,
+      "spoken": false,
+      "speed": 1,
+      "framing": {
+        "reels": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "feed": {
+          "x": 0,
+          "y": 180,
+          "width": 1080,
+          "height": 1350
+        }
+      },
+      "purpose": "The dry spotless result, with the new branded read entering.",
+      "voicePlaceholder": false
+    },
+    {
+      "id": "close",
+      "label": "Complete branded close",
+      "role": "brand",
+      "kind": "card",
+      "sourceStart": 0,
+      "duration": 5.5,
+      "audioUntil": 0,
+      "spoken": false,
+      "speed": 1,
+      "purpose": "The company, service and action remain readable after the voice finishes.",
+      "voicePlaceholder": false
+    }
+  ],
+  "policy": {
+    "minEndcardSeconds": 5.5,
+    "maxSpokenWpm": 170,
+    "maxNarrationWpm": 145,
+    "minReactionSeconds": 1,
+    "maxCredits": null,
+    "voiceStart": 8.5
+  },
+  "generation": null,
+  "reviews": [],
+  "delivery": {
+    "artifacts": [
+      {
+        "profile": "reels",
+        "path": ".videobase/renders/defined-detail-colour-visual/37e1c573f7f49cfd/reels/candidate/defined-detail-colour-visual-reels-candidate.mp4",
+        "sha256": "35a0984a8f9aa313d0987458a5b04c4bb085673fcca97f4e415b46ceb38626c1"
+      },
+      {
+        "profile": "feed",
+        "path": ".videobase/renders/defined-detail-colour-visual/37e1c573f7f49cfd/feed/candidate/defined-detail-colour-visual-feed-candidate.mp4",
+        "sha256": "53e857625aab90f222ab9802d7c031d5c4d03a47fc6ec865aa3f194d1c4f2a92"
+      }
+    ],
+    "technicalChecks": [
+      "full-decode",
+      "dimensions",
+      "duration",
+      "audio-48khz"
+    ]
+  },
+  "comparison": {
+    "referenceLabel": "CTN \u00b7 The contract wedding",
+    "referenceUrl": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/ctn-wedding-facebook-reels.mp4",
+    "rejectedLabel": "Defined Detail / Kitchen's Next / needs changes",
+    "rejectedUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/defined-detail-kitchens-next-reels.mp4",
+    "notes": [
+      {
+        "topic": "Idea",
+        "reference": "The wedding and psychic jokes depend on the mobile-contract problem.",
+        "rejected": "The kitchen punchline changes the subject after a shiny-car conversation.",
+        "rule": "The product must be the reason for the joke and its payoff."
+      },
+      {
+        "topic": "Service",
+        "reference": "The bill or contract stays central to the situation.",
+        "rejected": "No cleaning process is shown.",
+        "rule": "Plan and show both process and clean result."
+      },
+      {
+        "topic": "Voice close",
+        "reference": "Adam names CTN and gives a relevant action.",
+        "rejected": "Only the reused There's a simpler way line is spoken.",
+        "rule": "Record the complete business name, actual service and action."
+      },
+      {
+        "topic": "Judgment",
+        "reference": "Keiron chose the CTN set as the quality standard.",
+        "rejected": "The candidate still did not meet that standard.",
+        "rule": "Technical completion does not establish creative acceptance."
+      }
+    ]
+  },
+  "preview": {
+    "animaticUrl": "",
+    "animaticNote": "Caption-led visual alternative. The separately approved character performance is pending; this version uses a still opening and actual wash/result footage.",
+    "referencePoster": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/poster.jpg",
+    "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/poster-reels.jpg",
+    "candidates": [
+      {
+        "profile": "reels",
+        "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/defined-detail-colour-visual-reels.mp4",
+        "sha256": "35a0984a8f9aa313d0987458a5b04c4bb085673fcca97f4e415b46ceb38626c1",
+        "poster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/poster-reels.jpg"
+      },
+      {
+        "profile": "feed",
+        "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/defined-detail-colour-visual-feed.mp4",
+        "sha256": "53e857625aab90f222ab9802d7c031d5c4d03a47fc6ec865aa3f194d1c4f2a92",
+        "poster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/poster-feed.jpg"
+      }
+    ]
+  }
+}

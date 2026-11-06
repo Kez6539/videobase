@@ -105,3 +105,27 @@ test('reference inputs cannot leak a signed provider URL into the public project
  const p=fresh();p.generation={enabled:true,purpose:'reference',tool:'mcp__codex_apps__runway_generate_image',workspaceId:1,arguments:{model:'fixture',promptText:'Reference fixture',referenceImages:[{url:'https://example.com/image?_jwt=secret'}]},quote:{credits:1,checkedAt:new Date().toISOString(),source:'https://example.com/quote',notes:'Fixture'}};
  assert.throws(()=>projectSchema.parse(p));
 });
+
+test('an honest caption-led cut has no invented character performance',async()=>{
+ const {default:visual}=await import('../examples/defined-detail-colour-visual.json',{with:{type:'json'}});
+ const p=projectSchema.parse(visual);
+ assert.equal(p.script.format,'caption-led');assert.deepEqual(p.script.lines,[]);
+ assert.equal(creativeAudit(p).filter(x=>x.level==='block').length,0);
+ assert.equal(candidateCoverage(p).filter(x=>x.level==='block').length,0);
+});
+test('caption-led copy stays bound to the selected concept',async()=>{
+ const {default:visual}=await import('../examples/defined-detail-colour-visual.json',{with:{type:'json'}});
+ const p=projectSchema.parse(structuredClone(visual));p.script.displayCopy![0]!.text='Different words';
+ assert.ok(creativeAudit(p).some(x=>x.level==='block'));
+});
+test('a still photograph cannot stand in for an acted spoken setup',()=>{
+ const p=fresh();
+ assert.ok(candidateCoverage(p).some(x=>x.code==='candidate-dialogue'));
+});
+
+test('the renderer cannot silently use different visible headlines',async()=>{
+ const {default:visual}=await import('../examples/defined-detail-colour-visual.json',{with:{type:'json'}});
+ const p=projectSchema.parse(structuredClone(visual));p.script.captions.find(c=>c.kind==='display')!.text='Different headline';
+ const {audit}=await import('../src/project.ts');
+ assert.ok((await audit(p)).some(x=>x.code==='display-captions'));
+});

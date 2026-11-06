@@ -1,0 +1,74 @@
+{
+  "at": "2026-11-06T10:56:02.823583+00:00",
+  "host": "Hermes VPS",
+  "sourceChecks": {
+    "command": "npm run check",
+    "passed": 48,
+    "failed": 0,
+    "build": "npm run build passed"
+  },
+  "previewBrowser": {
+    "reels": {
+      "duration": 16.5,
+      "width": 1080,
+      "height": 1920,
+      "playedToEnd": true,
+      "muted": false
+    },
+    "feed": {
+      "duration": 16.5,
+      "width": 1080,
+      "height": 1350,
+      "playedToEnd": true,
+      "muted": false
+    },
+    "viewport": 390,
+    "scrollWidth": 390,
+    "pageErrors": [],
+    "formatSwitchAndDownload": "passed"
+  },
+  "workbenchBrowser": {
+    "concepts": 5,
+    "filmingDirectionsExport": "passed",
+    "visibleOpeningCopy": "passed",
+    "candidatePreviews": 2,
+    "noCreditCeilingDisplay": "passed",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "pageErrors": []
+  },
+  "hostedBytes": {
+    "files": [
+      {
+        "file": "index.html",
+        "status": 200,
+        "sha256": "a25c587aeee610d28e9f86ff4e544225cf4330a8bfd3765a6bf00861d6a18545"
+      },
+      {
+        "file": "defined-detail-colour-visual-reels.mp4",
+        "status": 200,
+        "sha256": "35a0984a8f9aa313d0987458a5b04c4bb085673fcca97f4e415b46ceb38626c1"
+      },
+      {
+        "file": "defined-detail-colour-visual-feed.mp4",
+        "status": 200,
+        "sha256": "53e857625aab90f222ab9802d7c031d5c4d03a47fc6ec865aa3f194d1c4f2a92"
+      },
+      {
+        "file": "defined-detail-colour-downloads.zip",
+        "status": 200,
+        "sha256": "a21273357589c0efb65872ce234f29931232fe0962f6e88a52151fb06a690deb"
+      },
+      {
+        "file": "captions.vtt",
+        "status": 200,
+        "sha256": "1012af481288155629e6ee0d885c5db9735c2f562bd5f5a6a95e18527eb35cb6"
+      }
+    ],
+    "range": 206
+  },
+  "zipCRC": "passed",
+  "visualInspection": "Source motion contact sheets, composed Reels and Feed frames, desktop preview and mobile review layout checked.",
+  "creativeAcceptance": "pending user review",
+  "voiceListeningAcceptance": "not claimed"
+}

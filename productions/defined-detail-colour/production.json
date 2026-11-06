@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "project": "defined-detail-colour",
+  "visualProject": "defined-detail-colour-visual",
+  "title": "Blue. Allegedly.",
+  "status": "visual candidate; approved spoken performance pending",
+  "producedAt": "2026-11-06T10:51:28.806550+00:00",
+  "host": "Hermes VPS",
+  "preview": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/index.html",
+  "authorization": {
+    "mode": "agent-directed-development",
+    "instruction": "so on the repo, make it alot better, then try again, there isnt a limit on credits",
+    "at": "2026-11-06T09:46:46.568362Z",
+    "grantedBy": "user"
+  },
+  "productionCalls": [
+    {
+      "name": "clean-master",
+      "requestId": "2f4bea89348bc5390d602ae2bd5cb38b22680740dda50f587676229c242afa9f",
+      "taskId": "47983ae7-85bc-46d1-b8e5-a78d4f867381",
+      "state": "completed",
+      "quotedCredits": 41,
+      "actualCredits": 20,
+      "generation": {
+        "tool": "mcp__codex_apps__runway_generate_image",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "gpt-image-2",
+          "promptText": "A naturalistic commercial photograph for a British professional vehicle-detailing advert. Portrait composition. One fictional unbadged cobalt-blue rear-engine sports coupe with rounded headlights, smooth curved bonnet, black five-split-spoke wheels and clean dark tyres, parked in a tidy grey UK detailing studio. Low close front-three-quarter camera position: the blue bonnet, front wing, near wheel and spotless windscreen fill the picture. Natural perspective, no extreme wide-angle distortion. The car has just been properly cleaned and is completely dry. Crisp straight soft-white inspection-light reflections show the rich blue paint; realistic glass, rubber and metal, no star sparkles or artificial lens flares. Warm side-window daylight from the left balanced with soft inspection lights. A clean concrete floor, a grey rear wall and a discreet detailing trolley give credible depth. Frame the car prominently, with no large empty ceiling area. No people. No readable writing, badges, number plates, watermarks, captions or graphic elements. This is the clean master reference: consistent body geometry, wheel pattern, blue paint and studio will anchor the later dirty scene, cleaning shot and finished hero film.",
+          "ratio": "9:16",
+          "count": 1
+        }
+      },
+      "selected": false
+    },
+    {
+      "name": "dirty-scene",
+      "requestId": "ebe226d3467d2f9f8843b8d46315ce099bd151dd8cb9853808f6fb1daf7c7eff",
+      "taskId": "1f41bc72-5ff9-45a1-ac1a-0740c6e7f806",
+      "state": "completed",
+      "quotedCredits": 41,
+      "actualCredits": 20,
+      "generation": {
+        "enabled": true,
+        "purpose": "reference",
+        "takeLabel": "dirty-scene",
+        "tool": "mcp__codex_apps__runway_generate_image",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "gpt-image-2",
+          "ratio": "9:16",
+          "count": 1,
+          "referenceImages": [
+            {
+              "taskId": "47983ae7-85bc-46d1-b8e5-a78d4f867381",
+              "tag": "car"
+            }
+          ],
+          "promptText": "Create the opening still of a photorealistic British car-cleaning comedy. Use the exact same blue sports coupe, rounded headlight design, black wheel pattern and grey detailing studio as the reference. Reframe slightly higher and farther back into a close medium two-shot: two fictional adults are clearly visible from the waist up behind the front wing, with large readable faces, and the car occupies the lower foreground. On the left a professional female detailer, 35, with dark hair tied back, an unbranded black polo and black trousers. On the right the owner, 50, with short greying hair, a sage overshirt and grey T-shirt. Relaxed closed mouths before speaking, sincere expressions, no broad smiles or exaggerated surprise. They look down at the car. The car is now heavily covered in physically realistic mottled brown winter road grime and dried tyre spray, opaque across the bonnet, front wing and doors so the blue paint is barely visible. Keep the same body and panel gaps; this is dirt on the blue car, not a brown-painted different car. Windscreen remains plausibly transparent, with grime around its edges. The detailer is perfectly tidy and competent; the owner is ordinary and likeable. Warm daylight from the same left window, natural skin, soft white studio lights. No large empty ceiling. No touching or wiping dirty paint, no hand choreography. No writing, logos, badges, number plates, captions or graphic elements."
+        },
+        "quote": {
+          "credits": 41,
+          "checkedAt": "2026-11-06T10:24:18.365735Z",
+          "source": "https://docs.dev.runwayml.com/guides/pricing/",
+          "notes": "Current published rate; image high/auto estimate is conservative. The actual connected-workspace deduction is recorded separately."
+        }
+      },
+      "selected": false
+    },
+    {
+      "name": "foam-process",
+      "requestId": "469e1df277579c503895e4f7c7c8ef7c56429874e702011a9a6c14951dc8a181",
+      "taskId": "97a06303-11cd-4365-8eb3-dd264d461685",
+      "state": "completed",
+      "quotedCredits": 41,
+      "actualCredits": 20,
+      "generation": {
+        "enabled": true,
+        "purpose": "reference",
+        "takeLabel": "foam-process",
+        "tool": "mcp__codex_apps__runway_generate_image",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "gpt-image-2",
+          "ratio": "9:16",
+          "count": 1,
+          "referenceImages": [
+            {
+              "taskId": "47983ae7-85bc-46d1-b8e5-a78d4f867381",
+              "tag": "car"
+            }
+          ],
+          "promptText": "A photorealistic close camera view of the exact reference sports coupe in the exact same detailing bay during a professional prewash rinse. Preserve the cobalt-blue paint, curved bonnet, rounded headlight and black five-split-spoke wheel geometry. Compose the near front wing, bonnet edge and part of the wheel prominently across this portrait frame; keep enough of the same window and grey studio to recognise the location. Thick white prewash foam covers most of the paint. A black pressure-wash lance enters from the upper right; its nozzle is a sensible distance away and a single wide fan of clear water is just beginning to remove the foam, exposing a narrow clean blue stripe. Realistic water droplets, wet foam flowing down under gravity and credible physical spray contact. The operator stays outside frame: no visible face or extra limbs, just the end of the lance. Soft bright inspection light and warm left-window daylight. This is one simple real cleaning action, not a magical transformation. No dry wiping, scratch marks, badges, text, logos, captions, sparkle stars or graphic elements."
+        },
+        "quote": {
+          "credits": 41,
+          "checkedAt": "2026-11-06T10:24:18.862728Z",
+          "source": "https://docs.dev.runwayml.com/guides/pricing/",
+          "notes": "Current published rate; image high/auto estimate is conservative. The actual connected-workspace deduction is recorded separately."
+        }
+      },
+      "selected": false
+    },
+    {
+      "name": "hero-motion",
+      "requestId": "860c981336f8c4b05e3c24a93863c8d125494c7f990fb5d5bab3829530080278",
+      "taskId": "13697eb6-8114-46be-8966-9da8cbf0134b",
+      "state": "completed",
+      "quotedCredits": 60,
+      "actualCredits": 60,
+      "generation": {
+        "enabled": true,
+        "purpose": "result",
+        "takeLabel": "hero-motion",
+        "tool": "mcp__codex_apps__runway_generate_video",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "gen-4.5",
+          "duration": 5,
+          "ratio": "9:16",
+          "resolution": "1080p",
+          "generateAudio": false,
+          "startFrame": {
+            "taskId": "47983ae7-85bc-46d1-b8e5-a78d4f867381"
+          },
+          "promptText": "A restrained five-second car-detailing hero shot, continuing directly from this exact photograph. A very slow, smooth camera push of only a few centimetres towards the near front quarter of the parked spotless cobalt-blue sports coupe. The same rounded headlight, black split-spoke wheel, bonnet, windscreen, studio and window remain physically consistent. The car and wheels are completely stationary. Crisp real inspection-light reflections slide gently with the camera movement across the completely dry blue paint. Clear glass, clean tyres and a rich genuinely clean finish. Natural commercial photography, warm side daylight, realistic material texture. No people enter, no floating or melting geometry, no spinning wheels, no artificial sparkles, lens flares, generated text, logos or end card."
+        },
+        "quote": {
+          "credits": 60,
+          "checkedAt": "2026-11-06T10:24:19.362722Z",
+          "source": "https://docs.dev.runwayml.com/guides/pricing/",
+          "notes": "Current published rate; image high/auto estimate is conservative. The actual connected-workspace deduction is recorded separately."
+        }
+      },
+      "selected": false
+    },
+    {
+      "name": "dirty-scene-close",
+      "requestId": "98b4ed560190a479f82eaae456cb62700d8c4dec125754187437167eb82c3d44",
+      "taskId": "b0257bbf-2915-47e5-a1cb-27add8ec5b55",
+      "state": "completed",
+      "quotedCredits": 41,
+      "actualCredits": 20,
+      "generation": {
+        "enabled": true,
+        "purpose": "reference",
+        "takeLabel": "dirty-scene-close",
+        "tool": "mcp__codex_apps__runway_generate_image",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "gpt-image-2",
+          "ratio": "9:16",
+          "count": 1,
+          "referenceImages": [
+            {
+              "taskId": "1f41bc72-5ff9-45a1-ac1a-0740c6e7f806",
+              "tag": "scene"
+            }
+          ],
+          "promptText": "Recompose this exact scene as a much closer, natural British comedy medium two-shot. Keep these exact two people, their faces, tied-back hair, black polo, sage overshirt and grey T-shirt. Keep this exact grime-covered blue sports coupe and grey detailing studio. Move the camera closer and slightly higher so the actors are framed from mid-torso upwards, large and clear across the upper half of the portrait picture. The dirty curved bonnet and near front wing occupy the lower half. It is not necessary to fit the complete wheel, bumper or car in this conversational shot. Do not let the car roof hide their torsos or dominate three quarters of the image. No large empty ceiling. The fictional detailer on the left and owner on the right calmly look at the dirty paint, with relaxed closed mouths before speaking. Preserve the opaque mottled brown road grime, which almost hides the blue; do not clean or change the car. Natural skin texture, warm left-window daylight and soft white inspection lights, dimensional believable studio photography. No broad smiles, exaggerated facial expressions, touching paint, text, logos, badges, number plates or graphic effects."
+        },
+        "quote": {
+          "credits": 41,
+          "checkedAt": "2026-11-06T10:29:13.014401Z",
+          "source": "https://docs.dev.runwayml.com/guides/pricing/",
+          "notes": "Current published rate. The closer scene frame addresses face readability; the extra hero addresses the first take returning 720p despite the 1080p request. Actual deductions are recorded."
+        }
+      },
+      "selected": true
+    },
+    {
+      "name": "rinse-motion",
+      "requestId": "fd3dee70f84fe5c27051cd222468ac2c35cdda4fdacb99ab22725409614fc21d",
+      "taskId": "2b021d29-560d-40d6-a968-0282126fbaaf",
+      "state": "completed",
+      "quotedCredits": 340,
+      "actualCredits": 340,
+      "generation": {
+        "enabled": true,
+        "purpose": "process",
+        "takeLabel": "rinse-motion",
+        "tool": "mcp__codex_apps__runway_generate_video",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "seedance-2.5",
+          "duration": 5,
+          "ratio": "9:16",
+          "resolution": "1080p",
+          "generateAudio": true,
+          "startFrame": {
+            "taskId": "97a06303-11cd-4365-8eb3-dd264d461685"
+          },
+          "promptText": "A five-second photorealistic professional car-cleaning process shot continuing directly from this reference. Keep this exact blue sports coupe, rounded headlight, black wheel and studio geometry. Locked close camera. The black pressure-wash lance remains a sensible distance away from the paint and moves slowly across the foamy near front wing in one steady pass. A single continuous broad fan of water visibly pushes the white foam down and off the blue paint, exposing a clean blue section behind it. Plausible contact, spray, reflections and foam draining under gravity; dirty runoff reaches the floor. Maintain the same car throughout, no new parts or changing wheel design. The operator remains outside the frame. No wiping, extra hands, camera orbit, cuts, text, badges, narrator, dialogue, music, sparkle stars or magical colour morph. Realistic pressure-wash hiss and splashing water only. Show a real cleaning action with a beginning and a clear freshly rinsed patch at the end."
+        },
+        "quote": {
+          "credits": 340,
+          "checkedAt": "2026-11-06T10:29:13.389863Z",
+          "source": "https://docs.dev.runwayml.com/guides/pricing/",
+          "notes": "Current published rate. The closer scene frame addresses face readability; the extra hero addresses the first take returning 720p despite the 1080p request. Actual deductions are recorded."
+        }
+      },
+      "selected": true
+    },
+    {
+      "name": "hero-native-1080",
+      "requestId": "72d0bc84a4e6bf493d02db09a25997253ce2c93ad1f31b4ec9892a401479b0b7",
+      "taskId": "3c9c6195-b1cc-4da3-b211-7b475a1b7c2c",
+      "state": "completed",
+      "quotedCredits": 200,
+      "actualCredits": 200,
+      "generation": {
+        "enabled": true,
+        "purpose": "result",
+        "takeLabel": "hero-native-1080",
+        "tool": "mcp__codex_apps__runway_generate_video",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "seedance-2",
+          "duration": 5,
+          "ratio": "9:16",
+          "resolution": "1080p",
+          "generateAudio": false,
+          "startFrame": {
+            "taskId": "47983ae7-85bc-46d1-b8e5-a78d4f867381"
+          },
+          "promptText": "A five-second naturalistic premium car-detailing result shot from this exact photograph. Native portrait 1080p. Preserve the same completely dry spotless cobalt-blue sports coupe, curved bonnet, rounded headlight, black split-spoke wheel, clear windscreen and studio. Very slow controlled camera push of only a few centimetres towards the near front wing. The car and wheels stay stationary, with fixed geometry and realistic perspective. Crisp soft-white inspection-light reflections move gently with the camera across the blue paint. Warm light from the same left window, clean concrete floor and tidy trolley. Show tactile real paint and glass, without looking like a 3D render. No people, wheel rotation, camera orbit, floating or melting parts, badges, text, artificial sparkles, lens flares or end card. No dialogue or narration."
+        },
+        "quote": {
+          "credits": 200,
+          "checkedAt": "2026-11-06T10:29:13.767953Z",
+          "source": "https://docs.dev.runwayml.com/guides/pricing/",
+          "notes": "Current published rate. The closer scene frame addresses face readability; the extra hero addresses the first take returning 720p despite the 1080p request. Actual deductions are recorded."
+        }
+      },
+      "selected": true
+    }
+  ],
+  "actualRunwayCredits": 680,
+  "voicePaidCredits": 0,
+  "dialogue": {
+    "script": [
+      {
+        "speaker": "Detailer",
+        "text": "What colour is it?"
+      },
+      {
+        "speaker": "Owner",
+        "text": "Blue. Allegedly."
+      },
+      {
+        "speaker": "Detailer",
+        "text": "We'll find it."
+      }
+    ],
+    "userApproval": "Approve this script and take",
+    "approvalScope": "One ten-second, 400-credit take against the prepared close reference image",
+    "reference": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/assets/dirty-scene-close.png",
+    "state": "blocked before reservation",
+    "reason": "Automatic approval review returned only: blocked by policy",
+    "reservationCreated": false,
+    "providerTaskId": null,
+    "creditsCharged": 0
+  },
+  "voice": {
+    "copy": "Defined Detail. Car cleaning and detailing in Telford. Message us to book.",
+    "duration": 5.36,
+    "provenance": {
+      "method": "reference-recreation",
+      "referenceVoiceId": "DEFpwxCUkrj3WAbTDRTZ",
+      "referenceSHA256": "9d211b7c7cbedef9ad690b142b1ca1abda4086edb6fa615626038a15ff428e4b",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+      "reportUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/voice-provenance.json"
+    },
+    "sha256": "f1fc716264c31cb3f5c9016b6744e6e5c375e761d9d06f2b7f6279f7778e069b",
+    "humanListeningApproval": false
+  },
+  "edit": {
+    "format": "caption-led",
+    "seconds": 16.5,
+    "timeline": [
+      {
+        "id": "dirty-opening",
+        "label": "Dirty car / visible caption",
+        "role": "setup",
+        "kind": "still",
+        "assetId": "dirty-scene-close",
+        "sourceStart": 0,
+        "duration": 3,
+        "audioUntil": 0,
+        "spoken": false,
+        "speed": 1,
+        "framing": {
+          "reels": {
+            "x": 4,
+            "y": 0,
+            "width": 1080,
+            "height": 1920
+          },
+          "feed": {
+            "x": 4,
+            "y": 150,
+            "width": 1080,
+            "height": 1350
+          }
+        },
+        "purpose": "An intentional still opening with graphic copy, not a lip-synced performance.",
+        "voicePlaceholder": false
+      },
+      {
+        "id": "wash",
+        "label": "Actual foam rinse",
+        "role": "process",
+        "kind": "video",
+        "assetId": "rinse-motion",
+        "sourceStart": 0.4,
+        "duration": 4,
+        "audioUntil": 4,
+        "spoken": false,
+        "speed": 1,
+        "framing": {
+          "reels": {
+            "x": 4,
+            "y": 0,
+            "width": 1076,
+            "height": 1912
+          },
+          "feed": {
+            "x": 2,
+            "y": 220,
+            "width": 1080,
+            "height": 1350
+          }
+        },
+        "purpose": "Physically remove foam and show blue paint emerging.",
+        "voicePlaceholder": false
+      },
+      {
+        "id": "clean-result",
+        "label": "Same car / clean blue finish",
+        "role": "result",
+        "kind": "video",
+        "assetId": "hero-native-1080",
+        "sourceStart": 0.5,
+        "duration": 4,
+        "audioUntil": 0,
+        "spoken": false,
+        "speed": 1,
+        "framing": {
+          "reels": {
+            "x": 0,
+            "y": 0,
+            "width": 1080,
+            "height": 1920
+          },
+          "feed": {
+            "x": 0,
+            "y": 180,
+            "width": 1080,
+            "height": 1350
+          }
+        },
+        "purpose": "The dry spotless result, with the new branded read entering.",
+        "voicePlaceholder": false
+      },
+      {
+        "id": "close",
+        "label": "Complete branded close",
+        "role": "brand",
+        "kind": "card",
+        "sourceStart": 0,
+        "duration": 5.5,
+        "audioUntil": 0,
+        "spoken": false,
+        "speed": 1,
+        "purpose": "The company, service and action remain readable after the voice finishes.",
+        "voicePlaceholder": false
+      }
+    ],
+    "voiceStart": 8.5,
+    "speed": 1
+  },
+  "artifacts": [
+    {
+      "profile": "reels",
+      "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/defined-detail-colour-visual-reels.mp4",
+      "sha256": "35a0984a8f9aa313d0987458a5b04c4bb085673fcca97f4e415b46ceb38626c1",
+      "poster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/poster-reels.jpg"
+    },
+    {
+      "profile": "feed",
+      "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/defined-detail-colour-visual-feed.mp4",
+      "sha256": "53e857625aab90f222ab9802d7c031d5c4d03a47fc6ec865aa3f194d1c4f2a92",
+      "poster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/poster-feed.jpg"
+    }
+  ],
+  "technicalChecks": {
+    "reels": {
+      "seconds": 16.5,
+      "fullDecode": true,
+      "sha256": "35a0984a8f9aa313d0987458a5b04c4bb085673fcca97f4e415b46ceb38626c1",
+      "width": 1080,
+      "height": 1920,
+      "fps": "30/1",
+      "audioSampleRate": "48000",
+      "audioChannels": 2
+    },
+    "feed": {
+      "seconds": 16.5,
+      "fullDecode": true,
+      "sha256": "53e857625aab90f222ab9802d7c031d5c4d03a47fc6ec865aa3f194d1c4f2a92",
+      "width": 1080,
+      "height": 1350,
+      "fps": "30/1",
+      "audioSampleRate": "48000",
+      "audioChannels": 2
+    }
+  },
+  "visualInspection": {
+    "method": "sampled frames and source contact sheets",
+    "findings": "Matching blue coupe and studio; visible physical foam removal; dry result; legible brand card. Feed opening cropped separately to retain faces and dirty bonnet.",
+    "humanCreativeAcceptance": "pending"
+  },
+  "assets": [
+    {
+      "id": "logo",
+      "path": ".videobase/assets/defined-detail/logo.png",
+      "sha256": "643de4d5e49ebe2e6339cdc79752cc541b80be01ef1d9cde0c94966b66e2daf5",
+      "kind": "image",
+      "sourceUrl": "https://static.wixstatic.com/media/ea4773_ba539c7be6e9499f89c3ab1923c26f73~mv2.png"
+    },
+    {
+      "id": "brand-font",
+      "path": ".videobase/assets/defined-detail-colour/Poppins-Bold.ttf",
+      "sha256": "983676516167748b74de6f4771fb384c664fd913acb8b471122ecacf5da5ea6c",
+      "kind": "font"
+    },
+    {
+      "id": "brand-voice",
+      "path": ".videobase/assets/defined-detail-colour/voice-f1fc716264c31cb3.wav",
+      "sha256": "f1fc716264c31cb3f5c9016b6744e6e5c375e761d9d06f2b7f6279f7778e069b",
+      "kind": "audio"
+    },
+    {
+      "id": "setup-plan",
+      "path": ".videobase/assets/defined-detail-colour/setup-plan.png",
+      "sha256": "8f67c11318438e8c41f04eaf400a5457871c10745635b1b17dd19c122c6cfd08",
+      "kind": "image"
+    },
+    {
+      "id": "process-plan",
+      "path": ".videobase/assets/defined-detail-colour/process-plan.png",
+      "sha256": "bf2be2c1c64c050f5fe7fefcbe40681db6c65cb7b529ba9670e9929f889c3ba3",
+      "kind": "image"
+    },
+    {
+      "id": "result-plan",
+      "path": ".videobase/assets/defined-detail-colour/result-plan.png",
+      "sha256": "ca8eb5e540e364410cf3419f28a194845029daa38af2ddbfd6f94955fc716390",
+      "kind": "image"
+    },
+    {
+      "id": "clean-master",
+      "path": ".videobase/assets/defined-detail-colour/clean-master.png",
+      "sha256": "ed08c93d2c42a0f49b1bd69259cf6b709d0a5af24ab5537c68a45e31807469bb",
+      "kind": "image",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/assets/clean-master.png"
+    },
+    {
+      "id": "dirty-scene",
+      "path": ".videobase/assets/defined-detail-colour/dirty-scene.png",
+      "sha256": "375f28766fc1f839d9ed918b57d3080ce543807cfa8c5de6263e85e9f194cbad",
+      "kind": "image"
+    },
+    {
+      "id": "foam-process",
+      "path": ".videobase/assets/defined-detail-colour/foam-process.png",
+      "sha256": "143039c3053ed8ad85fc6678e57277f137b21a983e717be4b9d6d62d01b15b1e",
+      "kind": "image"
+    },
+    {
+      "id": "hero-motion",
+      "path": ".videobase/assets/defined-detail-colour/hero-motion.mp4",
+      "sha256": "ac267298127b49f5c2d1f7c3e26bcbbd67087b387e7a16dbd8903ebc79fe7042",
+      "kind": "video"
+    },
+    {
+      "id": "dirty-scene-close",
+      "path": ".videobase/assets/defined-detail-colour/dirty-scene-close.png",
+      "sha256": "095edb29fd6b5948407382c2361ded89c64dad7c7a29d72be2d7ebe27eff881f",
+      "kind": "image"
+    },
+    {
+      "id": "rinse-motion",
+      "path": ".videobase/assets/defined-detail-colour/rinse-motion.mp4",
+      "sha256": "8ec5a3065a2ef6601479833882f11f45a682ec6a2678e6208eb316a0fd6991b0",
+      "kind": "video"
+    },
+    {
+      "id": "hero-native-1080",
+      "path": ".videobase/assets/defined-detail-colour/hero-native-1080.mp4",
+      "sha256": "1525c93865a576b95b77c203f8495c43c6d8fe4f36de04e06e1d293feb2c35f6",
+      "kind": "video"
+    }
+  ]
+}

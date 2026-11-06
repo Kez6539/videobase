@@ -27,8 +27,8 @@ export function bindCreative(p:Project,changed:(message:string)=>void):void{
  const value=(id:string)=>(document.getElementById(id) as HTMLTextAreaElement).value.trim();
  const syncSelected=():void=>{
   const x=c.concepts.find(x=>x.id===c.selectedId);if(!x)return;
-  p.script.premise=x.premise;p.script.whyFunny=x.serviceConnection;p.script.lines=structuredClone(x.dialogue);
-  p.script.captions=[...x.dialogue.map(l=>({kind:'dialogue' as const,text:l.text,start:l.start,end:l.end})),...p.script.captions.filter(l=>l.kind==='narration')];
+  p.script.format=x.dialogue.length?'dialogue':'caption-led';p.script.displayCopy=structuredClone(x.displayCopy??[]);p.script.premise=x.premise;p.script.whyFunny=x.serviceConnection;p.script.lines=structuredClone(x.dialogue);
+  p.script.captions=[...x.dialogue.map(l=>({kind:'dialogue' as const,text:l.text,start:l.start,end:l.end})),...(x.displayCopy??[]).map(c=>({kind:'display' as const,...c})),...p.script.captions.filter(l=>l.kind==='narration')];
  };
  document.getElementById('saveSelectionReason')?.addEventListener('click',()=>{c.selectionReason=value('selectionReason');changed('Selection reason saved. This is an editorial case, not final approval.');});
  document.querySelectorAll<HTMLButtonElement>('[data-develop]').forEach(b=>b.onclick=()=>{

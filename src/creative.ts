@@ -17,7 +17,7 @@ export const creativeSchema=z.object({
     firstFrame:z.string(),premise:z.string(),punchline:z.string(),
     serviceConnection:z.string(),visualPayoff:z.string(),risk:z.string(),
     recommendation:z.enum(['develop','alternative','reject']),
-    dialogue:z.array(line)
+    displayCopy:z.array(z.object({text:z.string(),start:z.number().nonnegative(),end:z.number().positive()}).strict()).optional(),dialogue:z.array(line)
   }).strict()).min(3).max(8),
   selectedId:z.string().nullable(),
   selectionReason:z.string(),
@@ -31,7 +31,7 @@ export type Creative=z.infer<typeof creativeSchema>;
 export type CreativeContext={
   brief:{business:string;product:string;tone:string};
   brand:{name:string;cta:string;destination:string};
-  script:{lines:Array<z.infer<typeof line>>;closingCopy:string};
+  script:{format?:'dialogue'|'caption-led'|undefined;displayCopy?:Array<{text:string;start:number;end:number}>|undefined;lines:Array<z.infer<typeof line>>;closingCopy:string};
   voice:{referenceName:string;voiceId:string};
   creative?:Creative|undefined;
 };
@@ -59,7 +59,11 @@ export function creativeAudit(p:CreativeContext):CreativeFinding[]{
     for(const [key,label] of [['firstFrame','opening image'],['punchline','punchline'],['serviceConnection','reason the joke belongs to this service'],['visualPayoff','visible service payoff'],['risk','likely failure to inspect']] as const){
       if(!chosen[key].trim())block('concept-'+key,'Describe the '+label+'.');
     }
-    if(!chosen.dialogue.length||chosen.dialogue.some(x=>!x.text.trim()||x.end<=x.start))block('concept-dialogue','Write the actual dialogue and leave room for its performance.');
+    if(p.script.format!=='caption-led'&&(!chosen.dialogue.length||chosen.dialogue.some(x=>!x.text.trim()||x.end<=x.start)))block('concept-dialogue','Write the actual dialogue and leave room for its performance.');
+    if(p.script.format==='caption-led'){
+      if(chosen.dialogue.length||p.script.lines.length)block('caption-dialogue','A caption-led cut must not imply an unproduced spoken exchange.');
+      if(!chosen.displayCopy?.length||JSON.stringify(chosen.displayCopy)!==JSON.stringify(p.script.displayCopy))block('caption-copy','The selected visible copy must match the caption-led script.');
+    }
     if(JSON.stringify(chosen.dialogue.map(x=>[x.speaker,x.text]))!==JSON.stringify(p.script.lines.map(x=>[x.speaker,x.text])))block('concept-script-mismatch','The selected concept and production dialogue disagree. Keep one exact script.');
   }
   for(const role of ['process','result'] as const){
@@ -77,12 +81,12 @@ export function promptPack(p:CreativeContext){
   const c=p.creative!;const selected=c.concepts.find(x=>x.id===c.selectedId)!;
   const scene=[
     'Create a naturalistic British comedy advert for '+p.brief.business+'.',
-    'One continuous medium two-shot, with the speakers and car visible together. No montage inside this conversation.',
+    p.script.format==='caption-led'?'Caption-led opening still. The visible copy is graphic text, not character speech. Do not imply lip-synced dialogue.':'One continuous medium two-shot, with the speakers and car visible together. No montage inside this conversation.',
     'Opening image: '+selected.firstFrame,
     'Situation: '+selected.premise,
     'Photographic direction: '+c.visualStyle,
     'Continuity: '+c.continuity,
-    'Use only these exact character lines, in order, one speaker at a time:',
+    p.script.format==='caption-led'?'Displayed copy: '+(p.script.displayCopy??[]).map(c=>c.text).join(' / '):'Use only these exact character lines, in order, one speaker at a time:',
     ...p.script.lines.map(l=>l.speaker+' ('+l.start+'-'+l.end+'s): "'+l.text+'" Direction: '+l.performance),
     'Keep every spoken word at its natural speed. Leave a quiet reaction after the last line.',
     'Quiet native room tone only. No narrator, music, captions, logos or generated lettering. Branding and narration are separate edit elements.'
