@@ -1,7 +1,7 @@
 {
   "id": "defined-detail-kitchens-next",
   "title": "Kitchen's Next",
-  "status": "rendered review candidate",
+  "status": "needs changes / superseded for development",
   "creativeApproval": null,
   "userDirections": [
     "thats terrible. try again, look at the comparethenetworks ones, they are laods better",
@@ -177,5 +177,11 @@
       "identicalAudioPackets": "5b790d9eac0161ad8e8f4f4c43a5f44e7d639804b06e10bb67288e5f6f8e7f40"
     },
     "loudnessSummary": "\n\n  Integrated loudness:\n    I:         -16.1 LUFS\n    Threshold: -29.6 LUFS\n\n  Loudness range:\n    LRA:        18.5 LU\n    Threshold: -39.9 LUFS\n    LRA low:   -35.2 LUFS\n    LRA high:  -16.7 LUFS\n\n  True peak:\n    Peak:       -2.0 dBFS\n"
+  },
+  "latestFeedback": {
+    "reviewer": "Keiron",
+    "date": "2026-11-06",
+    "quote": "the adverts in comparethenetworks.com are still better",
+    "instruction": "so on the repo, make it alot better, then try again, there isnt a limit on credits"
   }
 }

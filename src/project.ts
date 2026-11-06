@@ -1,22 +1,37 @@
 import {z} from 'zod';
+import {creativeSchema,creativeAudit} from './creative.ts';
 
 const id=z.string().regex(/^[a-z0-9][a-z0-9-]*$/);
 const local=z.string().min(1).refine(p=>!p.includes('..')&&!p.includes('\\')&&!p.startsWith('/')&&!/^[A-Za-z]:/.test(p),'Use a relative asset path without traversal');
 const https=z.url().refine(v=>v.startsWith('https://')&&!/[?&](_jwt|token|key|signature)=/i.test(v),'Use a public HTTPS URL without credentials');
 const hash=z.string().regex(/^[a-f0-9]{64}$/);
+
+const reference=z.object({url:https.optional(),taskId:z.uuid().optional(),tag:z.string().optional()}).strict().refine(x=>!!x.url||!!x.taskId,'Supply a task id or public reference URL');
+const quote=z.object({credits:z.number().int().positive(),checkedAt:z.iso.datetime(),source:https,notes:z.string()}).strict();
+const common={enabled:z.boolean(),workspaceId:z.number().int().positive(),takeLabel:z.string().min(1).optional(),quote};
+const generationSchema=z.discriminatedUnion('tool',[
+ z.object({...common,tool:z.literal('mcp__codex_apps__runway_generate_video'),purpose:z.enum(['scene','process','result']).optional(),arguments:z.object({
+  model:z.string(),promptText:z.string().min(1),duration:z.number().int().positive(),ratio:z.enum(['9:16','16:9','1:1']),resolution:z.string(),generateAudio:z.boolean(),
+  startFrame:z.object({url:https.optional(),taskId:z.uuid().optional()}).strict().refine(x=>!!x.url||!!x.taskId).optional(),
+  endFrame:z.object({url:https}).strict().optional(),referenceImages:z.array(reference).optional()
+ }).strict()}).strict(),
+ z.object({...common,tool:z.literal('mcp__codex_apps__runway_generate_image'),purpose:z.literal('reference'),arguments:z.object({
+  model:z.string(),promptText:z.string().min(1),ratio:z.string().optional(),imageSize:z.enum(['1K','2K','3K','4K']).optional(),count:z.number().int().min(1).max(4).optional(),referenceImages:z.array(reference).optional()
+ }).strict()}).strict()
+]);
 export const stages=['brief','script','voice','animatic','spend','final'] as const;
 export type Stage=typeof stages[number];
 export const reviewSchema=z.object({stage:z.enum(stages),inputHash:hash,decision:z.enum(['approved','changes']),reviewer:z.string().min(2),at:z.iso.datetime(),note:z.string().min(5),evidence:z.array(z.string().min(1)).min(1)}).strict();
 export const projectSchema=z.object({
-  version:z.literal(1),id,name:z.string().min(1),status:z.enum(['development','in-review','approved','rejected']),
+  version:z.literal(1),creative:creativeSchema.optional(),authorization:z.object({mode:z.literal('agent-directed-development'),instruction:z.string().min(10),at:z.iso.datetime(),grantedBy:z.literal('user')}).strict().optional(),id,name:z.string().min(1),status:z.enum(['development','in-review','approved','rejected']),
   brief:z.object({business:z.string().min(1),product:z.string().min(1),audience:z.string().min(1),problem:z.string().min(1),promise:z.string().min(1),action:z.string().min(1),proof:z.array(z.object({claim:z.string(),source:https})),tone:z.string(),avoid:z.array(z.string())}).strict(),
-  brand:z.object({name:z.string(),headline:z.string(),background:z.string().regex(/^#[a-f\d]{6}$/i),accent:z.string().regex(/^#[a-f\d]{6}$/i),ink:z.string().regex(/^#[a-f\d]{6}$/i),logo:local.optional(),cta:z.string(),destination:z.string()}).strict(),
+  brand:z.object({fontFamily:z.string().optional(),fontAsset:id.optional(),sceneLogo:z.object({reels:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive()}).strict(),feed:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive()}).strict()}).strict().optional(),name:z.string(),headline:z.string(),background:z.string().regex(/^#[a-f\d]{6}$/i),accent:z.string().regex(/^#[a-f\d]{6}$/i),ink:z.string().regex(/^#[a-f\d]{6}$/i),logo:local.optional(),cta:z.string(),destination:z.string()}).strict(),
   script:z.object({premise:z.string(),whyFunny:z.string(),lines:z.array(z.object({speaker:z.string(),text:z.string().min(1),performance:z.string(),start:z.number().nonnegative(),end:z.number().positive()}).strict()),captions:z.array(z.object({kind:z.enum(['dialogue','narration']),text:z.string().min(1),start:z.number().nonnegative(),end:z.number().positive()}).strict()),closingCopy:z.string(),closingDelivery:z.string(),pronunciation:z.record(z.string(),z.string())}).strict(),
-  voice:z.object({referenceName:z.string(),referenceUrl:https,voiceId:z.string(),direction:z.string(),auditions:z.array(z.object({id,name:z.string(),voiceId:z.string().optional(),url:https,script:z.string(),selected:z.boolean()})),recordingAsset:id.optional(),recordingUrl:https.optional(),recordingDuration:z.number().positive().optional(),recordingScriptHash:hash.optional()}).strict(),
-  assets:z.array(z.object({id,path:local,sha256:hash,kind:z.enum(['video','audio','image']),sourceUrl:https.optional()}).strict()),
-  timeline:z.array(z.object({id,label:z.string(),kind:z.enum(['video','still','card']),assetId:id.optional(),sourceStart:z.number().nonnegative().default(0),duration:z.number().positive(),audioUntil:z.number().nonnegative().default(0),spoken:z.boolean().default(false),speed:z.number().min(.5).max(2).default(1),purpose:z.string(),voicePlaceholder:z.boolean().default(false)}).strict()).min(1),
-  policy:z.object({minEndcardSeconds:z.number().positive(),maxSpokenWpm:z.number().positive(),maxNarrationWpm:z.number().positive().default(135),minReactionSeconds:z.number().nonnegative(),maxCredits:z.number().int().nonnegative(),voiceStart:z.number().nonnegative()}).strict(),
-  generation:z.object({enabled:z.boolean(),tool:z.literal('mcp__codex_apps__runway_generate_video'),workspaceId:z.number().int().positive(),arguments:z.object({model:z.string(),promptText:z.string().min(1),duration:z.number().int().positive(),ratio:z.enum(['9:16','16:9','1:1']),resolution:z.string(),generateAudio:z.boolean()}).strict(),quote:z.object({credits:z.number().int().positive(),checkedAt:z.iso.datetime(),source:https,notes:z.string()}).strict()}).strict().nullable(),
+  voice:z.object({referenceName:z.string(),referenceUrl:https,voiceId:z.string(),direction:z.string(),auditions:z.array(z.object({id,name:z.string(),voiceId:z.string().optional(),url:https,script:z.string(),selected:z.boolean()})),recordingProvenance:z.object({method:z.enum(['library','reference-recreation','human-recording','existing-recording']),referenceVoiceId:z.string().optional(),referenceSHA256:hash.optional(),model:z.string().optional(),reportUrl:https.optional()}).strict().optional(),recordingAsset:id.optional(),recordingUrl:https.optional(),recordingDuration:z.number().positive().optional(),recordingScriptHash:hash.optional()}).strict(),
+  assets:z.array(z.object({id,path:local,sha256:hash,kind:z.enum(['video','audio','image','font']),scriptHash:hash.optional(),sourceUrl:https.optional()}).strict()),
+  timeline:z.array(z.object({id,label:z.string(),role:z.enum(['setup','process','result','reaction','brand']).optional(),kind:z.enum(['video','still','card']),assetId:id.optional(),sourceStart:z.number().nonnegative().default(0),duration:z.number().positive(),audioUntil:z.number().nonnegative().default(0),spoken:z.boolean().default(false),speed:z.number().min(.5).max(2).default(1),framing:z.object({reels:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive(),height:z.number().positive()}).strict().optional(),feed:z.object({x:z.number().nonnegative(),y:z.number().nonnegative(),width:z.number().positive(),height:z.number().positive()}).strict().optional()}).strict().optional(),purpose:z.string(),voicePlaceholder:z.boolean().default(false)}).strict()).min(1),
+  policy:z.object({minEndcardSeconds:z.number().positive(),maxSpokenWpm:z.number().positive(),maxNarrationWpm:z.number().positive().default(135),minReactionSeconds:z.number().nonnegative(),maxCredits:z.number().int().nonnegative().nullable(),voiceStart:z.number().nonnegative()}).strict(),
+  generation:generationSchema.nullable(),
   reviews:z.array(reviewSchema),
   delivery:z.object({artifacts:z.array(z.object({profile:z.enum(['reels','feed']),path:local,sha256:hash})),technicalChecks:z.array(z.string())}).strict().nullable().default(null),
   comparison:z.object({referenceLabel:z.string(),referenceUrl:https,rejectedLabel:z.string(),rejectedUrl:https,notes:z.array(z.object({topic:z.string(),reference:z.string(),rejected:z.string(),rule:z.string()}))}).strict(),
@@ -37,7 +52,7 @@ export function canonical(value:unknown):string {
   return JSON.stringify(value)??'null';
 }
 export function stageInput(p:Project,stage:Stage):unknown {
-  const brief={brief:p.brief,brand:p.brand};
+  const brief={brief:p.brief,brand:p.brand,creative:p.creative??null};
   const script={...brief,script:p.script};
   const voice={...script,voice:p.voice,recording:p.assets.find(a=>a.id===p.voice.recordingAsset)??null};
   const animatic={...voice,timeline:p.timeline,assets:p.assets,policy:p.policy};
@@ -45,7 +60,7 @@ export function stageInput(p:Project,stage:Stage):unknown {
   if(stage==='script')return script;
   if(stage==='voice')return voice;
   if(stage==='animatic')return animatic;
-  return {...animatic,generation:p.generation,...(stage==='final'?{delivery:p.delivery}:{}),stage};
+  return {...animatic,generation:p.generation,authorization:p.authorization??null,...(stage==='final'?{delivery:p.delivery,status:p.status}:{}),stage};
 }
 export async function digest(value:unknown):Promise<string>{
   const bytes=new TextEncoder().encode(canonical(value));
@@ -63,6 +78,8 @@ export function words(text:string):number{return text.trim().split(/\s+/).filter
 export type Finding={code:string;level:'block'|'note';message:string};
 export async function audit(p:Project):Promise<Finding[]>{
   const findings:Finding[]=[];
+  if(p.status==='rejected')findings.push({code:'project-rejected',level:'block',message:'This project is rejected; keep it as comparison and develop a new candidate.'});
+  if(p.creative)findings.push(...creativeAudit(p));
   if(Object.values(p.brand).some(v=>typeof v==='string'&&/^\[.*\]$/.test(v)))findings.push({code:'brand-incomplete',level:'block',message:'Write the business-specific closing line, action and destination.'});
   if(p.brand.headline.length>60||p.brand.cta.length>45||p.brand.destination.length>60)findings.push({code:'endcard-copy',level:'block',message:'Shorten the end-card copy so it can be read clearly on a phone.'});
   if(Object.values(p.brief).some(v=>typeof v==='string'&&(!v.trim()||/^\[.*\]$/.test(v))))findings.push({code:'brief-incomplete',level:'block',message:'Complete the business brief before production.'});
@@ -83,15 +100,37 @@ export async function audit(p:Project):Promise<Finding[]>{
   findings.push({code:'human-judgment',level:'note',message:'Decode, transcript and loudness checks cannot judge whether a voice sounds good or a joke lands.'});
   return findings;
 }
+export function developmentAuthorized(p:Project,now=new Date()):boolean{
+  const a=p.authorization;
+  return !!a&&a.grantedBy==='user'&&a.mode==='agent-directed-development'&&Date.parse(a.at)<=now.getTime()+60_000;
+}
 export async function generationBlockers(p:Project,now=new Date()):Promise<string[]>{
   const reasons:string[]=[];
-  for(const stage of ['brief','script','voice','animatic','spend'] as const){const state=await reviewStatus(p,stage);if(state!=='approved')reasons.push(stage+': '+state);}
+  if(p.status==='rejected')reasons.push('This project was rejected. Develop a new candidate before another paid request.');
+  if(!developmentAuthorized(p,now)){
+    for(const stage of ['brief','script','voice','animatic','spend'] as const){const state=await reviewStatus(p,stage);if(state!=='approved')reasons.push(stage+': '+state);}
+  }
+  if(p.authorization&&!developmentAuthorized(p,now))reasons.push('Development authorization is invalid or future-dated.');
+  if(developmentAuthorized(p,now))reasons.push(...creativeAudit(p).filter(x=>x.level==='block').map(x=>x.message));
   reasons.push(...(await audit(p)).filter(f=>f.level==='block').map(f=>f.message));
   if(!p.generation?.enabled)reasons.push('Paid generation is disabled.');
   if(p.generation){
-    if(p.generation.quote.credits>p.policy.maxCredits)reasons.push('Quote exceeds the project credit cap.');
+    if(p.policy.maxCredits!==null&&p.generation.quote.credits>p.policy.maxCredits)reasons.push('Quote exceeds the project credit cap.');
+    if(p.creative&&p.generation.tool==='mcp__codex_apps__runway_generate_video'&&(p.generation.purpose??'scene')==='scene'&&p.script.lines.some(l=>!p.generation!.arguments.promptText.includes(l.text)))reasons.push('The filming request does not contain the exact selected character lines.');
     const age=now.getTime()-Date.parse(p.generation.quote.checkedAt);
     if(age<0||age>24*60*60*1000)reasons.push('Refresh the generation quote before approving spend.');
   }
-  return reasons;
+  return Array.from(new Set(reasons));
 }
+
+export function candidateCoverage(p:Project):Finding[]{
+ if(!p.creative)return [];
+ const findings:Finding[]=[];
+ for(const role of ['process','result'] as const){
+  if(!p.timeline.some(s=>s.role===role&&s.kind==='video'&&p.assets.some(a=>a.id===s.assetId&&a.kind==='video'))){
+   findings.push({code:'candidate-'+role,level:'block',message:'The candidate needs actual '+role+' footage. A plan or placeholder is insufficient.'});
+  }
+ }
+ return findings;
+}
+export async function dialogueHash(p:Project):Promise<string>{return digest(p.script.lines.map(l=>({speaker:l.speaker,text:l.text})));}

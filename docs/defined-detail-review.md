@@ -30,3 +30,12 @@ Keiron also rejected the Personal Space cut: "thats terrible. try again, look at
 The tiny step and generic owner-hovering situation did not satisfy the brief. Its technical checks did not make it an accepted advert. Keep its assets and recipe for comparison, and record its status as rejected.
 
 The next review candidate, Kitchen's Next, centres the immaculate car: the owner's partner assumes it is newly purchased, then gives him the kitchen to clean. It retains a full three-turn exchange and a 5.5-second close. The production recipe, exact spend and media hashes are in productions/defined-detail-kitchens-next/. Keiron has not accepted this new candidate.
+
+
+## Kitchen's Next: further changes requested
+
+On 6 November Keiron said the CTN adverts were still better and instructed: "so on the repo, make it alot better, then try again, there isnt a limit on credits".
+
+The kitchen punchline diverted the story from car cleaning, and the film showed a clean car without showing the work. Its narrator said only an unrelated reused sentence, rather than the complete business name, service and action. Good framing and technical checks did not resolve those weaknesses.
+
+The new colour-reveal dossier compares five ideas, commits to actual process and result coverage and requires a fresh complete branded read. Explicit development authority and an uncapped budget record the user's instruction; human creative acceptance remains separate.

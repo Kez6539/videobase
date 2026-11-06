@@ -24,3 +24,16 @@ This is an offline review receipt, not an identity or authentication system. Bro
 The source repository is public. Keep local media and account data in ignored `.videobase/`. `verify-assets` resolves paths and checks bytes before rendering. A generated voice must not be accepted merely because a transcription has the right words. Listen to it dry and with the picture; inspect actual delivery, accent and brand pronunciation.
 
 Candidate checks include decode, dimensions, duration and audio sample rate. Loudness is normalized during rendering. A technical report does not certify performance, typography, humour, lip sync or visual continuity. Human review remains explicit.
+
+
+## Creative development
+
+creative records alternatives, selectionReason, service truth, continuity references, rejected-cut lessons, process/result coverage and spokenClose (businessName, service, action). The chosen dialogue must match script.lines; the complete closing copy must match script.closingCopy.
+
+Optional authorization records an explicit agent-directed-development instruction, grantedBy=user and an ISO time. It permits development, not final creative acceptance. Missing authority retains review-first behavior. Future-dated grants cannot bypass review.
+
+policy.maxCredits is a nonnegative integer or null. Null means no project ceiling; zero disables spend. Requests still need current quotes. A stable request identity excludes volatile quote dates. generation.takeLabel names an intentional extra performance; generation.purpose identifies scene, process or result.
+
+Timeline shots may declare role and per-profile framing rectangles. Assets may declare scriptHash; a spoken source in a creative candidate must match dialogueHash. A creative candidate requires actual video assets for process and result. Placeholders remain draft-only.
+
+Brand settings support fontFamily, a verified fontAsset and per-profile sceneLogo coordinates. Fonts remain private assets. Measured end-card bounds are written next to each generated card. Media paths keep the existing workspace boundary checks.

@@ -8,7 +8,7 @@ const entry=z.object({requestId:z.string(),projectId:z.string(),credits:z.number
 const ledgerSchema=z.array(entry);
 export type Ledger=z.infer<typeof ledgerSchema>;
 async function ledger(file:string):Promise<Ledger>{try{return ledgerSchema.parse(JSON.parse(await readFile(file,'utf8')));}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return [];throw e;}}
-export async function requestId(p:Project):Promise<string>{return digest({projectId:p.id,request:p.generation});}
+export async function requestId(p:Project):Promise<string>{const g=p.generation;return digest({projectId:p.id,workspaceId:g?.workspaceId,tool:g?.tool,arguments:g?.arguments,purpose:g?.purpose??'scene',takeLabel:g?.takeLabel??'first-take'});}
 export function committedCredits(items:Ledger,projectId:string):number{return items.filter(x=>x.projectId===projectId&&x.state!=='cancelled').reduce((sum,x)=>sum+(x.actualCredits??x.credits),0);}
 export async function reserveRequest(root:string,p:Project,now=new Date()):Promise<unknown>{
   const blockers=await generationBlockers(p,now);if(blockers.length)throw Error('Generation locked:\n'+blockers.join('\n'));
@@ -17,7 +17,7 @@ export async function reserveRequest(root:string,p:Project,now=new Date()):Promi
   return withLock(file+'.lock',async()=>{
     const items=await ledger(file);const id=await requestId(p);
     if(items.some(x=>x.requestId===id))throw Error('This request already has a reservation. Inspect its task receipt; never submit a blind retry.');
-    if(committedCredits(items,p.id)+g.quote.credits>p.policy.maxCredits)throw Error('Reserved and spent credits would exceed the project cap.');
+    if(p.policy.maxCredits!==null&&committedCredits(items,p.id)+g.quote.credits>p.policy.maxCredits)throw Error('Reserved and spent credits would exceed the project cap.');
     const item={requestId:id,projectId:p.id,credits:g.quote.credits,state:'reserved' as const,reservedAt:now.toISOString()};
     const request={...item,workspaceId:g.workspaceId,tool:g.tool,arguments:g.arguments,notice:'A local reservation, not a Runway submission. Submit exactly once through the approved connection, then record the task id. Do not purchase credits automatically.'};
     // Persist the reservation first: an interrupted export cannot create a second spend.
