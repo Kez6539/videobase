@@ -1,0 +1,633 @@
+{
+  "version": 1,
+  "project": "defined-detail-taxi",
+  "status": "21-second picture cut published; exact Adam read pending",
+  "preview": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/index.html",
+  "producedOn": "Hermes VPS",
+  "producedAt": "2026-11-06T12:36:01.377729+00:00",
+  "repository": "Kez6539/videobase",
+  "userInstruction": {
+    "mode": "agent-directed-development",
+    "instruction": "and now fix so its a 10/10 , ultracode, multiple agents, stop rushing",
+    "at": "2026-11-06T11:19:05.310487Z",
+    "grantedBy": "user"
+  },
+  "assemblyAuthorization": {
+    "source": "user chat",
+    "text": "Approve this exact assembly",
+    "scope": "8.5s spoken sketch,3s matching wash,4s clean-car detail,5.5s brand close; closing music; narrator pending; no additionalRunwaycredits",
+    "finalCreativeAcceptance": false
+  },
+  "dialogue": [
+    {
+      "speaker": "Detailer",
+      "text": "Your car's ready.",
+      "performance": "Warm practical handover. Hold the keys slightly forward without completing a handoff.",
+      "start": 0,
+      "end": 0.82
+    },
+    {
+      "speaker": "Owner",
+      "text": "I'll get a taxi.",
+      "performance": "A calm sensible decision. No smirk, no phone action.",
+      "start": 1.86,
+      "end": 2.7
+    },
+    {
+      "speaker": "Detailer",
+      "text": "What about your car?",
+      "performance": "A sincere practical follow-up, looking at him rather than the camera.",
+      "start": 4.02,
+      "end": 5.22
+    },
+    {
+      "speaker": "Owner",
+      "text": "I've just had it cleaned.",
+      "performance": "A perfectly reasonable explanation, lightly stressing just. Do not perform the punchline; preserve the reaction.",
+      "start": 5.7,
+      "end": 6.98
+    }
+  ],
+  "captionWindows": [
+    {
+      "kind": "dialogue",
+      "text": "Your car's ready.",
+      "start": 0,
+      "end": 1.55
+    },
+    {
+      "kind": "dialogue",
+      "text": "I'll get a taxi.",
+      "start": 1.86,
+      "end": 3.32
+    },
+    {
+      "kind": "dialogue",
+      "text": "What about your car?",
+      "start": 4.02,
+      "end": 5.4
+    },
+    {
+      "kind": "dialogue",
+      "text": "I've just had it cleaned.",
+      "start": 5.7,
+      "end": 7.6
+    }
+  ],
+  "selectedPerformance": {
+    "taskId": "42bd267f-ccfa-42a2-86aa-8aafe61a8eda",
+    "reason": "Closer native framing and continuous reply; A/B audio preference inconclusive.",
+    "scriptHash": "4cc1c3609233b6421691e8c1ecaeaac947fa4f39038c1b61c8d329edd0a92668",
+    "actualSpeechWindows": [
+      {
+        "speaker": "Detailer",
+        "text": "Your car's ready.",
+        "performance": "Warm practical handover. Hold the keys slightly forward without completing a handoff.",
+        "start": 0,
+        "end": 0.82
+      },
+      {
+        "speaker": "Owner",
+        "text": "I'll get a taxi.",
+        "performance": "A calm sensible decision. No smirk, no phone action.",
+        "start": 1.86,
+        "end": 2.7
+      },
+      {
+        "speaker": "Detailer",
+        "text": "What about your car?",
+        "performance": "A sincere practical follow-up, looking at him rather than the camera.",
+        "start": 4.02,
+        "end": 5.22
+      },
+      {
+        "speaker": "Owner",
+        "text": "I've just had it cleaned.",
+        "performance": "A perfectly reasonable explanation, lightly stressing just. Do not perform the punchline; preserve the reaction.",
+        "start": 5.7,
+        "end": 6.98
+      }
+    ],
+    "captionWindows": [
+      {
+        "kind": "dialogue",
+        "text": "Your car's ready.",
+        "start": 0,
+        "end": 1.55
+      },
+      {
+        "kind": "dialogue",
+        "text": "I'll get a taxi.",
+        "start": 1.86,
+        "end": 3.32
+      },
+      {
+        "kind": "dialogue",
+        "text": "What about your car?",
+        "start": 4.02,
+        "end": 5.4
+      },
+      {
+        "kind": "dialogue",
+        "text": "I've just had it cleaned.",
+        "start": 5.7,
+        "end": 7.6
+      }
+    ],
+    "humanApproval": false
+  },
+  "productionCalls": [
+    {
+      "name": "take1",
+      "requestId": "7b4984a582ea9a984930c0a15ce8c360724b7a8e9c925fd5d9d0f947d2eecaae",
+      "taskId": "7e8bc7f1-f1e7-4353-ac6e-8d7c68ea89f0",
+      "actualCredits": 400,
+      "quotedCredits": 400,
+      "providerStatus": "succeeded",
+      "request": {
+        "enabled": true,
+        "purpose": "scene",
+        "takeLabel": "taxi ordinary clothes / first complete spoken pilot",
+        "tool": "mcp__codex_apps__runway_generate_video",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "seedance-2",
+          "promptText": "A ten-second naturalistic British comedy advert, filmed as one continuous medium two-shot in a real professional car-detailing bay. Soft side-window daylight, soft white inspection-light reflections, natural skin and believable paint and glass. The reference image anchors the same immaculate cobalt-blue sports coupe, rounded headlights, black split-spoke wheels and grey studio. Keep the clean blue bonnet and both actors' faces clearly readable in the portrait frame.\n\nA fictional female detailer in her thirties, black polo and dark hair tied back, stands beside the car holding its keys. A fictional male customer in his fifties, short grey hair, sage overshirt and grey T-shirt, has come to collect his own car. Ordinary clothes. The owner is affectionate and slightly overprotective of the beautiful finish; he behaves as if his decision is completely reasonable.\n\nThe detailer offers the keys slightly forward without a handoff and says: \"Your car's ready.\"\nThe owner replies calmly: \"I'll get a taxi.\"\nThe detailer asks, genuinely puzzled: \"What about your car?\"\nThe owner gives the plain explanation: \"I've just had it cleaned.\"\n\nFour natural British spoken turns in this exact order, one person speaking at a time, with clearly audible dialogue synchronised to the correct lips. Give the final line its own unhurried beat, lightly stressing \"just\". Then hold the detailer's small patient reaction and the owner's sincere composure. No grin, wink, laugh or extra line.\n\nKeep the camera steady, both actors and the clean car in one coherent shot. Quiet workshop room tone. No taxi, phone action, getting into the car, key handoff, narrator, music, captions, graphic text or generated logos. This is the complete acted sketch, not a montage.",
+          "duration": 10,
+          "ratio": "9:16",
+          "resolution": "1080p",
+          "generateAudio": true,
+          "referenceImages": [
+            {
+              "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/assets/clean-master.png",
+              "tag": "car"
+            }
+          ]
+        },
+        "quote": {
+          "credits": 400,
+          "checkedAt": "2026-11-06T11:19:05.312334Z",
+          "source": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/production.json",
+          "notes": "Current connected workspace verified by whoami. Estimate 40 credits/second for seedance-2 1080p, anchored to the same-account 5-second 200-credit task receipt. Actual charge will be recorded separately; user has no project ceiling. This is a new taxi scene, not the denied Blue reservation."
+        }
+      }
+    },
+    {
+      "name": "take2",
+      "requestId": "12bb77316894f4ef7ef5a38fa1511d092ea8bc6b8e3d1e702a491c11698b4a3d",
+      "taskId": "42bd267f-ccfa-42a2-86aa-8aafe61a8eda",
+      "actualCredits": 400,
+      "quotedCredits": 400,
+      "providerStatus": "succeeded",
+      "request": {
+        "enabled": true,
+        "purpose": "scene",
+        "takeLabel": "taxi take 2 / closer frame and natural interplay after actual-audio critique",
+        "tool": "mcp__codex_apps__runway_generate_video",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "seedance-2",
+          "promptText": "Animate the exact supplied image as a ten-second naturalistic British comedy commercial. Preserve these same two fictional people, the immaculate blue sports coupe, wheel and brake details, the offered keys and this detailing bay. Keep this closer medium two-shot: both faces, the keys and the glossy blue bonnet remain prominent. Do not widen the camera or turn it into a montage.\n\nThis should feel like a spontaneously overheard handover between a practical female detailer and a familiar male customer, not actors taking turns reading a script. She is warm and businesslike. He has decided his newly cleaned car is too nice to dirty on the way home, and treats taking a taxi as entirely reasonable. They respond naturally to one another, with brief live reactions rather than artificial gaps. Their ordinary British English is clear and conversational, neither over-enunciated nor hurried.\n\nExactly these four spoken turns, correct speaker, no overlap:\nThe female detailer, offering the keys slightly forward: \"Your car's ready.\"\nThe male owner, matter-of-fact: \"I'll get a taxi.\"\nShe follows up with genuine practical confusion: \"What about your car?\"\nHe answers in one smooth complete sentence: \"I've just had it cleaned.\"\n\nLet the last reply land naturally, then keep a small genuine reaction: she processes his logic; he remains affectionately serious. No knowing grin, comic mugging, extra word, false start, laugh or extra spoken tag. Keep every mouth synchronised to its speaker. The car remains parked. No key handoff, walking, phone, taxi or getting into the car. Quiet native workshop room tone only. No narration, music, captions or generated logos. Natural skin and real-looking reflections, consistent body geometry and hands.",
+          "duration": 10,
+          "ratio": "9:16",
+          "resolution": "1080p",
+          "generateAudio": true,
+          "startFrame": {
+            "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/performance-reference.png"
+          }
+        },
+        "quote": {
+          "credits": 400,
+          "checkedAt": "2026-11-06T11:40:52.961941Z",
+          "source": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/production.json",
+          "notes": "Same connected workspace, actual first Taxi native-dialogue 1080p10s task charged400credits. This purposeful second performance follows actual-audio feedback of metronomic/stage-read delivery and a visual crop review. No change to original denied Blue request."
+        }
+      }
+    },
+    {
+      "name": "clean-result-reference",
+      "requestId": "7fa789a84952bb9187b5436939aae8e7f499cb1224dfbd40d835d9576aa90fe4",
+      "taskId": "8611fa8e-5d12-4142-ba59-bb3ed261b896",
+      "actualCredits": 20,
+      "quotedCredits": 41,
+      "providerStatus": "succeeded",
+      "request": {
+        "enabled": true,
+        "purpose": "reference",
+        "takeLabel": "Taxi matching clean result reference / preserve observed wheel and yellow caliper",
+        "tool": "mcp__codex_apps__runway_generate_image",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "gpt-image-2",
+          "promptText": "Rephotograph the SAME fictional blue sports coupe seen in the reference scene, now without either person or the keys. This is a matching finished-car insert for that commercial, not a replacement car. Preserve the visible cobalt-blue paint, smoothly curved front wing and bonnet, near-wheel design with its bright-edged slender paired spokes and dark recesses, yellow brake caliper, tyre proportions, dark glazing and the same grey studio. Use the scene image as the authority for the vehicle and surroundings.\n\nMove the camera lower and slightly back for a close, elegant front-three-quarter view: the dry blue bonnet, near front wheel, rounded headlight and windscreen fill the portrait picture. Show a coherent premium rear-engine sports-coupe body, with fixed roof and physically realistic panel gaps. The unseen front should be consistent with the visible reference contours. Keep the wheel and yellow caliper especially faithful.\n\nThe car has been properly detailed and is completely dry: clean glass, clean rubber and rich polished blue paint with crisp real reflections. Soft side-window daylight from the same left-hand industrial window and soft white inspection lighting. Retain the high grey detailing bay and plausible concrete floor. No people, water, foam, lances, mist, artificial sparkle stars, invented badges, number plates, writing, watermark, logos or graphic elements. A natural commercial photograph, not glossy CGI. Keep the car prominent and avoid wasted ceiling.",
+          "ratio": "9:16",
+          "count": 1,
+          "referenceImages": [
+            {
+              "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/car-scene-reference.png",
+              "tag": "scene-car"
+            }
+          ]
+        },
+        "quote": {
+          "credits": 41,
+          "checkedAt": "2026-11-06T11:43:08.288645Z",
+          "source": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/production.json",
+          "notes": "Same-day identical model/ratio/count image tasks quoted41 and actuallycharged20. Conservative41quote; record observedactual charge separately. Needed because independent visual review found old wheel/caliper footage did not match the acted Taxi car. Existing acted scene passed exact-word and actual-audio review."
+        }
+      }
+    },
+    {
+      "name": "result-motion",
+      "requestId": "4cfbf7bd940c36c2ef6273c5ec046b752e3b592da360e4bbde49117ff4014f98",
+      "taskId": "cb0755d9-9663-4745-b86f-30b1e6ccc018",
+      "actualCredits": 200,
+      "quotedCredits": 200,
+      "providerStatus": "succeeded",
+      "request": {
+        "enabled": true,
+        "purpose": "result",
+        "takeLabel": "Taxi matching dry hero / reviewed yellow-caliper reference",
+        "tool": "mcp__codex_apps__runway_generate_video",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "seedance-2",
+          "promptText": "A restrained five-second real commercial camera move from this exact clean blue sports-coupe image. The vehicle is parked and absolutely stationary: wheels never rotate, body geometry, slender bright-edged dark wheel spokes, yellow caliper, rounded headlight, glazing and blue paint stay consistent. A very small smooth camera push reveals the dry spotless finish and crisp real window-light reflections. Preserve the reference framing: the near wheel and headlight prominent, no wasted ceiling. Same grey block-walled studio, left black-framed industrial window and white inspection lights. Completely dry car. No people, foam, water, mist, artificial sparkles, distortion, captions, logos or narration. Let the rich clean paint, clean glass and realistic reflections be the payoff.",
+          "duration": 5,
+          "ratio": "9:16",
+          "resolution": "1080p",
+          "generateAudio": false,
+          "startFrame": {
+            "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/clean-result-reels-reference.png"
+          }
+        },
+        "quote": {
+          "credits": 200,
+          "checkedAt": "2026-11-06T11:47:11.661628Z",
+          "source": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/production.json",
+          "notes": "Same-account seedance-2 native1080p5s noaudio actualcharge200 confirmed in prior result task. New reference independently reviewed against actual Taxi car; old inconsistent result will not be reused."
+        }
+      }
+    },
+    {
+      "name": "wash-reference",
+      "requestId": "7f4115c87b22a571fe49b4e3c8d0c084bb48244278d09f032b74575d38221fb4",
+      "taskId": "7dbd6291-9e9d-4a12-9805-9afef28b4604",
+      "actualCredits": 20,
+      "quotedCredits": 41,
+      "providerStatus": "succeeded",
+      "request": {
+        "enabled": true,
+        "purpose": "reference",
+        "takeLabel": "Taxi matching prewash foam reference / same reviewed car",
+        "tool": "mcp__codex_apps__runway_generate_image",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "gpt-image-2",
+          "promptText": "Photograph the exact reference blue coupe in the same studio and same close front-three-quarter composition, during a safe professional prewash. Preserve its rounded headlight, cobalt-blue body contours, slender bright-edged dark near-wheel spokes, yellow brakecaliper, tyre, fixed roof, window and inspection-light positions. The blue bonnet and front wing are covered in believable thick white prewash foam. A black pressure-washer lance enters from upper right, operator entirely outside the frame. Its physically plausible broad fan of water meets the foamy front wing between near wheel and headlight, pushing foam down and away to reveal clean blue paint. Real droplets and foamy runoff on concrete. It is the same car, not a new design. Close tactile commercial photography with natural perspective and real surface contact. Do not wipe dry dirt across paint. No people, hands, text, logos, sparkle stars, misty fantasy effects or transformation morph. Match the supplied vehicle and grey bay exactly.",
+          "ratio": "9:16",
+          "count": 1,
+          "referenceImages": [
+            {
+              "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/clean-result-reels-reference.png",
+              "tag": "same-car"
+            }
+          ]
+        },
+        "quote": {
+          "credits": 41,
+          "checkedAt": "2026-11-06T11:47:11.661628Z",
+          "source": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/production.json",
+          "notes": "Conservative41 for samegptimage2 setup; mostrecent matchingresultreference actuallycharged20. Needed same-car process insert after independent continuity review."
+        }
+      }
+    },
+    {
+      "name": "wash-motion",
+      "requestId": "0dde59d3df14110f91f7536c7a3d465f8bd9738ca24ab7353ec04518f77d4c99",
+      "taskId": "bd9a08f2-2a36-4b4d-b4e8-b7d8ea4ceafb",
+      "actualCredits": 340,
+      "quotedCredits": 340,
+      "providerStatus": "succeeded",
+      "request": {
+        "enabled": true,
+        "purpose": "process",
+        "takeLabel": "Taxi matching physical foam rinse / reviewed new wheel and yellow caliper",
+        "tool": "mcp__codex_apps__runway_generate_video",
+        "workspaceId": 72233744,
+        "arguments": {
+          "model": "seedance-2.5",
+          "promptText": "A five-second tactile photorealistic car-detailing process shot, continuing this exact reference. Same parked cobalt-blue coupe, rounded headlight, slender bright-edged dark wheel, yellow brakecaliper, grey bay and window-light reflections. The black pressure-washer lance stays outside the upper-right edge except its nozzle, at a plausible safe distance. A coherent broad fan of water sweeps slowly across the foamy bonnet and front wing toward the headlight. Water physically pushes the white prewash foam down and off the paint, revealing clean blue surface; realistic droplets and foamy runoff collect on the concrete. One simple continuous cleaning action. Camera steady, car and wheels completely stationary. Preserve body, wheel, glass and lamp geometry; no morph, melting reflections or disappearing parts. No extra hands or people, no captions, logo, narrator, music, sparkle stars or artificial flare. Native real pressure-washer hiss and water runoff only.",
+          "duration": 5,
+          "ratio": "9:16",
+          "resolution": "1080p",
+          "generateAudio": true,
+          "startFrame": {
+            "taskId": "7dbd6291-9e9d-4a12-9805-9afef28b4604"
+          }
+        },
+        "quote": {
+          "credits": 340,
+          "checkedAt": "2026-11-06T11:51:16.642447Z",
+          "source": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/production.json",
+          "notes": "Same-account seedance-2.5 native1080p5s withaudio actualcharge340 in earlier successful foam-rinse task. This request uses the newlymatched car reference to fix specifically observed wheel/caliper continuity. Actor performance assessed first; user has no project ceiling."
+        }
+      }
+    }
+  ],
+  "actualRunwayCredits": 1380,
+  "pictureAssemblyRunwayCredits": 0,
+  "externalAudioQA": {
+    "requests": 2,
+    "model": "gemini-3.8-flash",
+    "actualAudioInput": true,
+    "expectedTranscriptSupplied": false,
+    "all16WordsHeard": true,
+    "comparativeFinding": "Both Taxi takes clean and acoustically very similar; CTN sharper tonal contrast. Take2 selected for closer picture and continuous complete reply, not claimed superior acoustically.",
+    "humanApproval": false,
+    "actualChargeUSD": null,
+    "billingNote": "API did not expose actual billing or free-tier status; token receipts retained privately."
+  },
+  "narrator": {
+    "requiredName": "Adam Stone - Warm, Upbeat & Confident",
+    "requiredVoiceId": "DEFpwxCUkrj3WAbTDRTZ",
+    "words": "Defined Detail. Car cleaning and detailing in Telford. Message us to book.",
+    "state": "not recorded for this cut",
+    "substituteUsed": false,
+    "oldDefinedDetailRead": {
+      "taskId": "44a63266-1a91-4c6e-8058-cb8312a8265c",
+      "voice": "Tom",
+      "words": "Time to evict the mess. Defined Detail. Telford.",
+      "used": false
+    }
+  },
+  "edit": {
+    "seconds": 21,
+    "timeline": [
+      {
+        "id": "setup",
+        "label": "Taxi / selected complete spoken take",
+        "role": "setup",
+        "kind": "video",
+        "assetId": "taxi-acted-scene",
+        "sourceStart": 0,
+        "duration": 8.5,
+        "audioUntil": 8.5,
+        "spoken": true,
+        "speed": 1,
+        "framing": {
+          "reels": {
+            "x": 0,
+            "y": 0,
+            "width": 1080,
+            "height": 1920
+          },
+          "feed": {
+            "x": 0,
+            "y": 70,
+            "width": 1080,
+            "height": 1350
+          }
+        },
+        "purpose": "Complete four-line exchange, original speech speed, approximately1.5s reaction. Selected for closer readable picture and continuous final reply; audio comparison did not prove take2 better than take1.",
+        "voicePlaceholder": false
+      },
+      {
+        "id": "wash",
+        "label": "Matching physical foam rinse",
+        "role": "process",
+        "kind": "video",
+        "assetId": "taxi-wash",
+        "sourceStart": 0.7,
+        "duration": 3,
+        "audioUntil": 3,
+        "spoken": false,
+        "speed": 1,
+        "framing": {
+          "reels": {
+            "x": 4,
+            "y": 0,
+            "width": 1076,
+            "height": 1912
+          },
+          "feed": {
+            "x": 2,
+            "y": 150,
+            "width": 1080,
+            "height": 1350
+          }
+        },
+        "purpose": "Physical foam removal on the matching wheel/caliper/body. Native water is about10LU below dialogue before mastering.",
+        "voicePlaceholder": false
+      },
+      {
+        "id": "result",
+        "label": "Matching dry blue finish detail",
+        "role": "result",
+        "kind": "video",
+        "assetId": "taxi-result",
+        "sourceStart": 0.3,
+        "duration": 4,
+        "audioUntil": 0,
+        "spoken": false,
+        "speed": 1,
+        "framing": {
+          "reels": {
+            "x": 0,
+            "y": 0,
+            "width": 1080,
+            "height": 1920
+          },
+          "feed": {
+            "x": 0,
+            "y": 200,
+            "width": 1080,
+            "height": 1350
+          }
+        },
+        "purpose": "Clean paint, headlight and wheel detail. Feed is deliberately tighter, not a full-car reveal. Intended Adam read enters over live picture.",
+        "voicePlaceholder": false
+      },
+      {
+        "id": "close",
+        "label": "Defined Detail / booking close",
+        "role": "brand",
+        "kind": "card",
+        "sourceStart": 0,
+        "duration": 5.5,
+        "audioUntil": 0,
+        "spoken": false,
+        "speed": 1,
+        "purpose": "Real brand, service and booking action. Exact Adam recording pending; this approved picture cut does not substitute the old reference recreation.",
+        "voicePlaceholder": false
+      }
+    ],
+    "music": {
+      "assetId": "closing-music",
+      "start": 13.7,
+      "volumeDb": -24,
+      "fadeIn": 0.4,
+      "fadeOut": 1.2
+    },
+    "voiceStartPlanned": 13.8,
+    "speechSpeed": 1
+  },
+  "assets": [
+    {
+      "id": "logo",
+      "path": ".videobase/assets/defined-detail/logo.png",
+      "sha256": "643de4d5e49ebe2e6339cdc79752cc541b80be01ef1d9cde0c94966b66e2daf5",
+      "kind": "image",
+      "sourceUrl": "https://static.wixstatic.com/media/ea4773_ba539c7be6e9499f89c3ab1923c26f73~mv2.png"
+    },
+    {
+      "id": "brand-font",
+      "path": ".videobase/assets/defined-detail-colour/Poppins-Bold.ttf",
+      "sha256": "983676516167748b74de6f4771fb384c664fd913acb8b471122ecacf5da5ea6c",
+      "kind": "font"
+    },
+    {
+      "id": "closing-music",
+      "path": ".videobase/assets/defined-detail-taxi/closing-music.mp3",
+      "sha256": "43f228858683609d579600eb86a58d06b39cd21d20a525b6506752bab00a14bb",
+      "kind": "audio"
+    },
+    {
+      "id": "taxi-acted-scene",
+      "path": ".videobase/assets/defined-detail-taxi/acted-scene-take2.mp4",
+      "sha256": "be45affb0bade0cfdda56c83baa3e3f38c39ddf80899423b05a636e84e8b3f4a",
+      "kind": "video",
+      "scriptHash": "4cc1c3609233b6421691e8c1ecaeaac947fa4f39038c1b61c8d329edd0a92668",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/scene-take2-review.mp4"
+    },
+    {
+      "id": "taxi-wash",
+      "path": ".videobase/assets/defined-detail-taxi/matching-wash.mp4",
+      "sha256": "cb5aadc4eac78d749fa66dddebd99460512e3c778a95acd5977fe792731c367d",
+      "kind": "video"
+    },
+    {
+      "id": "taxi-result",
+      "path": ".videobase/assets/defined-detail-taxi/matching-result.mp4",
+      "sha256": "9088be0372298825e18659b3554aa59e6a0729be6e25b5042e3e6be69d01ad75",
+      "kind": "video"
+    },
+    {
+      "id": "taxi-car-reference",
+      "path": ".videobase/assets/defined-detail-taxi/car-scene-reference.png",
+      "sha256": "0928d9b00d9100c0c11c98d7019c89f407b6f4d92ca2fb9affc1ea33ec0c9e4e",
+      "kind": "image",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/car-scene-reference.png"
+    },
+    {
+      "id": "taxi-clean-reference",
+      "path": ".videobase/assets/defined-detail-taxi/clean-result-reference.png",
+      "sha256": "267b32161efe6c1f265936d3fbf32d21b3105539e1d6c5ff476e4b1f4426c7a2",
+      "kind": "image",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/clean-result-reference.png"
+    },
+    {
+      "id": "taxi-wash-reference",
+      "path": ".videobase/assets/defined-detail-taxi/wash-reference.png",
+      "sha256": "ac8a5d6cd35cf84252eb0569d1623dccdcd717bfb5925edbbfd071afa9d08988",
+      "kind": "image",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/wash-reference.png"
+    }
+  ],
+  "pictureOutputs": {
+    "reels": {
+      "seconds": 21,
+      "sha256": "d825e97b1e4626f3472531957d6eed3ec9567a5e6714dafb986a8ab14b150c17",
+      "fullDecode": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": "30/1",
+      "sampleRate": "48000",
+      "channels": 2,
+      "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/defined-detail-taxi-reels-picture.mp4"
+    },
+    "feed": {
+      "seconds": 21,
+      "sha256": "ff7f8cbff473dc9eb80225fdad9a16df0d3b920707a6d9fec997429cf7aa0f93",
+      "fullDecode": true,
+      "width": 1080,
+      "height": 1350,
+      "fps": "30/1",
+      "sampleRate": "48000",
+      "channels": 2,
+      "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/defined-detail-taxi-feed-picture.mp4"
+    }
+  },
+  "subtitlesContainOnlyRecordedDialogue": true,
+  "visualReview": {
+    "visibleContinuity": "Wheel spokes, yellow caliper, blue body and bay coherent in inspected source sequences. Newly revealed nose was not visible in actor shot.",
+    "feedFraming": "Deliberate paint/wheel/headlight detail crop, not a full-car reveal.",
+    "humanCreativeAcceptance": "pending"
+  },
+  "checks": {
+    "testsPassed": 63,
+    "build": "passed",
+    "workbenchBrowser": "played scene to end,390px no overflow, no console errors, exact-voice mismatch approval blocked",
+    "browserPicturePlayback": {
+      "reels": {
+        "seconds": 21,
+        "width": 1080,
+        "height": 1920,
+        "playedToEnd": true,
+        "muted": false
+      },
+      "feed": {
+        "seconds": 21,
+        "width": 1080,
+        "height": 1350,
+        "playedToEnd": true,
+        "muted": false
+      },
+      "mobileViewport": 390,
+      "mobileContentWidth": 390,
+      "copyAdamRead": "Copied",
+      "pageErrors": []
+    },
+    "hosted": {
+      "files": [
+        {
+          "file": "index.html",
+          "status": 200,
+          "sha256": "50de6f7cbfd6a1e00f431d943a7b209872d0aab65cfbb006b83de6c150e4f666"
+        },
+        {
+          "file": "defined-detail-taxi-reels-picture.mp4",
+          "status": 200,
+          "sha256": "d825e97b1e4626f3472531957d6eed3ec9567a5e6714dafb986a8ab14b150c17"
+        },
+        {
+          "file": "defined-detail-taxi-feed-picture.mp4",
+          "status": 200,
+          "sha256": "ff7f8cbff473dc9eb80225fdad9a16df0d3b920707a6d9fec997429cf7aa0f93"
+        },
+        {
+          "file": "captions.vtt",
+          "status": 200,
+          "sha256": "2579e71b915f1ab5038764f30fb76e49ea324bea03610493b320f084d71c40ac"
+        },
+        {
+          "file": "defined-detail-taxi-picture-cuts.zip",
+          "status": 200,
+          "sha256": "b4c17b7d117b8f3170ca9dfc7e1982e595bf90d065794727cc4113b26765e4bc"
+        }
+      ],
+      "range": 206
+    },
+    "zipCRC": "passed",
+    "githubCIStatus": "Final source commit verification pending; local 63 tests and build passed"
+  },
+  "previousBlueReservation": "Not retried; its original denial remains a separate historical event.",
+  "codeBaseCommit": "804f6b75b18a7c0391f3e0540414467855c481ec",
+  "sourceFileHashes": {
+    "src/project.ts": "9fe2be97c847f5fefc47310619ea633eee3dc01d9654f21971749ab614c01885",
+    "src/render.ts": "ddd5ea2247149482496c7272f01d6aa4a30965b9b94fda4e09bdd7e4f6c21d85",
+    "web/main.ts": "067e11dc6abd9b62edece3ebc258cb4e65151ed4257af7e8df2d87e999bfdb05",
+    "web/creative.ts": "7c0ee8af1482829db4ec2113d649c0d778e42a90b6447b65eb439b2fb0aaea48"
+  },
+  "renderInputHash": "0e0901040558526cbb6082c2df8b119de4098a95fb8c9b83d70baad1d9e9ddd5"
+}

@@ -3,9 +3,9 @@
   "creative": {
     "version": 1,
     "serviceTruth": "Defined Detail professionally cleans and details vehicles in Telford, including everyday cars and supercars. The advert must show dirt being removed and a visibly clean car.",
-    "audienceRecognition": "You know the car is a lovely colour; the layers of road grime have made that difficult to prove.",
+    "audienceRecognition": "After a proper detail, the first dirty drive feels like spoiling the finish. This fictional owner takes that affection to an unreasonable conclusion.",
     "visualStyle": "Photorealistic British commercial photography. Warm side-window daylight balanced with soft white inspection lights. Natural skin, tactile water and paint, restrained sincere performances and dimensional light. No artificial star sparkles.",
-    "continuity": "The same fictional unbadged cobalt-blue rear-engine sports coupe, rounded headlights, black five-split-spoke wheels and grey detailing bay as the clean-master reference. Warm window daylight from the left and soft white inspection lights. Fictional woman detailer in black polo, dark tied-back hair; fictional grey-haired man owner in sage overshirt and grey T-shirt. No real employee likeness is claimed.",
+    "continuity": "The actual fictional cobalt-blue fixed-roof sports coupe from the selected acting take. Dark slender bright-edged wheel spokes, yellow brakecaliper, rounded newlyrevealed headlight, blue front-wing/bonnet contours. Same tall black-framed left window, grey block wall, upright and diagonal inspection lights. The matching wash/result were regenerated around this observed car; the previous different wheel set is excluded. Nose details were not visible in the dialogue frame and are a coherent fictional extension, not a verified real customer vehicle.",
     "references": [
       {
         "name": "CTN: Contract wedding",
@@ -56,29 +56,29 @@
             "speaker": "Detailer",
             "text": "Your car's ready.",
             "performance": "Warm practical handover. Hold the keys slightly forward without completing a handoff.",
-            "start": 0.3,
-            "end": 1.7
+            "start": 0,
+            "end": 0.82
           },
           {
             "speaker": "Owner",
             "text": "I'll get a taxi.",
             "performance": "A calm sensible decision. No smirk, no phone action.",
-            "start": 2.2,
-            "end": 4
+            "start": 1.86,
+            "end": 2.7
           },
           {
             "speaker": "Detailer",
             "text": "What about your car?",
             "performance": "A sincere practical follow-up, looking at him rather than the camera.",
-            "start": 4.5,
-            "end": 6
+            "start": 4.02,
+            "end": 5.22
           },
           {
             "speaker": "Owner",
             "text": "I've just had it cleaned.",
             "performance": "A perfectly reasonable explanation, lightly stressing just. Do not perform the punchline; preserve the reaction.",
-            "start": 6.5,
-            "end": 8.7
+            "start": 5.7,
+            "end": 6.98
           }
         ]
       },
@@ -254,16 +254,16 @@
       {
         "id": "rinse",
         "role": "process",
-        "description": "Close view of a pressure-wash fan moving steadily across thick prewash foam on the same blue front wing. The water physically removes foam and road grime to reveal clean blue paint. An operator in a black polo is mostly outside frame; the lance stays plausibly separated from the car. No dry wiping. A single simple action.",
-        "duration": 4,
-        "reference": "The same clean master car reference, front wing geometry, blue paint and wheel."
+        "description": "A coherent pressure-washer fan moves across the selected blue coupe, pushing white foam off its headlight and front wing. The bright-edged dark wheel and yellow caliper stay stationary. Real-looking runoff, no people or invented badges.",
+        "duration": 3,
+        "reference": "Actual Taxi scene car and its derived matching clean-result/foam reference images. The older colour project car is excluded."
       },
       {
         "id": "hero",
         "role": "result",
-        "description": "Low three-quarter hero view of the same dry, spotless blue sports coupe in the same studio. Slow restrained camera movement shows crisp inspection-light reflections on the blue bonnet, clean glass and the pristine wheel. Let the car fill the picture. No people, fake star sparkles, transformation morph or invented badges.",
+        "description": "A restrained close front-quarter view of the same matching dry blue finish, near wheel, yellow caliper and headlight. Feed is an intentional detail crop rather than a full-car reveal.",
         "duration": 4,
-        "reference": "The clean master car reference; match body, rounded headlights, black five-split-spoke wheel, colour and bay."
+        "reference": "Actual Taxi scene car and its derived matching clean-result/foam reference images. The older colour project car is excluded."
       }
     ],
     "spokenClose": {
@@ -279,9 +279,10 @@
     "grantedBy": "user"
   },
   "id": "defined-detail-taxi",
-  "name": "Defined Detail / The taxi / spoken pilot",
-  "status": "development",
+  "name": "Defined Detail / The taxi / picture cut, Adam pending",
+  "status": "in-review",
   "brief": {
+    "format": "acted-comedy",
     "business": "Defined Detail",
     "product": "Car cleaning and detailing in Telford",
     "audience": "Drivers around Telford who value a properly clean car, including owners of premium cars and supercars.",
@@ -302,12 +303,23 @@
       "Fake sparkle overlays",
       "Cutting or accelerating dialogue",
       "Inventing creative approval"
-    ],
-    "format": "acted-comedy"
+    ]
   },
   "brand": {
     "fontFamily": "Poppins",
     "fontAsset": "brand-font",
+    "sceneLogo": {
+      "reels": {
+        "x": 760,
+        "y": 1000,
+        "width": 180
+      },
+      "feed": {
+        "x": 760,
+        "y": 980,
+        "width": 180
+      }
+    },
     "name": "Defined Detail",
     "headline": "Almost too clean.",
     "background": "#101112",
@@ -318,6 +330,7 @@
     "destination": "facebook.com/DefinedDetail"
   },
   "script": {
+    "format": "dialogue",
     "premise": "At collection, the owner decides to take a taxi rather than expose his freshly detailed car to use.",
     "whyFunny": "The customer contradicts the practical purpose of collecting his own car. The last line reveals an affectionate but absurd determination to preserve its clean finish.",
     "lines": [
@@ -325,73 +338,73 @@
         "speaker": "Detailer",
         "text": "Your car's ready.",
         "performance": "Warm practical handover. Hold the keys slightly forward without completing a handoff.",
-        "start": 0.3,
-        "end": 1.7
+        "start": 0,
+        "end": 0.82
       },
       {
         "speaker": "Owner",
         "text": "I'll get a taxi.",
         "performance": "A calm sensible decision. No smirk, no phone action.",
-        "start": 2.2,
-        "end": 4
+        "start": 1.86,
+        "end": 2.7
       },
       {
         "speaker": "Detailer",
         "text": "What about your car?",
         "performance": "A sincere practical follow-up, looking at him rather than the camera.",
-        "start": 4.5,
-        "end": 6
+        "start": 4.02,
+        "end": 5.22
       },
       {
         "speaker": "Owner",
         "text": "I've just had it cleaned.",
         "performance": "A perfectly reasonable explanation, lightly stressing just. Do not perform the punchline; preserve the reaction.",
-        "start": 6.5,
-        "end": 8.7
+        "start": 5.7,
+        "end": 6.98
       }
     ],
     "captions": [
       {
         "kind": "dialogue",
         "text": "Your car's ready.",
-        "start": 0.3,
-        "end": 1.7
+        "start": 0,
+        "end": 1.55
       },
       {
         "kind": "dialogue",
         "text": "I'll get a taxi.",
-        "start": 2.2,
-        "end": 4
+        "start": 1.86,
+        "end": 3.32
       },
       {
         "kind": "dialogue",
         "text": "What about your car?",
-        "start": 4.5,
-        "end": 6
+        "start": 4.02,
+        "end": 5.4
       },
       {
         "kind": "dialogue",
         "text": "I've just had it cleaned.",
-        "start": 6.5,
-        "end": 8.7
+        "start": 5.7,
+        "end": 7.6
       },
       {
         "kind": "narration",
         "text": "Defined Detail.",
-        "start": 14.2,
-        "end": 15.4
+        "start": 13.8,
+        "end": 15
       },
       {
         "kind": "narration",
         "text": "Car cleaning and detailing in Telford.",
-        "start": 15.6,
-        "end": 18.05
+        "start": 15.2,
+        "end": 17.7
       },
       {
         "kind": "narration",
         "text": "Message us to book.",
-        "start": 18.3,
-        "end": 19.56
+        "start": 18,
+        "end": 19.2
       }
     ],
     "closingCopy": "Defined Detail. Car cleaning and detailing in Telford. Message us to book.",
@@ -400,36 +413,24 @@
       "Defined": "dih-FYND",
       "Detail": "DEE-tail",
       "Telford": "TEL-fuhd"
-    },
-    "format": "dialogue"
+    }
   },
   "voice": {
-    "referenceName": "Adam Stone \u00b7 CTN reference",
+    "requireExactSelectedVoice": true,
+    "referenceName": "Adam Stone · CTN reference",
     "referenceUrl": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
     "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
-    "direction": "Exact selected Adam Stone identity remains required for the final film. The existing Qwen read is an unapproved reference recreation, retained only as a clearly labelled development audition.",
+    "direction": "Exact Adam Stone Warm Upbeat and Confident library identity, selectedvoiceID DEFpwxCUkrj3WAbTDRTZ. User confirmed it exists in their Runway library. Final read is pending. No reference recreation is attached to this project.",
     "auditions": [
       {
         "id": "adam",
-        "name": "Adam Stone \u00b7 the CTN reference",
+        "name": "Adam Stone · the CTN reference",
         "voiceId": "DEFpwxCUkrj3WAbTDRTZ",
         "url": "https://runway-static-assets.s3.amazonaws.com/public-model-resources/pier-pledge/voice/DEFpwxCUkrj3WAbTDRTZ/5d1971fbbf9058d2b77dd8031d0170274c1c593f441fe6db688c0ac23f824e2f.mp3",
         "script": "Existing library preview. Tone reference only; this is not Defined Detail copy.",
         "selected": true
       }
-    ],
-    "recordingProvenance": {
-      "method": "reference-recreation",
-      "referenceVoiceId": "DEFpwxCUkrj3WAbTDRTZ",
-      "referenceSHA256": "9d211b7c7cbedef9ad690b142b1ca1abda4086edb6fa615626038a15ff428e4b",
-      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-      "reportUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/voice-provenance.json"
-    },
-    "recordingAsset": "brand-voice",
-    "recordingUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/voice-audition-2.wav",
-    "recordingDuration": 5.36,
-    "recordingScriptHash": "f0e5a0897ea897a221b1513a8978a1f01cb6cfcb44aa82b46f0f4fa4675d908b",
-    "requireExactSelectedVoice": true
+    ]
   },
   "assets": [
     {
@@ -446,135 +447,65 @@
       "kind": "font"
     },
     {
-      "id": "brand-voice",
-      "path": ".videobase/assets/defined-detail-colour/voice-f1fc716264c31cb3.wav",
-      "sha256": "f1fc716264c31cb3f5c9016b6744e6e5c375e761d9d06f2b7f6279f7778e069b",
+      "id": "closing-music",
+      "path": ".videobase/assets/defined-detail-taxi/closing-music.mp3",
+      "sha256": "43f228858683609d579600eb86a58d06b39cd21d20a525b6506752bab00a14bb",
       "kind": "audio"
     },
     {
-      "id": "setup-plan",
-      "path": ".videobase/assets/defined-detail-colour/setup-plan.png",
-      "sha256": "8f67c11318438e8c41f04eaf400a5457871c10745635b1b17dd19c122c6cfd08",
-      "kind": "image"
-    },
-    {
-      "id": "process-plan",
-      "path": ".videobase/assets/defined-detail-colour/process-plan.png",
-      "sha256": "bf2be2c1c64c050f5fe7fefcbe40681db6c65cb7b529ba9670e9929f889c3ba3",
-      "kind": "image"
-    },
-    {
-      "id": "result-plan",
-      "path": ".videobase/assets/defined-detail-colour/result-plan.png",
-      "sha256": "ca8eb5e540e364410cf3419f28a194845029daa38af2ddbfd6f94955fc716390",
-      "kind": "image"
-    },
-    {
-      "id": "clean-master",
-      "path": ".videobase/assets/defined-detail-colour/clean-master.png",
-      "kind": "image",
-      "sha256": "ed08c93d2c42a0f49b1bd69259cf6b709d0a5af24ab5537c68a45e31807469bb",
-      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/assets/clean-master.png"
-    },
-    {
-      "id": "dirty-scene",
-      "kind": "image",
-      "path": ".videobase/assets/defined-detail-colour/dirty-scene.png",
-      "sha256": "375f28766fc1f839d9ed918b57d3080ce543807cfa8c5de6263e85e9f194cbad"
-    },
-    {
-      "id": "foam-process",
-      "kind": "image",
-      "path": ".videobase/assets/defined-detail-colour/foam-process.png",
-      "sha256": "143039c3053ed8ad85fc6678e57277f137b21a983e717be4b9d6d62d01b15b1e"
-    },
-    {
-      "id": "hero-motion",
+      "id": "taxi-acted-scene",
+      "path": ".videobase/assets/defined-detail-taxi/acted-scene-take2.mp4",
+      "sha256": "be45affb0bade0cfdda56c83baa3e3f38c39ddf80899423b05a636e84e8b3f4a",
       "kind": "video",
-      "path": ".videobase/assets/defined-detail-colour/hero-motion.mp4",
-      "sha256": "ac267298127b49f5c2d1f7c3e26bcbbd67087b387e7a16dbd8903ebc79fe7042"
+      "scriptHash": "4cc1c3609233b6421691e8c1ecaeaac947fa4f39038c1b61c8d329edd0a92668",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/scene-take2-review.mp4"
     },
     {
-      "id": "dirty-scene-close",
-      "path": ".videobase/assets/defined-detail-colour/dirty-scene-close.png",
+      "id": "taxi-wash",
+      "path": ".videobase/assets/defined-detail-taxi/matching-wash.mp4",
+      "sha256": "cb5aadc4eac78d749fa66dddebd99460512e3c778a95acd5977fe792731c367d",
+      "kind": "video"
+    },
+    {
+      "id": "taxi-result",
+      "path": ".videobase/assets/defined-detail-taxi/matching-result.mp4",
+      "sha256": "9088be0372298825e18659b3554aa59e6a0729be6e25b5042e3e6be69d01ad75",
+      "kind": "video"
+    },
+    {
+      "id": "taxi-car-reference",
+      "path": ".videobase/assets/defined-detail-taxi/car-scene-reference.png",
+      "sha256": "0928d9b00d9100c0c11c98d7019c89f407b6f4d92ca2fb9affc1ea33ec0c9e4e",
       "kind": "image",
-      "sha256": "095edb29fd6b5948407382c2361ded89c64dad7c7a29d72be2d7ebe27eff881f"
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/car-scene-reference.png"
     },
     {
-      "id": "rinse-motion",
-      "kind": "video",
-      "path": ".videobase/assets/defined-detail-colour/rinse-motion.mp4",
-      "sha256": "8ec5a3065a2ef6601479833882f11f45a682ec6a2678e6208eb316a0fd6991b0"
+      "id": "taxi-clean-reference",
+      "path": ".videobase/assets/defined-detail-taxi/clean-result-reference.png",
+      "sha256": "267b32161efe6c1f265936d3fbf32d21b3105539e1d6c5ff476e4b1f4426c7a2",
+      "kind": "image",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/clean-result-reference.png"
     },
     {
-      "id": "hero-native-1080",
-      "kind": "video",
-      "path": ".videobase/assets/defined-detail-colour/hero-native-1080.mp4",
-      "sha256": "1525c93865a576b95b77c203f8495c43c6d8fe4f36de04e06e1d293feb2c35f6"
-    },
-    {
-      "id": "closing-music",
-      "path": ".videobase/assets/defined-detail-taxi/closing-music.mp3",
-      "kind": "audio",
-      "sha256": "43f228858683609d579600eb86a58d06b39cd21d20a525b6506752bab00a14bb"
+      "id": "taxi-wash-reference",
+      "path": ".videobase/assets/defined-detail-taxi/wash-reference.png",
+      "sha256": "ac8a5d6cd35cf84252eb0569d1623dccdcd717bfb5925edbbfd071afa9d08988",
+      "kind": "image",
+      "sourceUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/assets/wash-reference.png"
     }
   ],
   "timeline": [
     {
       "id": "setup",
-      "label": "Taxi character performance / pending",
+      "label": "Taxi / selected complete spoken take",
       "role": "setup",
-      "kind": "still",
-      "assetId": "setup-plan",
+      "kind": "video",
+      "assetId": "taxi-acted-scene",
       "sourceStart": 0,
-      "duration": 10,
-      "audioUntil": 0,
-      "spoken": false,
+      "duration": 8.5,
+      "audioUntil": 8.5,
+      "spoken": true,
       "speed": 1,
-      "purpose": "Pending complete acted exchange. Do not render this placeholder as a finished comedy scene.",
-      "voicePlaceholder": false
-    },
-    {
-      "id": "wash",
-      "label": "Existing foam rinse",
-      "role": "process",
-      "kind": "video",
-      "assetId": "rinse-motion",
-      "sourceStart": 0.5,
-      "duration": 2.5,
-      "audioUntil": 2.5,
-      "spoken": false,
-      "speed": 1,
-      "purpose": "Actual physical cleaning, after the joke.",
-      "voicePlaceholder": false,
-      "framing": {
-        "reels": {
-          "x": 4,
-          "y": 0,
-          "width": 1076,
-          "height": 1912
-        },
-        "feed": {
-          "x": 2,
-          "y": 220,
-          "width": 1080,
-          "height": 1350
-        }
-      }
-    },
-    {
-      "id": "result",
-      "label": "Existing dry clean blue result",
-      "role": "result",
-      "kind": "video",
-      "assetId": "hero-native-1080",
-      "sourceStart": 0.5,
-      "duration": 3.5,
-      "audioUntil": 0,
-      "spoken": false,
-      "speed": 1,
-      "purpose": "Same car dry and clean, with narration entering after the character reaction.",
-      "voicePlaceholder": false,
       "framing": {
         "reels": {
           "x": 0,
@@ -584,15 +515,73 @@
         },
         "feed": {
           "x": 0,
-          "y": 180,
+          "y": 70,
           "width": 1080,
           "height": 1350
         }
-      }
+      },
+      "purpose": "Complete four-line exchange, original speech speed, approximately1.5s reaction. Selected for closer readable picture and continuous final reply; audio comparison did not prove take2 better than take1.",
+      "voicePlaceholder": false
+    },
+    {
+      "id": "wash",
+      "label": "Matching physical foam rinse",
+      "role": "process",
+      "kind": "video",
+      "assetId": "taxi-wash",
+      "sourceStart": 0.7,
+      "duration": 3,
+      "audioUntil": 3,
+      "spoken": false,
+      "speed": 1,
+      "framing": {
+        "reels": {
+          "x": 4,
+          "y": 0,
+          "width": 1076,
+          "height": 1912
+        },
+        "feed": {
+          "x": 2,
+          "y": 150,
+          "width": 1080,
+          "height": 1350
+        }
+      },
+      "purpose": "Physical foam removal on the matching wheel/caliper/body. Native water is about10LU below dialogue before mastering.",
+      "voicePlaceholder": false
+    },
+    {
+      "id": "result",
+      "label": "Matching dry blue finish detail",
+      "role": "result",
+      "kind": "video",
+      "assetId": "taxi-result",
+      "sourceStart": 0.3,
+      "duration": 4,
+      "audioUntil": 0,
+      "spoken": false,
+      "speed": 1,
+      "framing": {
+        "reels": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "feed": {
+          "x": 0,
+          "y": 200,
+          "width": 1080,
+          "height": 1350
+        }
+      },
+      "purpose": "Clean paint, headlight and wheel detail. Feed is deliberately tighter, not a full-car reveal. Intended Adam read enters over live picture.",
+      "voicePlaceholder": false
     },
     {
       "id": "close",
-      "label": "Branded close / exact Adam read unresolved",
+      "label": "Defined Detail / booking close",
       "role": "brand",
       "kind": "card",
       "sourceStart": 0,
@@ -600,7 +589,7 @@
       "audioUntil": 0,
       "spoken": false,
       "speed": 1,
-      "purpose": "Actual business, service and action. Current reference recreation is not the exact official Adam render.",
+      "purpose": "Real brand, service and booking action. Exact Adam recording pending; this approved picture cut does not substitute the old reference recreation.",
       "voicePlaceholder": false
     }
   ],
@@ -610,13 +599,20 @@
     "maxNarrationWpm": 145,
     "minReactionSeconds": 1,
     "maxCredits": null,
-    "voiceStart": 14.2
+    "voiceStart": 13.8
+  },
+  "music": {
+    "assetId": "closing-music",
+    "start": 13.7,
+    "volumeDb": -24,
+    "fadeIn": 0.4,
+    "fadeOut": 1.2
   },
   "generation": null,
   "reviews": [],
   "delivery": null,
   "comparison": {
-    "referenceLabel": "CTN \u00b7 The contract wedding",
+    "referenceLabel": "CTN · The contract wedding",
     "referenceUrl": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/ctn-wedding-facebook-reels.mp4",
     "rejectedLabel": "Defined Detail / Kitchen's Next / needs changes",
     "rejectedUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/defined-detail-kitchens-next-reels.mp4",
@@ -648,10 +644,6 @@
     ]
   },
   "preview": {
-    "animaticUrl": "",
-    "animaticNote": "New spoken pilot pending. Earlier Blue reservation remains denied and unchanged. Current narrator recording is a reference recreation; exact selected Adam remains unresolved.",
-    "referencePoster": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/poster.jpg",
-    "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/poster-reels.jpg",
     "performanceTakes": [
       {
         "id": "take1-edited",
@@ -659,16 +651,23 @@
         "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/scene-edited-reels.mp4",
         "sha256": "7286360242e0402d2967cb0999539617606a87dd59161637087a4213b063d5b5",
         "taskId": "7e8bc7f1-f1e7-4353-ac6e-8d7c68ea89f0",
-        "status": "review",
-        "notes": "All four lines independently heard after the false-start edit. Actual-audio comparison judged delivery slightly more stage-read than CTN; a targeted second performance is rendering. This is machine feedback, not human acceptance."
+        "status": "not-used",
+        "notes": "Complete after false-start edit. Blind actual-audio comparison found both Taxi takes similar and marginally preferred this take; take2 was selected for closer framing and a continuous complete reply."
+      },
+      {
+        "id": "take2-review",
+        "label": "Taxi take 2 / selected picture",
+        "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/scene-take2-review.mp4",
+        "sha256": "be45affb0bade0cfdda56c83baa3e3f38c39ddf80899423b05a636e84e8b3f4a",
+        "taskId": "42bd267f-ccfa-42a2-86aa-8aafe61a8eda",
+        "status": "selected-for-edit",
+        "notes": "All16words independently heard. No false-start edit needed, closer framing and continuous performance. Audio improvement was inconclusive. Editorial selection only, no human final approval."
       }
-    ]
-  },
-  "music": {
-    "assetId": "closing-music",
-    "start": 14.2,
-    "volumeDb": -24,
-    "fadeIn": 0.4,
-    "fadeOut": 1.2
+    ],
+    "animaticUrl": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/defined-detail-taxi-reels-picture.mp4",
+    "animaticInputHash": "0e0901040558526cbb6082c2df8b119de4098a95fb8c9b83d70baad1d9e9ddd5",
+    "animaticNote": "Approved21-second assembly: actual spoken comedy, matching wash/result, closing music. Exact Adam read pending with no substitute mixed. Planned narration caption times must be updated when the real library read arrives.",
+    "referencePoster": "https://meetingai.comparethenetworks.com/ads/media/facebook-ready/wedding/reels/poster.jpg",
+    "rejectedPoster": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-kitchens-next/poster-reels.jpg"
   }
 }

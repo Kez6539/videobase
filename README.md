@@ -2,7 +2,7 @@
 
 A production workbench for business adverts. Develop the idea, show the service, record the actual business copy and compose the edit before treating a render as an advert.
 
-Built around Keiron's preferred [CTN set](https://meetingai.comparethenetworks.com/ads/media/facebook-ready/index.html). The fourth Defined Detail cut was rejected for replacing the requested acted comedy with silent captions. The current development is [The taxi](productions/defined-detail-taxi/creative.md): a new spoken pilot selected after independent creative, CTN-reference and pipeline reviews. One native-dialogue take is being assessed before assembly. Exact selected Adam narration remains a separate requirement; a reference recreation cannot satisfy it. The earlier [rejected visual cut](https://meetingai.comparethenetworks.com/ads/media/defined-detail-colour/index.html) remains for comparison.
+Built around Keiron's preferred [CTN set](https://meetingai.comparethenetworks.com/ads/media/facebook-ready/index.html). The current development is [The taxi](https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/index.html): a21-second picture cut with an actual four-turn character scene, matching physical wash/result footage and closing music. Two spoken takes were compared after three independent reviews. The exact selected Adam read remains pending; no preset or recreated narrator is mixed. See [the production record](productions/defined-detail-taxi/production.json).
 
 ## Run it
 

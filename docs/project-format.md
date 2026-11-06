@@ -45,3 +45,11 @@ script.format can explicitly be caption-led, with no invented character lines. s
 ## Exact narrator identity
 
 voice.requireExactSelectedVoice can require the selected library identity. Candidate and release checks require matching referenceVoiceId with library or existing-recording provenance. A reference recreation remains an audition even when it has the same source voice ID. Character-scene development eligibility is unchanged; it must not silently relax this final narrator requirement.
+
+## Performance before coverage
+
+For acted comedy, process/result video requests require an existing spoken setup video bound to the current dialogue hash. This enforces production order, not the quality of the acting or human approval. Scene requests and reference images remain possible first.
+
+Optional preview.performanceTakes preserves compared takes and a selected-for-edit status without creating a human approval. Optional music sets an asset, start time, gain and fades; it must enter after the dialogue and reaction. The renderer mixes it at original speed.
+
+Short lines of five words or fewer keep their measured speech rate as a listening note. Longer lines still enforce the speech-rate policy. Do not pad speech windows to evade a rate check. Draft VTT contains only narration that has an attached recording, and the pending-narrator review label sits above the actors.

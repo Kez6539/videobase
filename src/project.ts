@@ -141,6 +141,14 @@ export async function generationBlockers(p:Project,now=new Date()):Promise<strin
   if(!p.generation?.enabled)reasons.push('Paid generation is disabled.');
   if(p.generation){
     if(p.brief.format==='acted-comedy'&&p.generation.tool==='mcp__codex_apps__runway_generate_video'&&(p.generation.purpose??'scene')==='scene'&&!p.generation.arguments.generateAudio)reasons.push('The acted comedy scene requires generated character dialogue audio.');
+    if(p.brief.format==='acted-comedy'&&p.generation.tool==='mcp__codex_apps__runway_generate_video'&&['process','result'].includes(p.generation.purpose??'scene')){
+      const scriptHash=await dialogueHash(p);
+      // Recorded workflow evidence only: this does not prove source audio, humour
+      // or human approval. The required character scene precedes paid coverage.
+      const currentScene=p.timeline.some(s=>s.role==='setup'&&s.kind==='video'&&s.spoken&&s.audioUntil>0&&p.assets.some(a=>a.id===s.assetId&&a.kind==='video'&&a.scriptHash===scriptHash));
+      if(!currentScene)reasons.push('Import the current script-bound spoken scene before process or result coverage.');
+    }
+
 
     if(p.policy.maxCredits!==null&&p.generation.quote.credits>p.policy.maxCredits)reasons.push('Quote exceeds the project credit cap.');
     if(p.creative&&p.generation.tool==='mcp__codex_apps__runway_generate_video'&&(p.generation.purpose??'scene')==='scene'&&p.script.lines.some(l=>!p.generation!.arguments.promptText.includes(l.text)))reasons.push('The filming request does not contain the exact selected character lines.');

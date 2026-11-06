@@ -1,0 +1,84 @@
+{
+  "at": "2026-11-06T12:52:00.714139+00:00",
+  "sourceTests": 63,
+  "build": "passed",
+  "pictureOutputs": {
+    "reels": {
+      "seconds": 21,
+      "sha256": "d825e97b1e4626f3472531957d6eed3ec9567a5e6714dafb986a8ab14b150c17",
+      "fullDecode": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": "30/1",
+      "sampleRate": "48000",
+      "channels": 2,
+      "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/defined-detail-taxi-reels-picture.mp4"
+    },
+    "feed": {
+      "seconds": 21,
+      "sha256": "ff7f8cbff473dc9eb80225fdad9a16df0d3b920707a6d9fec997429cf7aa0f93",
+      "fullDecode": true,
+      "width": 1080,
+      "height": 1350,
+      "fps": "30/1",
+      "sampleRate": "48000",
+      "channels": 2,
+      "url": "https://meetingai.comparethenetworks.com/ads/media/defined-detail-taxi/defined-detail-taxi-feed-picture.mp4"
+    }
+  },
+  "browser": {
+    "reels": {
+      "seconds": 21,
+      "width": 1080,
+      "height": 1920,
+      "playedToEnd": true,
+      "muted": false
+    },
+    "feed": {
+      "seconds": 21,
+      "width": 1080,
+      "height": 1350,
+      "playedToEnd": true,
+      "muted": false
+    },
+    "mobileViewport": 390,
+    "mobileContentWidth": 390,
+    "copyAdamRead": "Copied",
+    "pageErrors": []
+  },
+  "hosted": {
+    "files": [
+      {
+        "file": "index.html",
+        "status": 200,
+        "sha256": "50de6f7cbfd6a1e00f431d943a7b209872d0aab65cfbb006b83de6c150e4f666"
+      },
+      {
+        "file": "defined-detail-taxi-reels-picture.mp4",
+        "status": 200,
+        "sha256": "d825e97b1e4626f3472531957d6eed3ec9567a5e6714dafb986a8ab14b150c17"
+      },
+      {
+        "file": "defined-detail-taxi-feed-picture.mp4",
+        "status": 200,
+        "sha256": "ff7f8cbff473dc9eb80225fdad9a16df0d3b920707a6d9fec997429cf7aa0f93"
+      },
+      {
+        "file": "captions.vtt",
+        "status": 200,
+        "sha256": "2579e71b915f1ab5038764f30fb76e49ea324bea03610493b320f084d71c40ac"
+      },
+      {
+        "file": "defined-detail-taxi-picture-cuts.zip",
+        "status": 200,
+        "sha256": "b4c17b7d117b8f3170ca9dfc7e1982e595bf90d065794727cc4113b26765e4bc"
+      }
+    ],
+    "range": 206
+  },
+  "zipCRC": "passed",
+  "actualSpeech": "Four exact lines,16words, no false-start edit needed in selectedtake2",
+  "sourceVisualReview": "Matching visible wheel, yellow caliper, blue body and bay checked; final subtitle/logo frames inspected, statusstrip above faces",
+  "narrator": "not present, exact Adam pending",
+  "humanFinalApproval": false
+}

@@ -4,7 +4,7 @@ import {mkdtemp,readFile,mkdir,writeFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import data from '../examples/defined-detail.json' with {type:'json'};
-import {projectSchema,stageHash,reviewStatus,generationBlockers,candidateCoverage,audit,digest,type Project,type Stage} from '../src/project.ts';
+import {projectSchema,stageHash,reviewStatus,generationBlockers,candidateCoverage,dialogueHash,audit,digest,type Project,type Stage} from '../src/project.ts';
 import {reserveRequest,recordTask,committedCredits} from '../src/spend.ts';
 import {assetPath} from '../src/io.ts';
 
@@ -114,4 +114,46 @@ test('a nine-word line crammed into two seconds retains the sustained-rate block
  const findings=await audit(p);const rushed=findings.find(f=>f.code==='rushed-line');
  assert.equal(rushed?.level,'block');assert.match(rushed!.message,/270 words\/minute/);
  assert.ok(!findings.some(f=>f.code==='short-line-rate'));
+});
+
+
+async function coverageRequest(purpose:'process'|'result'):Promise<Project>{
+ const p=await ready();p.brief.format='acted-comedy';
+ if(p.generation?.tool!=='mcp__codex_apps__runway_generate_video')throw Error('Video fixture required');
+ p.generation.purpose=purpose;
+ for(const stage of ['brief','script','voice','animatic','spend'] as const)await approve(p,stage);
+ return p;
+}
+async function bindFixtureScene(p:Project):Promise<void>{
+ p.assets.push({id:'fixture-spoken-scene',path:'.videobase/assets/fixture-scene.mp4',kind:'video',sha256:'d'.repeat(64),scriptHash:await dialogueHash(p)});
+ p.timeline.unshift({id:'fixture-setup',label:'Fixture spoken setup',role:'setup',kind:'video',assetId:'fixture-spoken-scene',sourceStart:0,duration:10,audioUntil:10,spoken:true,speed:1,purpose:'Test workflow evidence only.',voicePlaceholder:false});
+}
+async function refreshFixtureReviews(p:Project):Promise<void>{for(const stage of ['brief','script','voice','animatic','spend'] as const)await approve(p,stage);}
+test('acted comedy cannot buy process or result coverage before a current script-bound scene',async()=>{
+ for(const purpose of ['process','result'] as const){
+  const p=await coverageRequest(purpose);
+  assert.ok((await generationBlockers(p)).some(x=>x.includes('current script-bound spoken scene')));
+  await bindFixtureScene(p);p.script.lines[0]!.text='A changed opening line.';await refreshFixtureReviews(p);
+  assert.ok((await generationBlockers(p)).some(x=>x.includes('current script-bound spoken scene')));
+ }
+});
+test('current spoken scene evidence permits coverage without requiring exact narrator provenance',async()=>{
+ for(const purpose of ['process','result'] as const){
+  const p=await coverageRequest(purpose);await bindFixtureScene(p);
+  p.voice.requireExactSelectedVoice=true;p.voice.recordingProvenance={method:'reference-recreation',referenceVoiceId:p.voice.voiceId};
+  await refreshFixtureReviews(p);
+  assert.deepEqual(await generationBlockers(p),[]);
+  assert.ok(candidateCoverage(p).some(f=>f.code==='voice-exact-selected'));
+ }
+});
+test('actor-first coverage evidence does not block an initial scene, reference image or caption-led brief',async()=>{
+ const p=await coverageRequest('process');
+ if(p.generation?.tool!=='mcp__codex_apps__runway_generate_video')throw Error('Video fixture required');
+ p.generation.purpose='scene';p.generation.arguments.generateAudio=true;await refreshFixtureReviews(p);
+ assert.deepEqual(await generationBlockers(p),[]);
+ p.generation={enabled:true,tool:'mcp__codex_apps__runway_generate_image',purpose:'reference',workspaceId:1,arguments:{model:'fixture',promptText:'One reference image'},quote:{credits:20,checkedAt:new Date().toISOString(),source:'https://example.com/quote',notes:'Test fixture quote'}};
+ await refreshFixtureReviews(p);assert.deepEqual(await generationBlockers(p),[]);
+ const q=await coverageRequest('result');q.brief.format='caption-led';q.script.format='caption-led';q.script.lines=[];
+ q.script.displayCopy=[{text:'A clean car.',start:0,end:1}];q.script.captions=[{kind:'display',...q.script.displayCopy[0]!},...q.script.captions.filter(c=>c.kind==='narration')];
+ await refreshFixtureReviews(q);assert.deepEqual(await generationBlockers(q),[]);
 });
